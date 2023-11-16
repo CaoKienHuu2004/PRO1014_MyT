@@ -1,3 +1,4 @@
-<php>
-    
-</php>
+<?php
+    include_once("model/pdo.php");
+   
+?>
