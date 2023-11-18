@@ -118,10 +118,10 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div style="display: flex; gap: 10px;">
-                                        <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                        <a href="author.html"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
                                         <div class="rn-inner-top">
                                             <h4 class="title"><a href="author.html">Cao Kiến Hựu</a></h4>
                                             <span><a>Quản trị viên</a></span>
@@ -153,12 +153,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="view/layout/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="view/layout/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
