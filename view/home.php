@@ -36,14 +36,14 @@
                 </div>
                 <div class="col-lg-6 order-lg-2 order-md-1 order-sm-1 order-1">
                     <div class="tilt-image-banner-16">
-                        <img class="tilt" src="assets/images/banner/banner-06.png" alt="Nft-profile">
+                        <img class="tilt" src="view/layout/assets/images/banner/banner-06.png" alt="Nft-profile">
                         <div class="joined-people-wrapper">
                             <div class="product-share-wrapper">
                                 <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="N.Hùng" tabindex="0"><img class="large" src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Tuan Tran" tabindex="0"><img class="large" src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Hựu" tabindex="0"><img class="large" src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Hotb" tabindex="0"><img class="large" src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="N.Hùng" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Tuan Tran" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-3.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Hựu" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-5.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Hotb" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
                                     <a class="more-author-text" href="#" tabindex="0">+ 1k sinh viên </a>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                     <div class="single-slide-product">
                         <div class="product-style-one">
                             <div class="card-thumbnail">
-                                <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                                <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                                 <div class="countdown" data-date="2023-12-30">
                                     <div class="countdown-container days">
                                         <span class="countdown-value">87</span>
@@ -120,7 +120,7 @@
                             
                             <div class="product-share-wrapper" style="margin: 0px;">
                                     <!-- <div class="profile-share">
-                                        <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                        <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                     
                                         <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                     </div> -->
@@ -140,7 +140,7 @@
                    <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -187,7 +187,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -207,7 +207,7 @@
                 <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -254,7 +254,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -275,7 +275,7 @@
                 <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -322,7 +322,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -342,7 +342,7 @@
                 <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -389,7 +389,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -410,7 +410,7 @@
                 <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -457,7 +457,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -477,7 +477,7 @@
                 <div class="single-slide-product">
                     <div class="product-style-one">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -524,7 +524,7 @@
                         
                         <div class="product-share-wrapper" style="margin: 0px;">
                                 <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
                                     <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
                                 </div> -->
@@ -563,15 +563,15 @@
                     <a href="author.html" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
                             </div>
                             <div class="collection-deg">
                                 <h6 class="title">Hựu CK</h6>
@@ -586,15 +586,15 @@
                     <a href="author.html" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
                             </div>
                             <div class="collection-deg">
                                 <h6 class="title">Đạt VH</h6>
@@ -609,15 +609,15 @@
                     <a href="author.html" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
                             </div>
                             <div class="collection-deg">
                                 <h6 class="title">Thảo TNK</h6>
@@ -632,15 +632,15 @@
                     <a href="author.html" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
                             </div>
                             <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
+                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
                             </div>
                             <div class="collection-deg">
                                 <h6 class="title">Long NCK</h6>
@@ -733,7 +733,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2022-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -790,7 +790,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2023-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -847,7 +847,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2022-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -904,7 +904,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2022-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -961,7 +961,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2023-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -1018,7 +1018,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2022-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -1075,7 +1075,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2023-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -1132,7 +1132,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2023-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -1189,7 +1189,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one overlay">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="2022-12-30">
                             <div class="countdown-container days">
                                 <span class="countdown-value">87</span>
@@ -1265,7 +1265,7 @@
                     <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="rn-service-one color-shape-7">
                         <div class="inner">
                             <div class="icon">
-                                <img src="assets/images/icons/shape-1.png" alt="Shape">
+                                <img src="view/layout/assets/images/icons/shape-1.png" alt="Shape">
                             </div>
                             <div class="subtitle">Bước 01</div>
                             <div class="content">
@@ -1283,7 +1283,7 @@
                     <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="rn-service-one color-shape-1">
                         <div class="inner">
                             <div class="icon">
-                                <img src="assets/images/icons/shape-6.png" alt="Shape">
+                                <img src="view/layout/assets/images/icons/shape-6.png" alt="Shape">
                             </div>
                             <div class="subtitle">Bước 02</div>
                             <div class="content">
@@ -1301,7 +1301,7 @@
                     <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="rn-service-one color-shape-5">
                         <div class="inner">
                             <div class="icon">
-                                <img src="assets/images/icons/shape-5.png" alt="Shape">
+                                <img src="view/layout/assets/images/icons/shape-5.png" alt="Shape">
                             </div>
                             <div class="subtitle">Bước 03</div>
                             <div class="content">
@@ -1424,7 +1424,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1481,7 +1481,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2022-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1538,7 +1538,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1595,7 +1595,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2023-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1652,7 +1652,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2022-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1709,7 +1709,7 @@
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
                             <div class="countdown" data-date="2022-12-30">
                                 <div class="countdown-container days">
                                     <span class="countdown-value">87</span>
@@ -1786,7 +1786,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-12.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-12.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1806,7 +1806,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1826,7 +1826,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-3.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1846,7 +1846,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-4.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-4.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1866,7 +1866,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-5.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1886,7 +1886,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-6.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-6.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1906,7 +1906,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-7.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-7.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1926,7 +1926,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-8.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-8.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1946,7 +1946,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-9.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-9.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
@@ -1966,7 +1966,7 @@
                     <div class="top-seller-inner-one">
                         <div class="top-seller-wrapper">
                             <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-10.png" alt="Nft_Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/client/client-10.png" alt="Nft_Profile"></a>
                             </div>
                             <div class="top-seller-content">
                                 <a href="author.html">
