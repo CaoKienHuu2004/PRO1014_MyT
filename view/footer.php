@@ -4,16 +4,16 @@
             <div class="container">
                 <div class="row">
                     <ul class="nu-brand-area">
-                        <li><img src="layout/assets/images/brand/brand-01.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-01.png" alt="nuron-brand_nft"></li>
 
-                        <li><img src="layout/assets/images/brand/brand-03.png" alt="nuron-brand_nft"></li>
-                        <li><img src="layout/assets/images/brand/brand-06.png" alt="nuron-brand_nft"></li>
-                        <li><img src="layout/assets/images/brand/brand-07.png" alt="nuron-brand_nft"></li>
-                        <li><img src="layout/assets/images/brand/brand-04.png" alt="nuron-brand_nft"></li>
-                        <li><img src="layout/assets/images/brand/brand-02.png" alt="nuron-brand_nft"></li>
-                        <li><img src="layout/assets/images/brand/brand-01.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-03.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-06.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-07.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-04.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-02.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-01.png" alt="nuron-brand_nft"></li>
 
-                        <li><img src="layout/assets/images/brand/brand-03.png" alt="nuron-brand_nft"></li>
+                        <li><img src="view/layout/assets/images/brand/brand-03.png" alt="nuron-brand_nft"></li>
                     </ul>
                 </div>
             </div>
@@ -24,8 +24,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="layout/assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="layout/assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="view/layout/assets/images/logo/MyT-01.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="view/layout/assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 MyT - Nơi giao dịch, trao đổi cái tài liệu, tài nguyên học tập dành cho sinh viên.
@@ -83,7 +83,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="layout/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -140,34 +140,34 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="layout/assets/js/vendor/jquery.js"></script>
-    <script src="layout/assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="layout/assets/js/vendor/jquery-ui.js"></script>
-    <script src="layout/assets/js/vendor/modernizer.min.js"></script>
-    <script src="layout/assets/js/vendor/feather.min.js"></script>
-    <script src="layout/assets/js/vendor/slick.min.js"></script>
-    <script src="layout/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="layout/assets/js/vendor/sal.min.js"></script>
-    <script src="layout/assets/js/vendor/particles.js"></script>
-    <script src="layout/assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="layout/assets/js/vendor/js.cookie.js"></script>
-    <script src="layout/assets/js/vendor/count-down.js"></script>
-    <script src="layout/assets/js/vendor/isotop.js"></script>
-    <script src="layout/assets/js/vendor/imageloaded.js"></script>
-    <script src="layout/assets/js/vendor/backtoTop.js"></script>
-    <script src="layout/assets/js/vendor/odometer.js"></script>
-    <script src="layout/assets/js/vendor/jquery-appear.js"></script>
-    <script src="layout/assets/js/vendor/scrolltrigger.js"></script>
-    <script src="layout/assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="layout/assets/js/vendor/savePopup.js"></script>
-    <script src="layout/assets/js/vendor/vanilla.tilt.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery-ui.js"></script>
+    <script src="view/layout/assets/js/vendor/modernizer.min.js"></script>
+    <script src="view/layout/assets/js/vendor/feather.min.js"></script>
+    <script src="view/layout/assets/js/vendor/slick.min.js"></script>
+    <script src="view/layout/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="view/layout/assets/js/vendor/sal.min.js"></script>
+    <script src="view/layout/assets/js/vendor/particles.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="view/layout/assets/js/vendor/js.cookie.js"></script>
+    <script src="view/layout/assets/js/vendor/count-down.js"></script>
+    <script src="view/layout/assets/js/vendor/isotop.js"></script>
+    <script src="view/layout/assets/js/vendor/imageloaded.js"></script>
+    <script src="view/layout/assets/js/vendor/backtoTop.js"></script>
+    <script src="view/layout/assets/js/vendor/odometer.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery-appear.js"></script>
+    <script src="view/layout/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="view/layout/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="view/layout/assets/js/vendor/savePopup.js"></script>
+    <script src="view/layout/assets/js/vendor/vanilla.tilt.js"></script>
 
     <!-- main JS -->
-    <script src="layout/assets/js/main.js"></script>
+    <script src="view/layout/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="layout/assets/js/vendor/web3.min.js"></script>
-    <script src="layout/assets/js/vendor/maralis.js"></script>
-    <script src="layout/assets/js/vendor/nft.js"></script>
+    <script src="view/layout/assets/js/vendor/web3.min.js"></script>
+    <script src="view/layout/assets/js/vendor/maralis.js"></script>
+    <script src="view/layout/assets/js/vendor/nft.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 </body>
