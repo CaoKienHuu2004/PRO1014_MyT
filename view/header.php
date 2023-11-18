@@ -34,8 +34,8 @@
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="view/layout/assets/images/logo/MyT-01.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="view/layout/assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
