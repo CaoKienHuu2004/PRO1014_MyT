@@ -14,16 +14,16 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/icons/shape-1.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="layout/assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="layout/assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="layout/assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="layout/assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="layout/assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="layout/assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="layout/assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="view/layout/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="view/layout/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="view/layout/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="view/layout/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="view/layout/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="view/layout/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="view/layout/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="layout/assets/css/style.css">
+    <link rel="stylesheet" href="view/layout/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
