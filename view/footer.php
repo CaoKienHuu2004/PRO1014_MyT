@@ -11,9 +11,6 @@
                         <li><img src="view/layout/assets/images/brand/brand-07.png" alt="nuron-brand_nft"></li>
                         <li><img src="view/layout/assets/images/brand/brand-04.png" alt="nuron-brand_nft"></li>
                         <li><img src="view/layout/assets/images/brand/brand-02.png" alt="nuron-brand_nft"></li>
-                        <li><img src="view/layout/assets/images/brand/brand-01.png" alt="nuron-brand_nft"></li>
-
-                        <li><img src="view/layout/assets/images/brand/brand-03.png" alt="nuron-brand_nft"></li>
                     </ul>
                 </div>
             </div>

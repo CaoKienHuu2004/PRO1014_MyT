@@ -1,3 +1,739 @@
+<?php 
+    // Sản phẩm giảm giá-------------------------------------------------------------------------------------------------------
+    $html_product_sale = '';
+    foreach ($product_select_sale as $item) {
+        extract($item);
+        $cert = "";
+        if ($Test == 1) {
+            $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+        }else {
+            $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+        }
+        $html_product_sale .='
+            <!-- start single product -->
+            <div class="single-slide-product">
+                <div class="product-style-one">
+                    <div class="card-thumbnail">
+                        <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                        <div class="countdown" data-date="'.$Date_Sale.'">
+                            <div class="countdown-container days">
+                                <span class="countdown-value">0</span>
+                                <span class="countdown-heading">Ngày</span>
+                            </div>
+                            <div class="countdown-container hours">
+                                <span class="countdown-value">0</span>
+                                <span class="countdown-heading">Giờ</span>
+                            </div>
+                            <div class="countdown-container minutes">
+                                <span class="countdown-value">0</span>
+                                <span class="countdown-heading">Phút</span>
+                            </div>
+                            <div class="countdown-container seconds">
+                                <span class="countdown-value">0</span>
+                                <span class="countdown-heading">Giây</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-share-wrapper">
+                        <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                        <div class="share-btn share-btn-activation dropdown">
+                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
+                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                    Share
+                                </button>
+                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                    Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    '.$cert.'
+                    <div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number"><a href="" style="color: gray">Giỏ hàng</a></span>
+                        </div>
+                    </div>
+                <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>
+                </div>
+            </div>
+            <!-- end single product -->
+        ';
+    }
+
+    // Danh mục -------------------------------------------------------------------------------------------------------
+    $html_category_select_all = '';
+    foreach ($category_select_all as $item) {
+        extract($item);
+        $html_category_select_all .='
+            <!-- start single category -->
+            <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                <a class="category-style-one" href="#">
+                    <i class="feather-'.$Img.'"></i>
+                    <span class="category-label">'.$Name.'</span>
+                </a>
+            </div>
+            <!-- end single category -->
+        ';
+    }
+
+
+    // Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
+    $html_product_bestsaler = '';
+    foreach ($product_select_bestsaler as $item) {
+        extract($item);
+        $cert = "";
+        if ($Test == 1) {
+            $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
+        }else {
+            $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
+        }
+        $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+        $html_product_bestsaler .='
+        <!-- start single product -->
+        <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="product-style-one overlay">
+                <div class="card-thumbnail">
+                    <a href="product-details.html"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                    <div class="countdown" data-date="'.$Date_Sale.'">
+                        <div class="countdown-container days">
+                            <span class="countdown-value">87</span>
+                            <span class="countdown-heading">Ds</span>
+                        </div>
+                        <div class="countdown-container hours">
+                            <span class="countdown-value">23</span>
+                            <span class="countdown-heading">Hs</span>
+                        </div>
+                        <div class="countdown-container minutes">
+                            <span class="countdown-value">38</span>
+                            <span class="countdown-heading">Mins</span>
+                        </div>
+                        <div class="countdown-container seconds">
+                            <span class="countdown-value">27</span>
+                            <span class="countdown-heading">Sec</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-share-wrapper">
+                    <a href="product-details.html"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <div class="share-btn share-btn-activation dropdown">
+                        <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                            </svg>
+                        </button>
+
+                        <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                            <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                Share
+                            </button>
+                            <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                Report
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center">'.$cert.'<span class=""><b style="color: #f27322">Lượt bán:</b> '.$best_saler.'</div>
+                <br>
+                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">'.$Describe.'</span></div>
+                '.$gia.'
+            </div>
+        </div>
+        <!-- end single product -->
+        ';
+    }
+
+    // Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
+    $html_product_view = '';
+    foreach ($product_select_view as $item) {
+        extract($item);
+        $cert = "";
+        if ($Test == 1) {
+            $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
+        }else {
+            $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
+        }
+        $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+        $html_product_view .='
+        <!-- start single product -->
+        <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="product-style-one overlay">
+                <div class="card-thumbnail">
+                    <a href="product-details.html"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                    <div class="countdown" data-date="'.$Date_Sale.'">
+                        <div class="countdown-container days">
+                            <span class="countdown-value">87</span>
+                            <span class="countdown-heading">Ds</span>
+                        </div>
+                        <div class="countdown-container hours">
+                            <span class="countdown-value">23</span>
+                            <span class="countdown-heading">Hs</span>
+                        </div>
+                        <div class="countdown-container minutes">
+                            <span class="countdown-value">38</span>
+                            <span class="countdown-heading">Mins</span>
+                        </div>
+                        <div class="countdown-container seconds">
+                            <span class="countdown-value">27</span>
+                            <span class="countdown-heading">Sec</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-share-wrapper">
+                    <a href="product-details.html"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <div class="share-btn share-btn-activation dropdown">
+                        <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                            </svg>
+                        </button>
+
+                        <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                            <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                Share
+                            </button>
+                            <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                Report
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center">'.$cert.'<span class=""><b style="color: #f27322">Lượt bán:</b> '.$best_saler.'</div>
+                <br>
+                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">'.$Describe.'</span></div>
+                '.$gia.'
+            </div>
+        </div>
+        <!-- end single product -->
+        ';
+    }
+
+     // Sản phẩm với danh mục "Lập Trình"-------------------------------------------------------------------------------------------------------
+     $html_product_category_0 = '';
+     foreach ($product_select_category_0 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_0 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+
+     // Sản phẩm với danh mục "Đồ Họa"-------------------------------------------------------------------------------------------------------
+     $html_product_category_1 = '';
+     foreach ($product_select_category_1 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_1 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+
+     // Sản phẩm với danh mục "Marketing"-------------------------------------------------------------------------------------------------------
+     $html_product_category_2 = '';
+     foreach ($product_select_category_2 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_2 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+
+     // Sản phẩm với danh mục "GIÁO TRÌNH"-------------------------------------------------------------------------------------------------------
+     $html_product_category_3 = '';
+     foreach ($product_select_category_3 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_3 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+
+     // Sản phẩm với danh mục "NGOẠI NGỮ"-------------------------------------------------------------------------------------------------------
+     $html_product_category_4 = '';
+     foreach ($product_select_category_4 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_4 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+
+     // Sản phẩm với danh mục "TIN HỌC"-------------------------------------------------------------------------------------------------------
+     $html_product_category_5 = '';
+     foreach ($product_select_category_5 as $item) {
+         extract($item);
+         $cert = "";
+         if ($Test == 1) {
+             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+         }else {
+             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+         }
+         $gia = "";
+        if ($Price_2 == 0) {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>';
+        }else {
+            $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <div class="react-area">
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
+                            <span class="number">Giỏ hàng</span>
+                        </div>
+                    </div>
+                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
+        }
+         $html_product_category_5 .='
+             <!-- start single product -->
+             <div class="single-slide-product">
+                 <div class="product-style-one">
+                     <div class="card-thumbnail">
+                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="'.$Date_Sale.'">
+                             <div class="countdown-container days">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Ngày</span>
+                             </div>
+                             <div class="countdown-container hours">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giờ</span>
+                             </div>
+                             <div class="countdown-container minutes">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Phút</span>
+                             </div>
+                             <div class="countdown-container seconds">
+                                 <span class="countdown-value">0</span>
+                                 <span class="countdown-heading">Giây</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="product-share-wrapper">
+                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <div class="share-btn share-btn-activation dropdown">
+                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                 </svg>
+                             </button>
+                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                 <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                     Share
+                                 </button>
+                                 <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                     Report
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                     '.$cert.'
+                    '.$gia.'
+                 </div>
+             </div>
+             <!-- end single product -->
+         ';
+     }
+    
+?>
+   
    <!-- banner 16 -->
    <div class="banner-area banner-16 pt--100 pb--120 pt_md--70 pt_sm--30 pb_md--90 pb_sm--50 bg-color--2">
         <div class="container">
@@ -62,484 +798,14 @@
         <div class="row mb--50">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Giảm giá giờ vàng !</h3>
+                    <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">GIẢM GIÁ GIỜ VÀNG !</h3>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                    <!-- start single product -->
-                    <div class="single-slide-product">
-                        <div class="product-style-one">
-                            <div class="card-thumbnail">
-                                <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                                <div class="countdown" data-date="2023-12-30">
-                                    <div class="countdown-container days">
-                                        <span class="countdown-value">87</span>
-                                        <span class="countdown-heading">D's</span>
-                                    </div>
-                                    <div class="countdown-container hours">
-                                        <span class="countdown-value">23</span>
-                                        <span class="countdown-heading">H's</span>
-                                    </div>
-                                    <div class="countdown-container minutes">
-                                        <span class="countdown-value">38</span>
-                                        <span class="countdown-heading">Min's</span>
-                                    </div>
-                                    <div class="countdown-container seconds">
-                                        <span class="countdown-value">27</span>
-                                        <span class="countdown-heading">Sec</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-share-wrapper">
-                                
-                                <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                                <div class="share-btn share-btn-activation dropdown">
-                                    <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                        </svg>
-                                    </button>
-
-                                    <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                        <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                            Share
-                                        </button>
-                                        <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                            Report
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                            <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                            
-                            <div class="product-share-wrapper" style="margin: 0px;">
-                                    <!-- <div class="profile-share">
-                                        <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                    
-                                        <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                    </div> -->
-                            </div>
-                            <div class="bid-react-area">
-                                <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                                <div class="react-area">
-                                    <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                    <span class="number">Giỏ hàng</span>
-                                </div>
-                            </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-                        </div>
-                    </div>
-                    <!-- end single product -->
-                   <!-- start single product -->
-                   <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br> -->
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px; color: #f27322;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                        <span class="last-bid" style="margin: 0px;"><del>24 PCoin</del></span>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div class="single-slide-product">
-                    <div class="product-style-one">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            
-                            <a href="product-details.html"><span class="product-name" style="margin: 0px;">Template HTML5</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="more-author-text" >4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span>
-                        
-                        <div class="product-share-wrapper" style="margin: 0px;">
-                                <!-- <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="@lyhuu123"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                    <span class="more-author-text" href="#"><b>Cao Kiến Hựu</b></span>
-                                </div> -->
-                        </div>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-
+                    <?=$html_product_sale?>
                 </div>
             </div>
         </div>
@@ -547,168 +813,11 @@
 </div>
 <!-- Explore Style Carousel End-->
 
-    <!-- collection area Start -->
-    <div class="rn-collection-area rn-section-gapTop">
-        <div class="container">
-            <div class="row mb--50 align-items-center">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800"><i class="feather-users" style="margin-right: 10px;"></i>Top lượt giao dịch vàng</h3>
-                </div>
-                
-            </div>
-
-            <div class="row g-5">
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="author.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Hựu CK</h6>
-                                <span class="items">50 Lượt giao dịch</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="author.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Đạt VH</h6>
-                                <span class="items">49 Lượt giao dịch</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="author.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Thảo TNK</h6>
-                                <span class="items">47 Lượt giao dịch</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="author.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="view/layout/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="view/layout/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="view/layout/assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Long NCK</h6>
-                                <span class="items">45 Lượt giao dịch</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                
-                
-            </div>
-        </div>
-    </div>
-    <!-- collection area End -->
-
     <!-- start category area -->
     <div class="category-area pt--110 pt_md--70 pt_sm--50">
         <div class="container">
             <div class="row g-5">
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-code"></i>
-                        <span class="category-label">Info Tech</span>
-                    </a>
-                </div>
-                <!-- end single category -->
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-layers"></i>
-                        <span class="category-label">Design</span>
-                    </a>
-                </div>
-                <!-- end single category -->
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-trending-up"></i>
-                        <span class="category-label">Digital MKT</span>
-                    </a>
-                </div>
-                <!-- end single category -->
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="500" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-users"></i>
-                        <span class="category-label">PR & Event</span>
-                    </a>
-                </div>
-                <!-- end single category -->
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="600" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-settings"></i>
-                        <span class="category-label">Automation</span>
-                    </a>
-                </div>
-                <!-- end single category -->
-                <!-- start single category -->
-                <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="700" data-sal="slide-up" data-sal-duration="800">
-                    <a class="category-style-one" href="#">
-                        <i class="feather-book"></i>
-                        <span class="category-label">Languages</span>
-                    </a>
-                </div>
-                <!-- end single category -->
+                <?=$html_category_select_all?>
             </div>
         </div>
     </div>
@@ -720,7 +829,7 @@
     <div class="container">
         <div class="row mb--50 align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Sản phẩm giao dịch cao</h3>
+                <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">SẢN PHẨM BÁN CHẠY</h3>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
                 <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
@@ -729,534 +838,18 @@
             </div>
         </div>
         <div class="row g-5">
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2022-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2023-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2022-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2022-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2023-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2022-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2023-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2023-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            <!-- start single product -->
-            <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="product-style-one overlay">
-                    <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="2022-12-30">
-                            <div class="countdown-container days">
-                                <span class="countdown-value">87</span>
-                                <span class="countdown-heading">D's</span>
-                            </div>
-                            <div class="countdown-container hours">
-                                <span class="countdown-value">23</span>
-                                <span class="countdown-heading">H's</span>
-                            </div>
-                            <div class="countdown-container minutes">
-                                <span class="countdown-value">38</span>
-                                <span class="countdown-heading">Min's</span>
-                            </div>
-                            <div class="countdown-container seconds">
-                                <span class="countdown-value">27</span>
-                                <span class="countdown-heading">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                        <div class="share-btn share-btn-activation dropdown">
-                            <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-
-                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                    Share
-                                </button>
-                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                    Report
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-                    <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                    <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                    <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                    <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                        <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end single product -->
-            
-
-            
+        <?=$html_product_bestsaler?>
         </div>
     </div>
 </div>
 <!-- New items End -->.
 
-
-    <!-- start service area -->
-    <div class="rn-service-area rn-section-gapTop">
+<!-- start service area -->
+<div class="rn-service-area rn-section-gapTop">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb--50">
-                    <h3 class="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Tạo và giao dịch trên MyT</h3>
+                    <h3 class="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">TẠO VÀ GIAO DỊCH TRÊN MyT</h3>
                 </div>
             </div>
             <div class="row g-5">
@@ -1319,6 +912,27 @@
         </div>
     </div>
     <!-- End service area -->
+
+<!-- New items Start -->
+<div class="rn-new-items rn-section-gapTop">
+    <div class="container">
+        <div class="row mb--50 align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">QUAN TÂM NHIỀU NHẤT</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
+                <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                    <a class="btn-transparent" href="product.html">XEM TẤT CẢ<i data-feather="arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <?=$html_product_view?>
+        </div>
+    </div>
+</div>
+<!-- New items End -->
+
     <!-- start subscribe area -->
     <div class="nu-subscribe-area rn-section-gapTop" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
         <div class="container">
@@ -1341,667 +955,138 @@
         </div>
     </div>
     <!-- end subscribe area -->
-     <!-- Start product area -->
-     <div class="rn-product-area rn-section-gapTop">
+
+    <!-- Explore Style Carousel -->
+    <div class="rn-live-bidding-area rn-section-gapTop" id="01">
         <div class="container">
-            <div class="row mb--50 align-items-center">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Bạn cũng quan tâm</h3>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                    <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                        <button class="discover-filter-button discover-filter-activation btn btn-primary">Filter<i class="feather-filter"></i></button>
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">XU HƯỚNG "LẬP TRÌNH"</h3>
                     </div>
                 </div>
             </div>
-
-            <div class="default-exp-wrapper default-exp-expand">
-                <div class="inner">
-                    <div class="filter-select-option">
-                        <label class="filter-leble">LIKES</label>
-                        <select>
-                            <option data-display="Most liked">Most liked</option>
-                            <option value="1">Least liked</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-select-option">
-                        <label class="filter-leble">Category</label>
-                        <select>
-                            <option data-display="Category">Category</option>
-                            <option value="1">Art</option>
-                            <option value="1">Photograph</option>
-                            <option value="2">Metaverses</option>
-                            <option value="4">Potato</option>
-                            <option value="4">Photos</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-select-option">
-                        <label class="filter-leble">Collections</label>
-                        <select>
-                            <option data-display="Collections">Collections</option>
-                            <option value="1">BoredApeYachtClub</option>
-                            <option value="2">MutantApeYachtClub</option>
-                            <option value="4">Art Blocks Factory</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-select-option">
-                        <label class="filter-leble">Sale type</label>
-                        <select>
-                            <option data-display="Sale type">Sale type</option>
-                            <option value="1">Fixed price</option>
-                            <option value="2">Timed auction</option>
-                            <option value="4">Not for sale</option>
-                            <option value="4">Open for offers</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-select-option">
-                        <label class="filter-leble">Price Range</label>
-                        <div class="price_filter s-filter clear">
-                            <form action="#" method="GET">
-                                <div id="slider-range"></div>
-                                <div class="slider__range--output">
-                                    <div class="price__output--wrap">
-                                        <div class="price--output">
-                                            <span>Price :</span><input type="text" id="amount" readonly>
-                                        </div>
-                                        <div class="price--filter">
-                                            <a class="btn btn-primary btn-small" href="#">Filter</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_0?>
                     </div>
                 </div>
-            </div>
-
-            <div class="row g-5">
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2022-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2023-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2022-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
-                <!-- start single product -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="product-style-one overlay">
-                        <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio"></a>
-                            <div class="countdown" data-date="2022-12-30">
-                                <div class="countdown-container days">
-                                    <span class="countdown-value">87</span>
-                                    <span class="countdown-heading">D's</span>
-                                </div>
-                                <div class="countdown-container hours">
-                                    <span class="countdown-value">23</span>
-                                    <span class="countdown-heading">H's</span>
-                                </div>
-                                <div class="countdown-container minutes">
-                                    <span class="countdown-value">38</span>
-                                    <span class="countdown-heading">Min's</span>
-                                </div>
-                                <div class="countdown-container seconds">
-                                    <span class="countdown-value">27</span>
-                                    <span class="countdown-heading">Sec</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-share-wrapper">
-                            <a href="product-details.html"><span class="product-name">Preatent</span></a>
-                            <div class="share-btn share-btn-activation dropdown">
-                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                    </svg>
-                                </button>
-
-                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                        Share
-                                    </button>
-                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                        Report
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                        <span class="latest-bid" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br>
-                        <span class="latest-bid"></i>4.8 / 5.0<i class="feather-star" style="padding-left: 5px;"></i></span><br>
-                        <span style="font-weight: 400; font-size: 15px; margin-top: 20px;">Đây là những thông tin mô tả ngắn về sản phẩm giao dịch này và được viết bởi Cao Kiến Hựu</span>
-                        <div class="bid-react-area">
-                            <h6 class="last-bid" style="margin: 0px;">24 PCoin</h6>
-                            <div class="react-area">
-                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                                <span class="number">Giỏ hàng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single product -->
             </div>
         </div>
     </div>
-    <!-- end product area -->
-    <!-- top top-seller start -->
-    <div class="rn-top-top-seller-area nice-selector-transparent rn-section-gapTop">
+    <!-- Explore Style Carousel End-->
+    <!-- Explore Style Carousel -->
+    <div class="rn-live-bidding-area rn-section-gapTop" id="01">
         <div class="container">
-            <div class="row  mb--30">
-                <div class="col-12 justify-sm-center d-flex">
-                    <h3 class="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Top 10 đại gia trong </h3>
-                    <select>
-                        <option data-display="1 day"> 1 day</option>
-                        <option value="1">7 Day's</option>
-                        <option value="2">15 Day's</option>
-                        <option value="4">30 Day's</option>
-                    </select>
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">XU HƯỚNG "ĐỒ HỌA"</h3>
+                    </div>
                 </div>
             </div>
-            <div class="row justify-sm-center g-5 top-seller-list-wrapper">
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-12.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Brodband</h6>
-                                </a>
-                                <span class="count-number">
-                                2500 PCoin
-                            </span>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_1?>
                     </div>
                 </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Ms. Parkline</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Methods</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-4.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Jone sone</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Siddhart</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-6.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Sobuj Mk</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-7.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Trodband</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-8.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Yash</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-9.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">YASHKIB</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="view/layout/assets/images/client/client-10.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Brodband</h6>
-                                </a>
-                                <span class="count-number">
-                                    2500 PCoin
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
             </div>
         </div>
     </div>
-    <!-- top top-seller end -->
-   
-    <!-- start nuron vedio area -->
-    
-    <!-- end nuron vedio area -->
-
-
-
+    <!-- Explore Style Carousel End-->
+     <!-- Explore Style Carousel -->
+     <div class="rn-live-bidding-area rn-section-gapTop" id="01">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">XU HƯỚNG "MARKETING"</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_2?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Explore Style Carousel End-->
+    <!-- Explore Style Carousel -->
+    <div class="rn-live-bidding-area rn-section-gapTop" id="01">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">XU HƯỚNG "NGOẠI NGỮ"</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_4?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Explore Style Carousel End-->
+    <!-- Explore Style Carousel -->
+    <div class="rn-live-bidding-area rn-section-gapTop" id="01">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">XU HƯỚNG "TIN HỌC"</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_5?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Explore Style Carousel End-->
+    <!-- Explore Style Carousel -->
+    <div class="rn-live-bidding-area rn-section-gapTop" id="01">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">CÁC TÀI LIỆU, GIÁO TRÌNH</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
+                       <?= $html_product_category_3?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Explore Style Carousel End-->
     <!-- Modal -->
     <div class="rn-popup-modal share-modal-wrapper modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i data-feather="x"></i></button>
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content share-wrapper">
                 <div class="modal-header share-area">
-                    <h5 class="modal-title">Share this NFT</h5>
+                    <h5 class="modal-title">Chia sẻ đến mọi người</h5>
                 </div>
                 <div class="modal-body">
                     <ul class="social-share-default">
-                        <li><a href="#"><span class="icon"><i data-feather="facebook"></i></span><span class="text">facebook</span></a></li>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=kienhuu.id.vn"><span class="icon"><i data-feather="facebook"></i></span><span class="text">facebook</span></a></li>
                         <li><a href="#"><span class="icon"><i data-feather="twitter"></i></span><span class="text">twitter</span></a></li>
                         <li><a href="#"><span class="icon"><i data-feather="linkedin"></i></span><span class="text">linkedin</span></a></li>
                         <li><a href="#"><span class="icon"><i data-feather="instagram"></i></span><span class="text">instagram</span></a></li>
@@ -2017,7 +1102,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content report-content-wrapper">
                 <div class="modal-header report-modal-header">
-                    <h5 class="modal-title">Why are you reporting?
+                    <h5 class="modal-title">Bạn muốn báo cáo sản phẩm này?
                     </h5>
                 </div>
                 <div class="modal-body">
@@ -2026,8 +1111,8 @@
                         <h6 class="title">Message</h6>
                         <textarea name="message" placeholder="Write issues"></textarea>
                         <div class="report-button">
-                            <button type="button" class="btn btn-primary mr--10 w-auto">Report</button>
-                            <button type="button" class="btn btn-primary-alta w-auto" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary mr--10 w-auto">Báo cáo</button>
+                            <button type="button" class="btn btn-primary-alta w-auto" data-bs-dismiss="modal">Hủy</button>
                         </div>
                     </div>
                 </div>

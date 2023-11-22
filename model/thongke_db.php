@@ -1,5 +1,5 @@
 <?php
-require_once 'pdo.php';
+require_once 'connect_db.php';
 
 function thong_ke_hang_hoa(){
     $sql = "SELECT lo.ma_loai, lo.ten_loai,"

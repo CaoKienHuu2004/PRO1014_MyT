@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +11,7 @@
     <meta name="theme-style-mode" content="0"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/icons/shape-1.png">
+    <link rel="shortcut icon" type="image/x-icon" href="view/layout/assets/images/icons/shape-1.png">
     <!-- CSS 
     ============================================ -->
     <link rel="stylesheet" href="view/layout/assets/css/vendor/bootstrap.min.css">
@@ -48,7 +48,7 @@
                                 <li><a href="categories.html">Chuyên mục</a>
                                 </li>
                                 <li class="has-menu-child-item">
-                                    <a href="product.html">Tài nguyên</a>
+                                    <a href="index.php?pg=product">Tài nguyên</a>
                                     
                                 </li>
                                 <li><a href="contact.html">Hỗ trợ</a></li>
@@ -194,7 +194,7 @@
                     <li><a href="about.html">Về chúng tôi</a>
                     </li>
                     <li class="has-menu-child-item">
-                        <a href="product.html">Tài nguyên</a>
+                        <a href="index.php?pg=product">Tài nguyên</a>
                         
                     </li>
                     <li><a href="contact.html">Hỗ trợ</a></li>
