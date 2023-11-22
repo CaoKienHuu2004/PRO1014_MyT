@@ -34,15 +34,15 @@
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="view/layout/assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="view/layout/assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.php"><img src="view/layout/assets/images/logo/MyT-01.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.php"><img src="view/layout/assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                             <!-- Start Mainmanu Nav -->
                             <ul class="mainmenu">
                                 <li class="has-menu-child-item">
-                                    <a href="index.html">Trang chủ</a>
+                                    <a href="index.php">Trang chủ</a>
                                     
                                 </li>
                                 <li><a href="categories.html">Chuyên mục</a>
@@ -175,8 +175,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.php"><img src="assets/images/logo/MyT-01.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.php"><img src="assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -188,7 +188,7 @@
                 <!-- Start Mainmanu Nav -->
                 <ul class="mainmenu">
                     <li class="has-menu-child-item">
-                        <a href="index.html">Trang chủ</a>
+                        <a href="index.php">Trang chủ</a>
                         
                     </li>
                     <li><a href="about.html">Về chúng tôi</a>
