@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
     include_once "model/connect_db.php";
     include_once "model/product_db.php";
     include_once "model/category_db.php";
@@ -61,9 +60,4 @@
     //         echo "Message has been sent";
     //     }
 
-=======
-    include_once("view/header.php");
-    include_once("view/home.php");
-    include_once("view/footer.php");
->>>>>>> 370714a054c9fc1da0204dc9a53dc7febb7e3d80
 ?>
