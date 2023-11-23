@@ -1,7 +1,73 @@
 <?php
     
         extract($product_select_id);
-    
+        $cert = '';
+        $gia ='';
+        if ($Test == 1) {
+            $cert .= '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+        }else {
+            $cert .= '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" style="color: gray;">Chưa kiểm duyệt</span>';
+        }
+        if ($Price_2 == 0) {
+            $gia .= '<div class="top-seller-wrapper">
+                        <div class="last-bid" style="font-size: 30px; font-weight: bold; color: #f27322;">'.$Price.' PCoin</div>
+                    </div>
+                    <i><span class="last-bid">1 PCoin = 1.000 VNĐ</span></i>
+                </div>
+            </div>
+            <div class="bid-list left-bid">
+                <h6 class="title">Thời gian khuyến mãi</h6>
+                <span class="last-bid">Không có khuyến mãi !</span>
+                <div class="countdown mt--15" data-date="0">
+                <div class="countdown-container days">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-heading">Ds</span>
+                    </div>
+                    <div class="countdown-container hours">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-heading">Hs</span>
+                    </div>
+                    <div class="countdown-container minutes">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-heading">Mins</span>
+                    </div>
+                    <div class="countdown-container seconds">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-heading">Sec</span>
+                    </div>
+                </div>
+            </div>';
+        }else {
+            $gia .= '<div class="top-seller-wrapper">
+                        <div class="last-bid" style="font-size: 30px; font-weight: bold; color: #f27322;">'.$Price_2.' PCoin</div>
+                    </div>
+                    <del><div class="last-bid" style="font-size: 20px; font-weight: bold; color: gray;">'.$Price.' PCoin</div></del>
+                    <i><span class="last-bid">1 PCoin = 1.000 VNĐ</span></i>
+                </div>
+            </div>
+            <div class="bid-list left-bid">
+                <h6 class="title">Thời gian khuyến mãi</h6>
+                <div class="countdown mt--15" data-date="'.$Date_Sale.'">
+                    <div class="countdown-container days">
+                        <span class="countdown-value">87</span>
+                        <span class="countdown-heading">Ds</span>
+                    </div>
+                    <div class="countdown-container hours">
+                        <span class="countdown-value">23</span>
+                        <span class="countdown-heading">Hs</span>
+                    </div>
+                    <div class="countdown-container minutes">
+                        <span class="countdown-value">38</span>
+                        <span class="countdown-heading">Mins</span>
+                    </div>
+                    <div class="countdown-container seconds">
+                        <span class="countdown-value">27</span>
+                        <span class="countdown-heading">Sec</span>
+                    </div>
+                </div>
+            </div>';
+        }
+
 ?>
 <!-- start page title area -->
 <div class="rn-breadcrumb-inner ptb--30">
@@ -108,6 +174,7 @@
                         
                         <div class="catagory-collection">
                             <div class="catagory">
+                                <?=$cert?> | 
                                 <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br><br>
                                 <span>Người bán:</span>
                                 <div class="top-seller-inner-one">
@@ -147,7 +214,7 @@
                                                 <div class="property-wrapper">
                                                     <!-- single property -->
                                                     <div class="pd-property-inner">
-                                                        <span class="color-white value">Đây là những mô tả của chi tiết sản phẩm, được làm bởi Cao Kiến Hựu </span>
+                                                        <span class="color-white value"><?php echo $Describe;?></span>
                                                     </div>
                                                     <!-- single property End -->
                                                 </div>
@@ -167,39 +234,14 @@
                                     <div class="bid-list winning-bid left-bid">
                                         <h6 class="title">Phí giao dịch: </h6>
                                         <div class="top-seller-inner-one">
-                                            <div class="top-seller-wrapper">
-                                                <div class="last-bid" style="font-size: 30px; font-weight: bold; color: #f27322;">10 PCoin</div>
-                                                
-                                                
-                                            </div>
-                                            <del><div class="last-bid" style="font-size: 20px; font-weight: bold; color: gray;">20 PCoin</div></del>
-                                            <i><span class="last-bid">1 PCoin = 1.000 VNĐ</span></i>
-                                        </div>
-                                    </div>
-                                    <div class="bid-list left-bid">
-                                        <h6 class="title">Thời gian khuyến mãi</h6>
-                                        <div class="countdown mt--15" data-date="2025-12-09">
-                                            <div class="countdown-container days">
-                                                <span class="countdown-value">87</span>
-                                                <span class="countdown-heading">D's</span>
-                                            </div>
-                                            <div class="countdown-container hours">
-                                                <span class="countdown-value">23</span>
-                                                <span class="countdown-heading">H's</span>
-                                            </div>
-                                            <div class="countdown-container minutes">
-                                                <span class="countdown-value">38</span>
-                                                <span class="countdown-heading">Min's</span>
-                                            </div>
-                                            <div class="countdown-container seconds">
-                                                <span class="countdown-value">27</span>
-                                                <span class="countdown-heading">Sec</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            <?=$gia?>
+                                            
                                 </div>
                                 <!-- <a class="btn btn-primary-alta mt--30" href="#">Place a Bid</a> -->
-                                <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal">TẢI TÀI NGUYÊN VỀ</button>
+                                <div style="display: flex; justfy-content: space-between;">
+                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal">TẢI TÀI NGUYÊN VỀ</button>
+                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal">TẢI TÀI NGUYÊN VỀ</button>
+                                </div>
                             </div>
                         </div>
                     </div>
