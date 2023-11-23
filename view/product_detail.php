@@ -265,15 +265,9 @@
                             <div class="community-content">
                                 <h3 class="title">Mô tả chi tiết</h3>
                                 <p class="desc">
-                                    NFTs are tokens that we can use to represent ownership of unique items. They let us
-                                    tokenise things like art, collectibles, even real estate. They can only have one
-                                    official owner at a time and they're secured by the Ethereum blockchain – no one can
-                                    modify the record of ownership or copy/paste a new NFT into existence.
-
-                                    NFT stands for non-fungible token. Non-fungible is an economic term that you could
-                                    use to describe things like your furniture, a song file, or your computer.
+                                    <?php echo $Instruct; ?>
                                 </p>
-                                <img class="community-img" src="view/layout/assets/images/community/community-post-01.jpg" alt="Nft_Community-image">
+                                
                                 
                                 
                             </div>
