@@ -3,6 +3,8 @@
     $html_product_sale = '';
     foreach ($product_select_sale as $item) {
         extract($item);
+        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        
         $cert = "";
         if ($Test == 1) {
             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -14,7 +16,7 @@
             <div class="single-slide-product">
                 <div class="product-style-one">
                     <div class="card-thumbnail">
-                        <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                        <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                         <div class="countdown" data-date="'.$Date_Sale.'">
                             <div class="countdown-container days">
                                 <span class="countdown-value">0</span>
@@ -35,7 +37,7 @@
                         </div>
                     </div>
                     <div class="product-share-wrapper">
-                        <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                        <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                         <div class="share-btn share-btn-activation dropdown">
                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -71,6 +73,7 @@
     $html_category_select_all = '';
     foreach ($category_select_all as $item) {
         extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $html_category_select_all .='
             <!-- start single category -->
             <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
@@ -88,6 +91,7 @@
     $html_product_bestsaler = '';
     foreach ($product_select_bestsaler as $item) {
         extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $cert = "";
         if ($Test == 1) {
             $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
@@ -118,7 +122,7 @@
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="product-style-one overlay">
                 <div class="card-thumbnail">
-                    <a href="product-details.html"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                    <a href="index.php?pg=product_detail"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                     <div class="countdown" data-date="'.$Date_Sale.'">
                         <div class="countdown-container days">
                             <span class="countdown-value">87</span>
@@ -139,7 +143,7 @@
                     </div>
                 </div>
                 <div class="product-share-wrapper">
-                    <a href="product-details.html"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <a href="index.php?pg=product_detail"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                     <div class="share-btn share-btn-activation dropdown">
                         <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -172,6 +176,7 @@
     $html_product_view = '';
     foreach ($product_select_view as $item) {
         extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $cert = "";
         if ($Test == 1) {
             $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
@@ -202,7 +207,7 @@
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="product-style-one overlay">
                 <div class="card-thumbnail">
-                    <a href="product-details.html"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                    <a href="index.php?pg=product_detail"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                     <div class="countdown" data-date="'.$Date_Sale.'">
                         <div class="countdown-container days">
                             <span class="countdown-value">87</span>
@@ -223,7 +228,7 @@
                     </div>
                 </div>
                 <div class="product-share-wrapper">
-                    <a href="product-details.html"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <a href="index.php?pg=product_detail"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                     <div class="share-btn share-btn-activation dropdown">
                         <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -256,6 +261,7 @@
      $html_product_category_0 = '';
      foreach ($product_select_category_0 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -286,7 +292,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -307,7 +313,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -336,6 +342,7 @@
      $html_product_category_1 = '';
      foreach ($product_select_category_1 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -366,7 +373,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -387,7 +394,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -416,6 +423,7 @@
      $html_product_category_2 = '';
      foreach ($product_select_category_2 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -446,7 +454,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -467,7 +475,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -496,6 +504,7 @@
      $html_product_category_3 = '';
      foreach ($product_select_category_3 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -526,7 +535,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -547,7 +556,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -576,6 +585,7 @@
      $html_product_category_4 = '';
      foreach ($product_select_category_4 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -606,7 +616,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -627,7 +637,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -656,6 +666,7 @@
      $html_product_category_5 = '';
      foreach ($product_select_category_5 as $item) {
          extract($item);
+$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -686,7 +697,7 @@
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="product-details.html"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                         <a href="index.php?pg=product_detail"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                          <div class="countdown" data-date="'.$Date_Sale.'">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
@@ -707,7 +718,7 @@
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="product-details.html"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="index.php?pg=product_detail"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">

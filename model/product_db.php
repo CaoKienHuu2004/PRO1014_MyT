@@ -45,10 +45,10 @@ function product_select_category($cate,$limi){
 }
 
 
-// function hang_hoa_select_by_id($ma_hh){
-//     $sql = "SELECT * FROM hang_hoa WHERE ma_hh=?";
-//     return pdo_query_one($sql, $ma_hh);
-// }
+function product_select_id($idProduct){
+    $sql = "SELECT * FROM product WHERE idProduct=?";
+    return pdo_query_one($sql, $idProduct);
+}
 
 // function hang_hoa_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
