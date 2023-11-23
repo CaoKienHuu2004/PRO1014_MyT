@@ -28,9 +28,9 @@ function user_select_all(){
     return pdo_query($sql);
 }
 
-function khach_hang_select_by_id($ma_kh){
-    $sql = "SELECT * FROM khach_hang WHERE ma_kh=?";
-    return pdo_query_one($sql, $ma_kh);
+function user_select_by_id($idus){
+    $sql = "SELECT * FROM user WHERE idUser=?";
+    return pdo_query_one($sql, $idus);
 }
 
 // function khach_hang_exist($ma_kh){

@@ -1,8 +1,9 @@
 <?php
         extract($product_select_id);
         $category_select_by_id = category_select_by_id($idCategories);
+        $user_select_by_id = user_select_by_id($idUser);
         extract($category_select_by_id);
-        
+        extract($user_select_by_id);
         
         $cert = '';
         $gia ='';
@@ -110,7 +111,7 @@
                                 </button>
                                 <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                                     <span class="rn-pd-sm-thumbnail">
-                                        <img src="view/layout/assets/images/portfolio/sm/portfolio-06.jpg" alt="Nft_Profile">
+                                        <img src="view/layout/assets/images/portfolio/sm/portfolio-01.jpg" alt="Nft_Profile">
                                     </span>
                                 </button>
                                 <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
@@ -183,11 +184,11 @@
                                 <div class="top-seller-inner-one">
                                     <div class="top-seller-wrapper">
                                         <div class="thumbnail">
-                                            <a href="#"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                            <a href="#"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
                                         </div>
                                         <div class="top-seller-content">
                                             <a href="#">
-                                                <h6 class="name">Brodband</h6>
+                                                <h6 class="name"><?php echo $Name_U ?></h6>
                                             </a>
                                         </div>
                                     </div>

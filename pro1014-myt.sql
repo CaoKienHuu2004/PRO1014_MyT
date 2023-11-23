@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2023 lúc 09:43 AM
+-- Thời gian đã tạo: Th10 23, 2023 lúc 10:13 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -186,7 +186,7 @@ CREATE TABLE `user` (
   `Pass` varchar(50) NOT NULL,
   `Avata_img` varchar(100) DEFAULT NULL,
   `Banner_img` varchar(100) DEFAULT NULL,
-  `Name` varchar(100) NOT NULL,
+  `Name_U` varchar(100) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Phone` int(10) NOT NULL,
   `Address` text DEFAULT NULL,
@@ -200,9 +200,9 @@ CREATE TABLE `user` (
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`idUser`, `Username`, `Pass`, `Avata_img`, `Banner_img`, `Name`, `Email`, `Phone`, `Address`, `Bio`, `Major`, `Role`, `Total_Pcoin`) VALUES
-(0, 'admin', '123', '', '', 'Quản Trị Viên', 'quantrivien@gmail.com', 374244751, 'TP.HCM', 'Lập Trình Viên + Nhà điều hành MyT Việt Nam', 'Web Dev', 1, 320),
-(1, 'lyhuu123', '13102004caokienhuu', NULL, NULL, 'Cao Kiến Hựu', 'lyhuu5570@gmail.com', 374244751, NULL, NULL, NULL, 0, 20);
+INSERT INTO `user` (`idUser`, `Username`, `Pass`, `Avata_img`, `Banner_img`, `Name_U`, `Email`, `Phone`, `Address`, `Bio`, `Major`, `Role`, `Total_Pcoin`) VALUES
+(0, 'admin', '123', 'client-2.png', '', 'Quản Trị Viên', 'quantrivien@gmail.com', 374244751, 'TP.HCM', 'Lập Trình Viên + Nhà điều hành MyT Việt Nam', 'Web Dev', 1, 320),
+(1, 'lyhuu123', '13102004caokienhuu', 'client-3.png', NULL, 'Cao Kiến Hựu', 'lyhuu5570@gmail.com', 374244751, NULL, NULL, NULL, 0, 20);
 
 -- --------------------------------------------------------
 
