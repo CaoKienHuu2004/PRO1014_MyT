@@ -32,6 +32,10 @@ function user_select_by_id($idus){
     $sql = "SELECT * FROM user WHERE idUser=?";
     return pdo_query_one($sql, $idus);
 }
+function img_select_by_id($idpr){
+    $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
+    return pdo_query($sql);
+}
 
 // function khach_hang_exist($ma_kh){
 //     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";

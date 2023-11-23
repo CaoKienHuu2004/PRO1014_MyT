@@ -3,7 +3,6 @@
     include_once "model/product_db.php";
     include_once "model/category_db.php";
     include_once "model/user_db.php";
-    include_once "model/user_db.php";
 // DATA---------------------------------------------------------------------------------------------------------------------
     $product_select_all = product_select_all();
     $product_select_sale = product_select_sale(10);
