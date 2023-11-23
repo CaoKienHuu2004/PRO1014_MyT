@@ -78,8 +78,8 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <!-- start single category -->
             <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
                 <a class="category-style-one" href="#">
-                    <i class="feather-'.$Img.'"></i>
-                    <span class="category-label">'.$Name.'</span>
+                    <i class="feather-'.$Img_C.'"></i>
+                    <span class="category-label">'.$Name_C.'</span>
                 </a>
             </div>
             <!-- end single category -->

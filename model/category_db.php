@@ -52,9 +52,9 @@ function category_select_all($limi){
  * @return array mảng chứa thông tin của một loại
  * @throws PDOException lỗi truy vấn
  */
-function category_select_by_id($id_category){
-    $sql = "SELECT * FROM category WHERE id_category=?";
-    return pdo_query_one($sql, $id_category);
+function category_select_by_id($idcata){
+    $sql = "SELECT * FROM categories WHERE idCategories=?";
+    return pdo_query_one($sql, $idcata);
 }
 /**
  * Kiểm tra sự tồn tại của một loại

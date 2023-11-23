@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2023 lúc 07:35 AM
+-- Thời gian đã tạo: Th10 23, 2023 lúc 09:43 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -43,15 +43,15 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `categories` (
   `idCategories` int(11) NOT NULL,
-  `Name` varchar(150) NOT NULL,
-  `Img` varchar(150) DEFAULT NULL
+  `Name_C` varchar(150) NOT NULL,
+  `Img_C` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`idCategories`, `Name`, `Img`) VALUES
+INSERT INTO `categories` (`idCategories`, `Name_C`, `Img_C`) VALUES
 (0, 'Lập trình', 'code'),
 (1, 'Đồ Họa', 'edit-3'),
 (2, 'Marketing', 'bar-chart'),

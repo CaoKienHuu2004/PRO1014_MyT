@@ -1,6 +1,9 @@
 <?php
-    
         extract($product_select_id);
+        $category_select_by_id = category_select_by_id($idCategories);
+        extract($category_select_by_id);
+        
+        
         $cert = '';
         $gia ='';
         if ($Test == 1) {
@@ -175,7 +178,7 @@
                         <div class="catagory-collection">
                             <div class="catagory">
                                 <?=$cert?> | 
-                                <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b>Công nghệ thông tin</b></span><br><br>
+                                <span class="more-author-text" style="color: #f27322;"><i class="feather-bookmark" style="padding-right: 5px;"></i><b><?php echo $Name_C ?></b></span><br><br>
                                 <span>Người bán:</span>
                                 <div class="top-seller-inner-one">
                                     <div class="top-seller-wrapper">
