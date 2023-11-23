@@ -106,7 +106,7 @@
                             <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                                     <span class="rn-pd-sm-thumbnail">
-                                        <img src="view/layout/assets/images/portfolio/sm/portfolio-01.jpg" alt="Nft_Profile">
+                                        <img src="view/layout/assets/images/portfolio/sm/<?php echo $Img ?>" alt="Nft_Profile">
                                     </span>
                                 </button>
                                 <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">

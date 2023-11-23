@@ -50,6 +50,7 @@ function product_select_id($idProduct){
     return pdo_query_one($sql, $idProduct);
 }
 
+
 // function hang_hoa_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
 //     return pdo_query_value($sql, $ma_hh) > 0;
