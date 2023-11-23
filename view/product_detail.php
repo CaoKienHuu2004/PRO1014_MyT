@@ -238,9 +238,9 @@
                                             
                                 </div>
                                 <!-- <a class="btn btn-primary-alta mt--30" href="#">Place a Bid</a> -->
-                                <div style="display: flex; justfy-content: space-between;">
-                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal">TẢI TÀI NGUYÊN VỀ</button>
-                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal">TẢI TÀI NGUYÊN VỀ</button>
+                                <div style="display: flex; justfy-content: space-between; gap: 5px;">
+                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button>
+                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal"><i class="feather-shopping-cart"></i> THÊM GIỎ HÀNG</button>
                                 </div>
                             </div>
                         </div>
