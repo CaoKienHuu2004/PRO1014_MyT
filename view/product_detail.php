@@ -1,9 +1,11 @@
 <?php
         extract($product_select_id);
+
         $category_select_by_id = category_select_by_id($idCategories);
         $user_select_by_id = user_select_by_id($idUser);
         extract($category_select_by_id);
         extract($user_select_by_id);
+        
         $cert = '';
         $gia ='';
         if ($Test == 1) {
