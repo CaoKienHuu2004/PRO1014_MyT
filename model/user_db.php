@@ -37,6 +37,11 @@ function img_select_by_id($idpr){
     return pdo_query($sql);
 }
 
+function User_Check_Login($user,$pass){
+    $sql ="SELECT * FROM user WHERE Username=? AND Pass=?";
+    return pdo_query($sql);
+}
+
 // function khach_hang_exist($ma_kh){
 //     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";
 //     return pdo_query_value($sql, $ma_kh) > 0;

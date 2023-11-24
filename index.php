@@ -1,4 +1,5 @@
 <?php
+
     include_once "model/connect_db.php";
     include_once "model/product_db.php";
     include_once "model/category_db.php";
@@ -17,14 +18,27 @@
     $product_select_category_5 = product_select_category(5,10);
 // Control---------------------------------------------------------------------------------------------------------------------
     include_once "view/header.php";
+    session_start();
 
     // Tạo đường dẫn pg - vd: index.php?pg=product
     if (isset($_GET['pg'])) {
         switch ($_GET['pg']) {
             case 'product':
-                    include_once "view/product.php";
+                include_once "view/product.php";
                 break;
-
+            case 'login':
+                include_once "view/login.php";
+                if(isset($_POST['user'])&& isset($_POST['pass'])){
+                    $kq = User_Check_Login($_POST['user'],$_POST['pass']);
+                    if ($kq) {
+                        $_SESSION['user']=$kq;
+                        header('Location: index.php?pg=home');
+                    }
+                    else{
+                        $_SESSION['loi']='Username Or Password is incorrect!!';
+                    }
+                }
+                break;
             case 'product_detail':
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];
