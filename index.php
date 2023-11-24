@@ -47,6 +47,8 @@
                 }else{
                     include_once "view/home.php";
                 }
+         
+
             break;
             case 'create_product':
                 include_once "view/create_product.php";
