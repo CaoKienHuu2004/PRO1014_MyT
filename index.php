@@ -33,6 +33,8 @@
                 }else{
                     include_once "view/home.php";
                 }
+         
+
             break;
             default:
                 include_once "view/home.php";
