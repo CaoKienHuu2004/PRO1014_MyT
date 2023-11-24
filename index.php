@@ -36,6 +36,9 @@
          
 
             break;
+            case 'create_product':
+                include_once "view/create_product.php";
+            break;
             default:
                 include_once "view/home.php";
                 break;

@@ -1,9 +1,12 @@
 <?php
         extract($product_select_id);
+        product_view_count($idProduct);
         $category_select_by_id = category_select_by_id($idCategories);
         $user_select_by_id = user_select_by_id($idUser);
         extract($category_select_by_id);
         extract($user_select_by_id);
+        
+
         $cert = '';
         $gia ='';
         if ($Test == 1) {
@@ -243,7 +246,7 @@
                                 <!-- <a class="btn btn-primary-alta mt--30" href="#">Place a Bid</a> -->
                                 <div style="display: flex; justify-content: space-between; gap: 5px;">
                                     <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button>
-                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal"><i class="feather-shopping-cart"></i> THÊM GIỎ HÀNG</button>
+                                    <button type="button" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> THÊM GIỎ HÀNG</button>
                                 </div>
                             </div>
                         </div>
