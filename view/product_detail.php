@@ -1,5 +1,6 @@
 <?php
         extract($product_select_id);
+        product_view_count($idProduct);
         $category_select_by_id = category_select_by_id($idCategories);
         $user_select_by_id = user_select_by_id($idUser);
         extract($category_select_by_id);
