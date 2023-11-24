@@ -91,7 +91,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
     $html_product_bestsaler = '';
     foreach ($product_select_bestsaler as $item) {
         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $cert = "";
         if ($Test == 1) {
             $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
@@ -122,7 +122,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="product-style-one overlay">
                 <div class="card-thumbnail">
-                    <a href="index.php?pg=product_detail"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
+                    <a href="'.$link_productdetails.'"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
                     <div class="countdown" data-date="'.$Date_Sale.'">
                         <div class="countdown-container days">
                             <span class="countdown-value">87</span>
