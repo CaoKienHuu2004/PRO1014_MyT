@@ -59,10 +59,10 @@
                 </div>
                 <div class="header-right">
                     <div class="setting-option d-none d-lg-block">
-                        <form class="search-form-wrapper" action="#">
-                            <input type="search" placeholder="Tìm kiếm ở đây ..." aria-label="Search">
+                        <form class="search-form-wrapper" method="POST" action="index.php?pg=search">
+                            <input type="search" name="search" placeholder="Tìm kiếm ở đây ..." aria-label="Search">
                             <div class="search-icon">
-                                <button><i class="feather-search"></i></button>
+                                <button type="submit" name="btnSearch"><i class="feather-search"></i></button>
                             </div>
                         </form>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="icon-box search-mobile-icon">
                             <button><i class="feather-search"></i></button>
                         </div>
-                        <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
+                        <form id="header-search-1" action="index.php?pg=search" method="POST" class="large-mobile-blog-search">
                             <div class="rn-search-mobile form-group">
                                 <button type="submit" class="search-button"><i class="feather-search"></i></button>
                                 <input type="text" placeholder="Tìm ...">

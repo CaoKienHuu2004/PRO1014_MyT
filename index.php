@@ -39,6 +39,7 @@
                     }
                 }
                 break;
+
             case 'product_detail':
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];
@@ -47,10 +48,16 @@
                 }else{
                     include_once "view/home.php";
                 }
-            break;
-            case 'create_product':
-                include_once "view/create_product.php";
-            break;
+                break;
+                
+            case "search":
+                if(isset($_POST['btnSearch'])){
+                    $search = $_POST['search'];
+                    $pro_search = product_select_keyword($search);
+                }
+                include_once "view/search.php"; 
+                break;
+
             default:
                 include_once "view/home.php";
                 break;

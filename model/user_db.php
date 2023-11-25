@@ -42,10 +42,14 @@ function User_Check_Login($user,$pass){
     return pdo_query($sql);
 }
 
-// function khach_hang_exist($ma_kh){
-//     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";
-//     return pdo_query_value($sql, $ma_kh) > 0;
-// }
+function img_select_by_id($idpr){
+    $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
+    return pdo_query($sql);
+}
+function check_name_user($id){
+    $sql = "SELECT Username FROM user WHERE idUser=?";
+    return pdo_query_value($sql, $id);
+}
 
 // function khach_hang_select_by_role($vai_tro){
 //     $sql = "SELECT * FROM khach_hang WHERE vai_tro=?";
