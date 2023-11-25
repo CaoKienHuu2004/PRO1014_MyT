@@ -29,7 +29,7 @@
                         <?php if(isset($_SESSION['loi'])):?>
                             <?=$_SESSION['loi']?>
                         <?php endif; unset($_SESSION['loi']);?>
-                        <form action="" method="post" >
+                        <form method="post" >
                             <div class="mb-5">
                                 <label for="user" class="form-label">Username</label>
                                 <input type="eser" id="user">

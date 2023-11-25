@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     include_once "model/connect_db.php";
     include_once "model/product_db.php";
     include_once "model/category_db.php";
@@ -18,7 +18,7 @@
     $product_select_category_5 = product_select_category(5,10);
 // Control---------------------------------------------------------------------------------------------------------------------
     include_once "view/header.php";
-    session_start();
+    
 
     // Tạo đường dẫn pg - vd: index.php?pg=product
     if (isset($_GET['pg'])) {
