@@ -76,12 +76,12 @@ function product_view_count($idPr){
 //     return pdo_query($sql, $ma_loai);
 // }
 
-// function hang_hoa_select_keyword($keyword){
-//     $sql = "SELECT * FROM hang_hoa hh "
-//             . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
-//             . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
-//     return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
-// }
+function product_select_keyword($keyword){
+    $sql = "SELECT * FROM hang_hoa hh "
+            . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
+            . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
+    return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
+}
 
 // function hang_hoa_select_page(){
 //     if(!isset($_SESSION['page_no'])){

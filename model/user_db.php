@@ -32,10 +32,10 @@ function user_select_by_id($idus){
     $sql = "SELECT * FROM user WHERE idUser=?";
     return pdo_query_one($sql, $idus);
 }
-function img_select_by_id($idpr){
-    $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
-    return pdo_query($sql);
-}
+// function img_select_by_id($idpr){
+//     $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
+//     return pdo_query($sql);
+// }
 
 function User_Check_Login($user,$pass){
     $sql ="SELECT * FROM user WHERE Username=? AND Pass=?";
