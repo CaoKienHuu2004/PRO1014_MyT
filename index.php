@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
     include_once "model/connect_db.php";
     include_once "model/product_db.php";
     include_once "model/category_db.php";
@@ -27,19 +28,28 @@
                 include_once "view/product.php";
                 break;
             case 'login':
-                include_once "view/login.php";
-                if(isset($_POST['user'])&& isset($_POST['pass'])){
-                    $kq = User_Check_Login($_POST['user'],$_POST['pass']);
-                    if ($kq) {
-                        $_SESSION['user']=$kq;
-                        header('Location: index.php?pg=home');
+                if(isset($_POST['btnlogin'])&&($_POST['btnlogin'])){
+                    // input
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $login = User_Check_Login($user,$pass);
+                    if ($login) {
+                        $_SESSION['user']=$login;
+                        header('Location: index.php');
                     }
                     else{
                         $_SESSION['loi']='Username Or Password is incorrect!!';
                     }
+                    
+                }
+                include_once "view/login.php";
+                break;
+            case 'logout':
+                if(isset($_SESSION['user'])){
+                    unset($_SESSION['user']);
+                    header('Location: index.php?pg=login');
                 }
                 break;
-
             case 'product_detail':
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];

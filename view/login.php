@@ -29,21 +29,22 @@
                         <?php if(isset($_SESSION['loi'])):?>
                             <?=$_SESSION['loi']?>
                         <?php endif; unset($_SESSION['loi']);?>
-                        <form method="post" >
+                        <form method="post">
                             <div class="mb-5">
                                 <label for="user" class="form-label">Username</label>
-                                <input type="eser" id="user">
+                                <input type="text" id="user" name="user">
                             </div>
                             <div class="mb-5">
                                 <label for="pass" class="form-label">Password</label>
-                                <input type="pass" id="pass">
+                                <input type="pass" id="pass" name="pass">
                             </div>
                             <div class="mb-5 rn-check-box">
                                 <input type="checkbox" class="rn-check-box-input" id="exampleCheck1">
                                 <label class="rn-check-box-label" for="exampleCheck1">Remember me leter</label>
                             </div>
-                            <button type="submit" class="btn btn-primary mr--15">Log In</button>
-                            <a href="sign-up.html" class="btn btn-primary-alta">Sign Up</a>
+                            <input type="submit" name="btnlogin" class="btn btn-primary mr--15" value="Log In">
+                            <!-- <button type="submit"  >Log In</button> -->
+                            <a href="index.php?pg=signup" class="btn btn-primary-alta">Sign Up</a>
                         </form>
                     </div>
                 </div>

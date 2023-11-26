@@ -39,7 +39,7 @@ function user_select_by_id($idus){
 
 function User_Check_Login($user,$pass){
     $sql ="SELECT * FROM user WHERE Username=? AND Pass=?";
-    return pdo_query($sql);
+    return pdo_query($sql,$user,$pass);
 }
 
 function img_select_by_id($idpr){

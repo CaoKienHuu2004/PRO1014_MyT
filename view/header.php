@@ -118,42 +118,48 @@
 
 
 
-                    
-                    <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
-                        <div class="icon-box">
-                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="index.php?pg=login">Đăng nhập</a>
-                        </div>
-                    </div>
-                    <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
-                        <div class="icon-box">
-                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="sign-up.html">Đăng ký</a>
-                        </div>
-                    </div>
-                    <!-- <div class="header_admin" id="header_admin">
-                        <div class="setting-option rn-icon-list user-account">
-                            <div class="icon-box">
-                                <a href="login.php"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
-                                <div class="rn-dropdown">
-                                    <div style="display: flex; gap: 10px;">
-                                        <a href="author.html"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
-                                        <div class="rn-inner-top">
-                                            <h4 class="title"><a href="author.html">Cao Kiến Hựu</a></h4>
-                                            <span><a>Quản trị viên</a></span>
+                    <?php 
+                        if (isset($_SESSION['user'])) {
+                            echo '<div class="header_admin" id="header_admin">
+                            <div class="setting-option rn-icon-list user-account">
+                                <div class="icon-box">
+                                    <a href="login.php"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
+                                    <div class="rn-dropdown">
+                                        <div style="display: flex; gap: 10px;">
+                                            <a href="author.html"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
+                                            <div class="rn-inner-top">
+                                                <h4 class="title"><a href="author.html">Cao Kiến Hựu</a></h4>
+                                                <span><a>Quản trị viên</a></span>
+                                            </div>
                                         </div>
+                                        
+                                        <hr>
+                                        <ul class="list-inner">
+                                            <li><a href="author.html" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-user"></i>Thông tin của tôi</a></li>
+                                            <li><a href="edit-profile.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-edit-3"></i>Chỉnh sửa hồ sơ</a></li>
+                                            <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-upload-cloud"></i>Tải lên tài nguyên</a></li>
+                                            <li><a href="index.php?pg=logout"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-log-out"></i>Đăng xuất</a></li>
+                                        </ul>
                                     </div>
-                                    
-                                    <hr>
-                                    <ul class="list-inner">
-                                        <li><a href="author.html" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-user"></i>Thông tin của tôi</a></li>
-                                        <li><a href="edit-profile.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-edit-3"></i>Chỉnh sửa hồ sơ</a></li>
-                                        <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-upload-cloud"></i>Tải lên tài nguyên</a></li>
-                                        <li><a href="login.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-log-out"></i>Đăng xuất</a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                     -->
+                        ';
+                        }else {
+                            echo ' <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
+                            <div class="icon-box">
+                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="index.php?pg=login">Đăng nhập</a>
+                            </div>
+                        </div>
+                        <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
+                            <div class="icon-box">
+                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="sign-up.html">Đăng ký</a>
+                            </div>
+                        </div>';
+                        }
+                    ?>
+                   
+                    
 
                     <div class="setting-option mobile-menu-bar d-block d-xl-none">
                         <div class="hamberger">
