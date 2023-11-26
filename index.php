@@ -27,6 +27,7 @@
             case 'product':
                 include_once "view/product.php";
                 break;
+                
             case 'login':
                 if(isset($_POST['btnlogin'])&&($_POST['btnlogin'])){
                     // input
@@ -44,12 +45,14 @@
                 }
                 include_once "view/login.php";
                 break;
+
             case 'logout':
                 if(isset($_SESSION['user'])){
                     unset($_SESSION['user']);
                     header('Location: index.php?pg=login');
                 }
                 break;
+
             case 'product_detail':
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];
@@ -59,7 +62,7 @@
                     include_once "view/home.php";
                 }
                 break;
-                
+
             case "search":
                 if(isset($_POST['btnSearch'])){
                     $search = $_POST['search'];
