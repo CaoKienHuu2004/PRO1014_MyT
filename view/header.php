@@ -122,23 +122,28 @@
                     <?php 
                         if (isset($_SESSION["user"])) {
                             // extract($_SESSION["user"]);
+                            // var_dump($_SESSION["user"]);
+                            $link_user_detail = 'index.php?pg=user&idUser='.$_SESSION["user"]["idUser"];
+                            $link_user_edit = 'index.php?pg=edit_user&idUser='.$_SESSION["user"]["idUser"];
                             echo '<div class="header_admin" id="header_admin">
                             <div class="setting-option rn-icon-list user-account">
                                 <div class="icon-box">
-                                    <a href="login.php"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
+                                    <a href="login.php"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                     <div class="rn-dropdown">
                                         <div style="display: flex; gap: 10px;">
-                                            <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/" alt="Images"></a>
+                                            <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                             <div class="rn-inner-top">
-                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Username'].'</a></h4>
+                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Name_U'].'</a></h4>
                                                 <span><a>Quản trị viên</a></span>
                                             </div>
                                         </div>
                                         
                                         <hr>
                                         <ul class="list-inner">
-                                            <li><a href="author.html" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-user"></i>Thông tin của tôi</a></li>
-                                            <li><a href="edit-profile.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-edit-3"></i>Chỉnh sửa hồ sơ</a></li>
+                                            <li><a href="'.$link_user_detail.'" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-user"></i>Thông tin của tôi</a></li>
+                                            <li><a href="'.$link_user_edit.'" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-edit-3"></i>Chỉnh sửa hồ sơ</a></li>
+                                            <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-credit-card"></i>Nạp / Rút xu</a></li>
+                                            <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-paperclip"></i>Thống kê giao dịch</a></li>
                                             <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-upload-cloud"></i>Tải lên tài nguyên</a></li>
                                             <li><a href="index.php?pg=logout"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-log-out"></i>Đăng xuất</a></li>
                                         </ul>
