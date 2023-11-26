@@ -46,13 +46,13 @@ function img_select_by_id($idpr){
     $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
     return pdo_query($sql);
 }
-function check_name_user($id){
+function check_name_user($idU){
     $sql = "SELECT Name_U FROM user WHERE idUser=?";
-    return pdo_query_value($sql, $id);
+    return pdo_query_value($sql, $idU);
 }
-function check_uname_user($id){
+function check_uname_user($idU){
     $sql = "SELECT Username FROM user WHERE idUser=?";
-    return pdo_query_value($sql, $id);
+    return pdo_query_value($sql, $idU);
 }
 
 // function khach_hang_select_by_role($vai_tro){
