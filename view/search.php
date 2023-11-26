@@ -1,5 +1,6 @@
 <?php
 if (!isset($search)) $search = '';
+
 ?>
 
 <!-- start page title area -->
@@ -39,6 +40,7 @@ if (!isset($search)) $search = '';
                         } else {
                             foreach ($pro_search as $value) {
                                 extract($value);
+                                $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                         ?>
                                 <!-- start single product -->
                                 <div class="lg-product-wrapper">
@@ -50,7 +52,7 @@ if (!isset($search)) $search = '';
                                             </a>
                                             <div class="read-content">
 
-                                                <a href="product-details.html">
+                                                <a href="<?=$link_productdetails?>">
                                                     <h6 class="title"><?= $Name ?></h6>
                                                 </a>
                                                 <div class="product-share-wrapper">
@@ -61,7 +63,7 @@ if (!isset($search)) $search = '';
                                                         <a class="more-author-text" href="#" tabindex="0"><?= check_name_user($idUser) ?></a>
                                                     </div>
                                                     <!-- all bids End-->
-                                                    <span class="latest-bid"> <b>Chuyên mục:</b> <?= check_name_cate_by_id($idCategories) ?></span>
+                                                    <span class="latest-bid"> <b>Chuyên mục:</b> <?= category_select_by_id($idCategories)['Name_C']; ?></span>
                                                 </div>
                                                 <h6 class="latest-bid" style="color: #f27322;"><?= $Price ?> PCoin</h6>
                                                 <div class="share-wrapper d-flex">

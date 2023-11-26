@@ -77,9 +77,9 @@ function product_view_count($idPr){
 // }
 
 function product_select_keyword($keyword){
-    $sql = "SELECT * FROM hang_hoa hh "
-            . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
-            . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
+    $sql = "SELECT * FROM product hh "
+            . " JOIN categories lo ON lo.idCategories =hh.idCategories  "
+            . " WHERE Name LIKE ? OR Name_C LIKE ?";
     return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
 }
 
