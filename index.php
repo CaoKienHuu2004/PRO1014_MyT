@@ -39,7 +39,7 @@
                         header('Location: index.php');
                     }
                     else{
-                        $_SESSION['loi']='Username Or Password is incorrect!!';
+                        $_SESSION['loi']='<i style="color: red;">Tên đăng nhập hoặc mật khẩu không đúng, vui lòng thử lại !</i>';
                     }
                     
                 }

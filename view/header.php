@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -119,16 +120,17 @@
 
 
                     <?php 
-                        if (isset($_SESSION['user'])) {
+                        if (isset($_SESSION["user"])) {
+                            // extract($_SESSION["user"]);
                             echo '<div class="header_admin" id="header_admin">
                             <div class="setting-option rn-icon-list user-account">
                                 <div class="icon-box">
                                     <a href="login.php"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
                                     <div class="rn-dropdown">
                                         <div style="display: flex; gap: 10px;">
-                                            <a href="author.html"><img src="view/layout/assets/images/icons/boy-avater.png" alt="Images"></a>
+                                            <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/" alt="Images"></a>
                                             <div class="rn-inner-top">
-                                                <h4 class="title"><a href="author.html">Cao Kiến Hựu</a></h4>
+                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Name_U'].'</a></h4>
                                                 <span><a>Quản trị viên</a></span>
                                             </div>
                                         </div>
