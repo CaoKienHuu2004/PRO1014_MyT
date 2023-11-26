@@ -130,7 +130,7 @@
                                         <div style="display: flex; gap: 10px;">
                                             <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/" alt="Images"></a>
                                             <div class="rn-inner-top">
-                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Name_U'].'</a></h4>
+                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Username'].'</a></h4>
                                                 <span><a>Quản trị viên</a></span>
                                             </div>
                                         </div>

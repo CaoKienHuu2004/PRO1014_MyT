@@ -27,7 +27,9 @@
             case 'product':
                 include_once "view/product.php";
                 break;
-                
+            case 'create_product':
+                include_once "view/create_product.php";
+                break;  
             case 'login':
                 if(isset($_POST['btnlogin'])&&($_POST['btnlogin'])){
                     // input
