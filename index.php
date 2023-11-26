@@ -72,7 +72,13 @@
                 }
                 include_once "view/search.php"; 
                 break;
-
+            case "user":
+                if(isset($_SESSION['user'])) {
+                    include_once "view/user.php";
+                }else {
+                    header('Location: index.php');
+                }
+                break;
             default:
                 include_once "view/home.php";
                 break;
