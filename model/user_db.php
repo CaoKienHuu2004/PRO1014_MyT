@@ -47,6 +47,10 @@ function img_select_by_id($idpr){
     return pdo_query($sql);
 }
 function check_name_user($id){
+    $sql = "SELECT Name_U FROM user WHERE idUser=?";
+    return pdo_query_value($sql, $id);
+}
+function check_uname_user($id){
     $sql = "SELECT Username FROM user WHERE idUser=?";
     return pdo_query_value($sql, $id);
 }
