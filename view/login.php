@@ -1,50 +1,31 @@
-
-
-    <!-- start page title area -->
-    <div class="rn-breadcrumb-inner ptb--30">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <h5 class="title text-center text-md-start">Nuron Login</h5>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-list">
-                        <li class="item"><a href="index.html">Home</a></li>
-                        <li class="separator"><i class="feather-chevron-right"></i></li>
-                        <li class="item current">Nuron Login</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end page title area -->
-
     <!-- login form -->
     <div class="login-area rn-section-gapTop">
         <div class="container">
             <div class="row g-5">
                 <div class=" offset-2 col-lg-4 col-md-6 ml_md--0 ml_sm--0 col-sm-12">
                     <div class="form-wrapper-one">
-                        <h4>Login</h4>
+                        <h4>ĐĂNG NHẬP</h4>
+                        <span><b>Chào mừng bạn đã quay trở lại. Hãy bắt đầu một trải nghiệm thú vị trong ngày mới nhé !</b></span><br>
                         <?php if(isset($_SESSION['loi'])):?>
                             <?=$_SESSION['loi']?>
                         <?php endif; unset($_SESSION['loi']);?>
                         <form method="post">
                             <div class="mb-5">
-                                <label for="user" class="form-label">Username</label>
+                                <label for="user" class="form-label">Tên đăng nhập</label>
                                 <input type="text" id="user" name="user">
                             </div>
                             <div class="mb-5">
-                                <label for="pass" class="form-label">Password</label>
+                                <label for="pass" class="form-label">Mật khẩu</label>
                                 <input type="pass" id="pass" name="pass">
                             </div>
                             <div class="mb-5 rn-check-box">
                                 <input type="checkbox" class="rn-check-box-input" id="exampleCheck1">
-                                <label class="rn-check-box-label" for="exampleCheck1">Remember me leter</label>
+                                <label class="rn-check-box-label" for="exampleCheck1">Ghi nhớ tài khoản này !</label>
                             </div>
-                            <input type="submit" name="btnlogin" class="btn btn-primary mr--15" value="Log In">
+                            <input type="submit" name="btnlogin" class="btn_login" style="background-color: #F27322; color:aliceblue; border: none;" value="Đăng nhập"><br><br>
                             <!-- <button type="submit"  >Log In</button> -->
-                            <a href="index.php?pg=signup" class="btn btn-primary-alta">Sign Up</a>
+                            Bạn chưa có tài khoản ? 
+                            <a href="index.php?pg=signup" class="btn-primary-alta" style="color: #F27322;"> Đăng ký ngay !</a>
                         </form>
                     </div>
                 </div>

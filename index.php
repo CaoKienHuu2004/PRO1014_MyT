@@ -86,13 +86,15 @@
                 //Lấy dữ liệu từ form
                 if(isset($_POST['addcart'])){
                     $hinh=$_POST['hinh'];
+                    $user=$_POST['iduser'];
+                    $cate=$_POST['idcate'];
                     $masp=$_POST['masp'];
                     $tensp=$_POST['tensp'];
                     $gia=$_POST['gia'];
+                    $gia2=$_POST['gia2'];
                     //thêm moi san pham vao gio hang
-                    $sp=[$hinh,$masp,$tensp,$gia];
+                    $sp = array("img"=>$hinh,"iduser"=>$user,"idcate"=>$cate,"idproduct"=>$masp,"name"=>$tensp,"price"=>$gia,"price_2"=>$gia2);
                     array_push($_SESSION['giohang'],$sp);
-                    var_dump($_SESSION['giohang']);
                     header('Location: index.php?pg=view_cart');
                 }
             //    include_once "view/shopping_cart.php";

@@ -61,9 +61,12 @@
                             <i class="feather-shopping-cart" style="padding-right: 5px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
                                 <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
                                 <input type="hidden" name="tensp" value="'.$Name.'">
                                 <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price_2.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
