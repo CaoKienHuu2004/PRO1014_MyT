@@ -59,7 +59,7 @@
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number"><a href="" style="color: gray">Giỏ hàng</a></span>
+                            <span class="number"><a href="index.php?pg=shopping-cart" style="color: gray">Giỏ hàng</a></span>
                         </div>
                     </div>
                 <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>
