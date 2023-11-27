@@ -117,7 +117,7 @@
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="Propertie" class="form-label">Thời gian khuyến mãi (nếu có)</label>
-                                    <input id="Propertie" type="">
+                                    <input id="Propertie" type="date">
                                 </div>
                             </div>
 
