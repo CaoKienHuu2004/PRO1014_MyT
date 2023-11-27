@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!isset($_SESSION['giohang'])){
+        $_SESSION['giohang']=[];
+    }
     ob_start();
     include_once "model/connect_db.php";
     include_once "model/product_db.php";
@@ -78,6 +81,34 @@
                 }else {
                     header('Location: index.php');
                 }
+                break;
+            case "shopping_cart":
+                //Lấy dữ liệu từ form
+                if(isset($_POST['addcart'])){
+                    $hinh=$_POST['hinh'];
+                    $masp=$_POST['masp'];
+                    $tensp=$_POST['tensp'];
+                    $gia=$_POST['gia'];
+                    //thêm moi san pham vao gio hang
+                    $sp=[$hinh,$masp,$tensp,$gia];
+                    array_push($_SESSION['giohang'],$sp);
+                    var_dump($_SESSION['giohang']);
+                    header('Location: index.php?pg=view_cart');
+                }
+            //    include_once "view/shopping_cart.php";
+               break;
+            case "view_cart":
+                include_once "view/shopping_cart.php";
+            break;
+            case 'del_cart':
+                
+                //làm rỗng giỏ hàng
+                if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['giohang']);
+                //xóa sp trong giỏ hàng
+                if(isset($_GET['delid'])&&($_GET['delid']>=0)){
+                    array_splice($_SESSION['giohang'],$_GET['delid'],1);
+                }
+                include_once "view/shopping_cart.php";
                 break;
             default:
                 include_once "view/home.php";
