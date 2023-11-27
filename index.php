@@ -20,6 +20,7 @@
     $product_select_category_3 = product_select_category(3,10);
     $product_select_category_4 = product_select_category(4,10);
     $product_select_category_5 = product_select_category(5,10);
+    $categories = Show_Category();
 // Control---------------------------------------------------------------------------------------------------------------------
     include_once "view/header.php";
     

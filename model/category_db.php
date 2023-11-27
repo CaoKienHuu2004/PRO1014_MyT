@@ -66,3 +66,9 @@ function category_exist($id_category){
     $sql = "SELECT count(*) FROM category WHERE id_category=?";
     return pdo_query_value($sql, $id_category) > 0;
 }
+
+function Show_Category()
+{
+    $sql = "SELECT * FROM category";
+    return pdo_query($sql);
+}
