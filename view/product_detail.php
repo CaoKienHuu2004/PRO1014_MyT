@@ -269,10 +269,7 @@
                                 <h3 class="title">Mô tả chi tiết</h3>
                                 <p class="desc">
                                     <?php echo $Instruct; ?>
-                                </p>
-                                
-                                
-                                
+                                </p>                               
                             </div>
                         </div>
                         <br>
@@ -284,23 +281,32 @@
                         <!-- comment Box -->
                         <div class="forum-input-ans-wrapper">
                             <img src="view/layout/assets/images/client/client-10.png" alt="Nft-Profile">
-                            <input type="text" placeholder="Write Answer...">
-                            <button class="btn btn-primary rounded">Answer</button>
+                            <input type="text" placeholder="Bình luận của bạn...">
+                            <button class="btn btn-primary rounded">Bình luận</button>
                         </div>
                         <!-- comment Box -->
-
+                        <?php
+                        if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+                            $content_comments = $_POST['content_comments'];
+                            $id_goods = $_POST['id_goods'];
+                            $id_user = $_SESSION['name_user']['id_user'];
+                            $dayAdd_comments = date('h:i:sa d/m/Y');
+                            insert_comment($content_comments, $id_goods, $idUser, $Date);
+                            header("Location: " . $_SERVER['HTTP_REFERER']);
+                        }
+                        ?>
                         <!-- answers box -->
                         <div class="forum-ans-box">
                             <!-- single answer -->
                             <div class="forum-single-ans">
                                 <div class="ans-header">
-                                    <a href="author.html"><img src="view/layout/assets/images/client/client-3.png" alt="Nft-Profile"></a>
+                                    <a href="author.html"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft-Profile"></a>
                                     <a href="author.html">
                                         <p class="name">@Mikle</p>
                                     </a>
                                     <div class="date">
                                         <i class="feather-watch"></i>
-                                        <span>5 days ago</span>
+                                        <span><?php echo date('d/m/Y', strtotime('-5 days')); ?> ago</span>
                                     </div>
                                 </div>
                                 <div class="ans-content">
@@ -308,7 +314,8 @@
                                         Check regularly the website, cause I’m in the same situation. They will add more
                                         artists sooner or later, check also the discord channel they have. But most
                                         important, be patient and keep sharing your work in other social media But most
-                                        important, be patient and keep sharing your work in other social media</p>
+                                        important, be patient and keep sharing your work in other social media
+                                    </p>
                                     <div class="reaction">
                                         <a href="#" class="like">
                                             <i class="feather-thumbs-up"></i>
@@ -322,6 +329,7 @@
                                     <hr class="form-ans-separator">
                                 </div>
                             </div>
+                        </div>
                             <!-- single answer End -->
                             <!-- single answer -->
                             <!-- <div class="forum-single-ans">
@@ -584,5 +592,5 @@
         </div>
     </div>
 <?php  
-    
+   
 ?>
