@@ -7,7 +7,7 @@
             <div class="inner" >
                 <div class="lg-left-content" style="justify-content: center;">
                     <a href="product-details.html" class="thumbnail">
-                        <img src="view/layout/assets/images/portfolio/ " alt="Nft_Portfolio">
+                        <img src="view/layout/assets/images/portfolio/'.$img.'" alt="Nft_Portfolio">
                     </a>
                     <div class="read-content" style="max-width: 350px;">
                         <a href="product-details.html">
