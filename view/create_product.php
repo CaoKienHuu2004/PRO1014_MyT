@@ -26,43 +26,43 @@
 
                         <div class="upload-formate mb--30">
                             <h6 class="title">
-                                Tải ảnh sản phẩm
+                            <b> Tải ảnh đại diện sản phẩm</b>
                             </h6>
                             <p class="formate">
-                                Drag or choose your file to upload
+                                Kéo hoặc chọn file ảnh cần upload
                             </p>
                         </div>
                         <div class="brows-file-wrapper">
                             <!-- actual upload which is hidden -->
                             <input name="createinputfile" id="createinputfile" type="file" class="inputfile" />
-                            <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6">
+                            <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6"> -->
                             <!-- our custom upload button -->
                             <label for="createinputfile" title="No File Choosen">
                                 <i class="feather-upload"></i>
                                 <span class="text-center">Chọn file trên máy</span>
-                                <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1BG</p>
+                                <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1GB</p>
                             </label>
                         </div>
                         <br>
                         <br>
                         <div class="upload-formate mb--30">
                             <h6 class="title">
-                                Tải album sản phẩm (chọn 2 - nếu có)
+                               <b> Tải ảnh demo sản phẩm </b>
                             </h6>
                             <p class="formate">
-                                Drag or choose your file to upload
+                                Kéo hoặc chọn file ảnh cần upload
                             </p>
                         </div>
 
                         <div class="brows-file-wrapper">
                             <!-- actual upload which is hidden -->
                             <input name="createinputfile" id="createinputfile" type="file" class="inputfile" />
-                            <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6">
+                            <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6"> -->
                             <!-- our custom upload button -->
                             <label for="createinputfile" title="No File Choosen">
                                 <i class="feather-upload"></i>
                                 <span class="text-center">Chọn file trên máy</span>
-                                <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1BG</p>
+                                <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1GB</p>
                             </label>
                         </div>
                     </div>
@@ -82,36 +82,42 @@
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
-                                    <label for="name" class="form-label">Product Name</label>
-                                    <input id="name" placeholder="e. g. `Digital Awesome Game`">
+                                    <label for="name" class="form-label">Tên sản phẩm *</label>
+                                    <input id="name" placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
-                                    <label for="Discription" class="form-label">Discription</label>
-                                    <textarea id="Discription" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
+                                    <label for="Discription" class="form-label">Mô tả ngắn *</label>
+                                    <textarea id="Discription" rows="3" placeholder="vd: đây là sản phẩm đồ họa thông mình ..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-box pb--20">
+                                    <label for="Discription" class="form-label">Mô tả chi tiết *</label>
+                                    <textarea id="motachitiet" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
+                                </div>
+                            </div>
+                            <script> var editor = CKEDITOR.replace('motachitiet');</script>
+                            <div class="col-md-4">
+                                <div class="input-box pb--20">
+                                    <label for="dollerValue" class="form-label">Giá sản phẩm *</label>
+                                    <input id="dollerValue" placeholder="50 Pcoin">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
-                                    <label for="dollerValue" class="form-label">Item Price in $</label>
-                                    <input id="dollerValue" placeholder="e. g. `20$`">
+                                    <label for="Size" class="form-label">Giá khuyến mãi (nếu có)</label>
+                                    <input id="Size" placeholder="25 PCoin">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
-                                    <label for="Size" class="form-label">Size</label>
-                                    <input id="Size" placeholder="e. g. `Size`">
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="input-box pb--20">
-                                    <label for="Propertie" class="form-label">Propertie</label>
-                                    <input id="Propertie" placeholder="e. g. `Propertie`">
+                                    <label for="Propertie" class="form-label">Thời gian khuyến mãi (nếu có)</label>
+                                    <input id="Propertie" type="">
                                 </div>
                             </div>
 

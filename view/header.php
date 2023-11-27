@@ -26,7 +26,8 @@
     <!-- Style css -->
     <link rel="stylesheet" href="view/layout/assets/css/style.css">
 </head>
-
+<script src="view/plugin/ckeditor/ckeditor.js"></script>
+<script src="view/plugin/ckeditor/ckfinder/ckfinder.js"></script>
 <body class="template-color-1 nft-body-connect">
 <!-- start header area -->
     <!-- Start Header -->
@@ -134,7 +135,7 @@
                                         <div style="display: flex; gap: 10px;">
                                             <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                             <div class="rn-inner-top">
-                                                <h4 class="title"><a href="author.html">'.$_SESSION["user"]['Name_U'].'</a></h4>
+                                                <h4 class="title"><a href="'.$link_user_detail.'">'.$_SESSION["user"]['Name_U'].'</a></h4>
                                                 <span><a>Quản trị viên</a></span>
                                             </div>
                                         </div>

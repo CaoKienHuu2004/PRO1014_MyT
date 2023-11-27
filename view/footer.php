@@ -158,6 +158,8 @@
     <script src="view/layout/assets/js/vendor/jquery.custom-file-input.js"></script>
     <script src="view/layout/assets/js/vendor/savePopup.js"></script>
     <script src="view/layout/assets/js/vendor/vanilla.tilt.js"></script>
+    
+    
 
     <!-- main JS -->
     <script src="view/layout/assets/js/main.js"></script>

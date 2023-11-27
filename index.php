@@ -29,7 +29,7 @@
                 include_once "view/home.php";
                 break;
         }
-    }else { hụ đợp chai
+    }else {
         include_once "view/home.php";
     }
     include_once "view/footer.php";
