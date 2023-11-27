@@ -112,16 +112,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -197,16 +215,35 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -282,16 +319,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -363,16 +418,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -444,16 +517,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -525,16 +616,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -606,16 +715,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -687,16 +814,34 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number">Giỏ hàng</span>
+                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="iduser" value="'.$idUser.'">
+                                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price.'">
+                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';

@@ -88,13 +88,15 @@
                     $hinh=$_POST['hinh'];
                     $user=$_POST['iduser'];
                     $cate=$_POST['idcate'];
+                    $test=$_POST['test'];
                     $masp=$_POST['masp'];
                     $tensp=$_POST['tensp'];
                     $gia=$_POST['gia'];
                     $gia2=$_POST['gia2'];
                     //thêm moi san pham vao gio hang
-                    $sp = array("img"=>$hinh,"iduser"=>$user,"idcate"=>$cate,"idproduct"=>$masp,"name"=>$tensp,"price"=>$gia,"price_2"=>$gia2);
+                    $sp = array("img"=>$hinh,"iduser"=>$user,"idcate"=>$cate,"test"=>$test,"idproduct"=>$masp,"name"=>$tensp,"price"=>$gia,"price_2"=>$gia2);
                     array_push($_SESSION['giohang'],$sp);
+                    echo var_dump($_SESSION['giohang']);
                     header('Location: index.php?pg=view_cart');
                 }
             //    include_once "view/shopping_cart.php";
@@ -102,15 +104,16 @@
             case "view_cart":
                 include_once "view/shopping_cart.php";
             break;
-            case 'del_cart':
-                
-                //làm rỗng giỏ hàng
-                if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['giohang']);
-                //xóa sp trong giỏ hàng
-                if(isset($_GET['delid'])&&($_GET['delid']>=0)){
-                    array_splice($_SESSION['giohang'],$_GET['delid'],1);
+            case 'action_cart':
+                if (isset($_SESSION['giohang'])) {
+                    if(isset($_GET['delid'])&&($_GET['delid']>=0)){
+                        array_splice($_SESSION['giohang'],$_GET['delid'],1);
+                    }else{
+                        unset($_SESSION['giohang']);
+                    }
+                    header('Location: index.php?pg=view_cart');
                 }
-                include_once "view/shopping_cart.php";
+                
                 break;
             default:
                 include_once "view/home.php";

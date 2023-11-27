@@ -103,7 +103,7 @@
                     </div> -->
                     <div class="setting-option rn-icon-list notification-badge">
                         <div class="icon-box">
-                            <a href="shopping-cart.html"><i class="feather-shopping-cart"></i><span class="badge">3</span></a>
+                            <a href="index.php?pg=view_cart"><i class="feather-shopping-cart"></i><span class="badge">3</span></a>
                         </div>
                     </div>
                     <!-- <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
