@@ -324,7 +324,7 @@
                             </div>
                             <!-- single answer End -->
                             <!-- single answer -->
-                            <div class="forum-single-ans">
+                            <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
                                     <a href="author.html"><img src="view/layout/assets/images/client/client-4.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
@@ -353,10 +353,10 @@
                                     </div>
                                     <hr class="form-ans-separator">
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- single answer End -->
                             <!-- single answer -->
-                            <div class="forum-single-ans">
+                            <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
                                     <a href="author.html"><img src="view/layout/assets/images/client/client-5.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
@@ -385,10 +385,10 @@
                                     </div>
                                     <hr class="form-ans-separator">
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- single answer End -->
                             <!-- single answer -->
-                            <div class="forum-single-ans">
+                            <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
                                     <a href="author.html"><img src="view/layout/assets/images/client/client-6.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
@@ -411,12 +411,12 @@
                                             <span>27 Like</span>
                                         </a>
                                         <a href="#" class="dislike">
-                                            <i class="feather-thumbs-down"></i>
+                                        <i class="feather-thumbs-down"></i>
                                             <span>27 dislike</span>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- single answer End -->
                         </div>
                         <!-- answers box End -->
