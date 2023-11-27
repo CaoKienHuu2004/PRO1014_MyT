@@ -21,6 +21,7 @@
     $product_select_category_3 = product_select_category(3,10);
     $product_select_category_4 = product_select_category(4,10);
     $product_select_category_5 = product_select_category(5,10);
+    $categories = Show_Category();
 // Control---------------------------------------------------------------------------------------------------------------------
     include_once "view/header.php";
     
@@ -100,7 +101,7 @@
                     //thêm moi san pham vao gio hang
                     $sp = array("img"=>$hinh,"iduser"=>$user,"idcate"=>$cate,"test"=>$test,"idproduct"=>$masp,"name"=>$tensp,"price"=>$gia,"price_2"=>$gia2);
                     array_push($_SESSION['giohang'],$sp);
-                    echo var_dump($_SESSION['giohang']);
+                    
                     header('Location: index.php?pg=view_cart');
                 }
             //    include_once "view/shopping_cart.php";

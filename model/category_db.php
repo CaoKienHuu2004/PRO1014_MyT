@@ -62,7 +62,17 @@ function category_select_by_id($idcata){
  * @return boolean có tồn tại hay không
  * @throws PDOException lỗi truy vấn
  */
-function category_exist($id_category){
-    $sql = "SELECT count(*) FROM category WHERE id_category=?";
-    return pdo_query_value($sql, $id_category) > 0;
+// function category_exist($id_category){
+//     $sql = "SELECT count(*) FROM category WHERE id_category=?";
+//     return pdo_query_value($sql, $id_category) > 0;
+// }
+/**
+ * Truy vấn tất cả các loại
+ * @return array mảng loại truy vấn được
+ * @throws PDOException lỗi truy vấn
+ */
+function Show_Category()
+{
+    $sql = "SELECT * FROM categories";
+    return pdo_query($sql);
 }
