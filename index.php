@@ -62,6 +62,9 @@
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];
                     $product_select_id = product_select_id($idProduct);
+                    if (isset($_GET['idComment'])){
+                        
+                    }
                     include_once "view/product_detail.php";
                 }else{
                     include_once "view/home.php";
