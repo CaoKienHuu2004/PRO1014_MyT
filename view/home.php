@@ -58,8 +58,14 @@
                     <div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i> 
-                            <span class="number"><a href="" style="color: gray">Giỏ hàng</a></span>
+                            <i class="feather-shopping-cart" style="padding-right: 5px;"></i>
+                            <form action="index.php?pg=shopping_cart" method="post">
+                                <input type="hidden" name="masp" value="'.$idProduct.'">
+                                <input type="hidden" name="tensp" value="'.$Name.'">
+                                <input type="hidden" name="hinh" value="'.$img.'">
+                                <input type="hidden" name="gia" value="'.$Price_2.'">
+                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                            </form>
                         </div>
                     </div>
                 <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>
