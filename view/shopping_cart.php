@@ -1,6 +1,7 @@
  <?php 
     if (isset($_SESSION['giohang'])) {
         $i = 0;
+        $tongxu = 0;
         $html_cart = '';
         foreach ($_SESSION['giohang'] as $item) {
             extract($item);
@@ -17,13 +18,16 @@
                 $gia = '<div class="bid-react-area">
                             <h6 class="last-bid" style="margin: 0px;">'.$price.' PCoin</h6>
                         </div>';
+                $tongxu += $price;
             }else {
                 $gia = '<div class="bid-react-area">
                             <h6 class="last-bid" style="margin: 0px;">'.$price_2.' PCoin</h6>
                             
                         </div>
                         <span class="last-bid" style="margin: 0px;"><del>'.$price.' PCoin</del></span>';
+                $tongxu += $price_2;
             }
+            
             $html_cart .= '
             <div class="lg-product-wrapper">
             <div class="inner" >
@@ -134,7 +138,7 @@
                         </ul>
                         <!-- Tab Content End -->
                         <?php 
-                            if (!isset($_SESSION['giohang'])) {
+                            if (isset($_SESSION['giohang'])) {
                                 echo $html_cart;
                             }else{
                                 echo "<h6>Giỏ hàng của bạn đang trống !</h6>";
@@ -152,9 +156,9 @@
                         <div class="inner">
                             <ul class="category-list ">
                                 <li><a href="#"><span class="left-content">Tổng số sản phẩm:</span><span
-                                            class="count-text">3</span></a></li>
+                                            class="count-text"><?php echo count($_SESSION['giohang']); ?></span></a></li>
                                 <li><a href="#"><span class="left-content">Thành tiền:</span><span
-                                            class="count-text">50 PCoin</span></a></li>
+                                            class="count-text"><?=$tongxu?> PCoin</span></a></li>
                                
                             </ul>
                         </div>
