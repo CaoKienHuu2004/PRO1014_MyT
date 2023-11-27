@@ -96,7 +96,7 @@
                     //thêm moi san pham vao gio hang
                     $sp = array("img"=>$hinh,"iduser"=>$user,"idcate"=>$cate,"test"=>$test,"idproduct"=>$masp,"name"=>$tensp,"price"=>$gia,"price_2"=>$gia2);
                     array_push($_SESSION['giohang'],$sp);
-                    echo var_dump($_SESSION['giohang']);
+                    
                     header('Location: index.php?pg=view_cart');
                 }
             //    include_once "view/shopping_cart.php";
