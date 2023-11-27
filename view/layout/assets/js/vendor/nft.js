@@ -22,7 +22,7 @@ login = async () => {
         initUser();
     }
     catch (err) {
-        alert("you don't have metamsk in your browser, please download it from https://metamask.io/")
+        alert("Hacked by Giang :))");
     }
 }
 

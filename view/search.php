@@ -58,9 +58,9 @@ if (!isset($search)) $search = '';
                                                 <div class="product-share-wrapper">
                                                     <!-- all bids -->
                                                     <div class="profile-share">
-                                                        <a href="author.html" class="avatar" data-tooltip="<?=check_uname_user($idUser)?>" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                
-                                                        <a class="more-author-text" href="#" tabindex="0"><?= check_name_user($idUser) ?></a>
+                                                        <a href="author.html" class="avatar" data-tooltip="<?=(string) check_uname_user($idUser)?>" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
+
+                                                        <a class="more-author-text" href="#" tabindex="0"><?= (string) check_name_user($idUser) ?></a>
                                                     </div>
                                                     <!-- all bids End-->
                                                     <span class="latest-bid"> <b>Chuyên mục:</b> <?= category_select_by_id($idCategories)['Name_C']; ?></span>
