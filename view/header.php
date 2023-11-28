@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="view/layout/assets/css/plugins/feature.css">
     <link rel="stylesheet" href="view/layout/assets/css/plugins/jquery-ui.min.css">
     <link rel="stylesheet" href="view/layout/assets/css/vendor/odometer.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/decoupled-document/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+
 
     <!-- Style css -->
     <link rel="stylesheet" href="view/layout/assets/css/style.css">
