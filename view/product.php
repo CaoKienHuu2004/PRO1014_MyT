@@ -237,11 +237,7 @@ foreach ($product_select_all as $item) {
                     <label class="filter-leble">Giống</label>
                     <select style="display: none;">
                         <option data-display="Chưa chọn"></option>
-                        <?php
-                        foreach ($categories as $key) {
-                            echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
-                        }
-                        ?>
+              
                     </select>
                 </div>
 
@@ -249,8 +245,11 @@ foreach ($product_select_all as $item) {
                     <label class="filter-leble">Chuyên mục</label>
                     <select style="display: none;">
                         <option data-display="Chưa chọn"></option>
-                        <option value="1">Lập Trình</option>
-                        <option value="1">Đồ Họa</option>
+                        <?php
+                        foreach ($categories as $key) {
+                            echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
+                        }
+                        ?>
                     </select>
                 </div>
 
