@@ -307,16 +307,11 @@
                                     </a>
                                     <div class="date">
                                         <i class="feather-watch"></i>
-                                        <span><?php echo date('d/m/Y', strtotime('-5 days')); ?> ago</span>
+                                        <span><?php echo date('d/m/Y'); ?> ago</span>
                                     </div>
                                 </div>
                                 <div class="ans-content">
-                                    <p>
-                                        Check regularly the website, cause I’m in the same situation. They will add more
-                                        artists sooner or later, check also the discord channel they have. But most
-                                        important, be patient and keep sharing your work in other social media But most
-                                        important, be patient and keep sharing your work in other social media
-                                    </p>
+                                    <p><?php echo $Content ?>v </p>
                                     <div class="reaction">
                                         <a href="#" class="like">
                                             <i class="feather-thumbs-up"></i>

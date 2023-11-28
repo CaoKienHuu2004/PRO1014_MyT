@@ -8,6 +8,7 @@
     include_once "model/product_db.php";
     include_once "model/category_db.php";
     include_once "model/user_db.php";
+    
 // DATA---------------------------------------------------------------------------------------------------------------------
     $product_select_all = product_select_all();
     $product_select_sale = product_select_sale(10);
@@ -63,6 +64,9 @@
                 if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                     $idProduct = $_GET['idProduct'];
                     $product_select_id = product_select_id($idProduct);
+                    if (isset($_GET['idComment'])){
+                        
+                    }
                     include_once "view/product_detail.php";
                 }else{
                     include_once "view/home.php";
