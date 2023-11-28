@@ -67,6 +67,7 @@
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -121,6 +122,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -138,6 +140,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -242,6 +245,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -328,6 +332,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -345,6 +350,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -427,6 +433,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -444,6 +451,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -526,6 +534,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -543,6 +552,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -625,6 +635,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -642,6 +653,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -724,6 +736,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -741,6 +754,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -823,6 +837,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -840,6 +855,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                                 <input type="hidden" name="hinh" value="'.$img.'">
                                 <input type="hidden" name="gia" value="'.$Price.'">
                                 <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="test" value="'.$Test.'">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
@@ -911,7 +927,14 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                         <p class="disc">Nơi trao đổi, giao dịch những tài liệu, tài nguyên học tập liên quan giữa các sinh viên và tất cả mọi người.</p>
                         <div class="button-group d-flex flex-wrap">
                             <a class="btn btn-large btn-primary mr--30" href="#01">Xem Ngay</a>
-                            <a class="btn btn-large btn-primary-alta" href="#">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> 
+                            <?php 
+                                if (isset($_SESSION['user'])) {
+                                    echo '<a class="btn btn-large btn-primary-alta" href="index.php?pg=create_product">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> ';
+                                }else{
+                                    echo '<a class="btn btn-large btn-primary-alta" href="index.php?pg=login" onclick="thongbao()">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> ';
+                                }
+                            ?>
+                            <script>function thongbao() {alert ('Bạn chưa đăng nhập, hãy đăng nhập nhé !');}</script>
                         </div>
                         <div class="odometer-area-slide ">
                             <div class="single-odometer" data-sal-delay="400" data-sal="slide-left" data-sal-duration="800">

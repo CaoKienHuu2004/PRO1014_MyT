@@ -99,7 +99,14 @@
                                     <textarea id="motachitiet" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
                                 </div>
                             </div>
-                            <script> var editor = CKEDITOR.replace('motachitiet');</script>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#motachitiet' ) )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="dollerValue" class="form-label">Giá sản phẩm *</label>
@@ -121,18 +128,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="input-box pb--20">
-                                    <label for="Royality" class="form-label">Royality</label>
-                                    <input id="Royality" placeholder="e. g. `20%`">
-                                </div>
-                            </div>
-
                             <div class="col-md-4 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
                                     <input class="rn-check-box-input" type="checkbox" id="putonsale">
                                     <label class="rn-check-box-label" for="putonsale">
-                                        Put on Sale
+                                        Xác thực kiểm duyệt
                                     </label>
                                 </div>
                             </div>
@@ -141,19 +141,12 @@
                                 <div class="input-box pb--20 rn-check-box">
                                     <input class="rn-check-box-input" type="checkbox" id="instantsaleprice">
                                     <label class="rn-check-box-label" for="instantsaleprice">
-                                        Instant Sale Price
+                                        Bạn tick vào nút này, sẽ đồng ý với các điều khoản & chính sách cộng đồng
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 col-sm-4">
-                                <div class="input-box pb--20 rn-check-box">
-                                    <input class="rn-check-box-input" type="checkbox" id="unlockpurchased">
-                                    <label class="rn-check-box-label" for="unlockpurchased">
-                                        Unlock Purchased
-                                    </label>
-                                </div>
-                            </div>
+                            <
 
                             <div class="col-md-12 col-xl-4">
                                 <div class="input-box">

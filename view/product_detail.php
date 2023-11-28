@@ -99,13 +99,13 @@
     <!-- start product details area -->
     <div class="product-details-area rn-section-gapTop">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-1" style="justify-content: space-between;">
                 <!-- product image area -->
 
-                <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="product-tab-wrapper rbt-sticky-top-adjust">
-                        <div class="pd-tab-inner">
-                            <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="">
+                            <!-- <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                                     <span class="rn-pd-sm-thumbnail">
                                         <img src="view/layout/assets/images/portfolio/sm/<?php echo $img ?>" alt="Nft_Profile">
@@ -116,12 +116,7 @@
                                         <img src="view/layout/assets/images/portfolio/sm/<?php echo $img1 ?>" alt="Nft_Profile">
                                     </span>
                                 </button>
-                                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                                    <span class="rn-pd-sm-thumbnail">
-                                        <img src="view/layout/assets/images/portfolio/sm/<?php echo $img2 ?>" alt="Nft_Profile">
-                                    </span>
-                                </button>
-                            </div>
+                            </div> -->
 
                             <div class="tab-content rn-pd-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -129,16 +124,11 @@
                                         <img src="view/layout/assets/images/portfolio/lg/<?php echo $img ?>" alt="Nft_Profile">
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <div class="rn-pd-thumbnail">
                                         <img src="view/layout/assets/images/portfolio/sm/<?php echo $img1 ?>" alt="Nft_Profile">
                                     </div>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                    <div class="rn-pd-thumbnail">
-                                        <img src="view/layout/assets/images/portfolio/lg/<?php echo $img2 ?>" alt="Nft_Profile">
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
@@ -245,8 +235,19 @@
                                 </div>
                                 <!-- <a class="btn btn-primary-alta mt--30" href="#">Place a Bid</a> -->
                                 <div style="display: flex; justify-content: space-between; gap: 5px;">
-                                    <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button>
-                                    <button type="button" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> THÊM GIỎ HÀNG</button>
+                                <form action="index.php?pg=shopping_cart" method="post">
+                                    <input type="hidden" name="masp" value="<?php echo $idProduct;?>">
+                                    <input type="hidden" name="iduser" value="<?php echo $idUser;?>">
+                                    <input type="hidden" name="idcate" value="<?php echo $idCategories;?>">
+                                    <input type="hidden" name="tensp" value="<?php echo $Name;?>">
+                                    <input type="hidden" name="hinh" value="<?php echo $img;?>">
+                                    <input type="hidden" name="gia" value="<?php echo $Price;?>">
+                                    <input type="hidden" name="gia2" value="<?php echo $Price_2;?>">
+                                    <input type="hidden" name="test" value="<?php echo $Test;?>">
+                                    <button type="submit" name="addcart" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> TẢI VỀ NGAY </button>
+                                </form>
+                                    <!-- <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button> -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -258,7 +259,7 @@
     </div>
     <!-- End product details area -->
 
-    <div class="nu-community-area rn-section-gapTop">
+    <div class="nu-community-area rn-section-gapTop" style="padding-top: 50px;">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-12">

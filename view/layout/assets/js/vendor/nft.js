@@ -22,7 +22,7 @@ login = async () => {
         initUser();
     }
     catch (err) {
-        alert("Hacked by Giang :))");
+        alert("Chúng tôi sẽ gửi cho bạn một ưu đãi sau khi đăng nhập nhé !");
     }
 }
 
