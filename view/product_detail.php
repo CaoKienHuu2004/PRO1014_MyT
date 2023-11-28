@@ -279,6 +279,8 @@
                             <span>7 Comments</span>
                         </a>
                         <!-- comment Box -->
+                        <?php
+                        if (check)
                         <div class="forum-input-ans-wrapper">
                             <img src="view/layout/assets/images/client/client-10.png" alt="Nft-Profile">
                             <input type="text" placeholder="Bình luận của bạn...">
@@ -310,7 +312,10 @@
                                     </div>
                                 </div>
                                 <div class="ans-content">
-                                    <p><?php echo $Content ?>v </p>
+                                    <p><?php echo $Content ?>Check regularly the website, cause I’m in the same situation. They will add more
+                                        artists sooner or later, check also the discord channel they have. But most
+                                        important, be patient and keep sharing your work in other social media But most
+                                        important, be patient and keep sharing your work in other social media</p>
                                     <div class="reaction">
                                         <a href="#" class="like">
                                             <i class="feather-thumbs-up"></i>

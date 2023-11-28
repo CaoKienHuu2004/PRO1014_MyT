@@ -42,3 +42,4 @@ function comment_select_by_product($idProduct){
     $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
     return pdo_query($sql, $idProduct);
 }
+function 
