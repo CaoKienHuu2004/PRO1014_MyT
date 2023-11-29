@@ -8,6 +8,10 @@
     include_once "model/product_db.php";
     include_once "model/category_db.php";
     include_once "model/user_db.php";
+
+    require("view/plugin/PHPMailer/src/PHPMailer.php");
+    require("view/plugin/PHPMailer/src/SMTP.php");
+    require("view/plugin/PHPMailer/src/Exception.php");
     
 // DATA---------------------------------------------------------------------------------------------------------------------
     $product_select_all = product_select_all();
@@ -31,6 +35,35 @@
         switch ($_GET['pg']) {
             case 'product':
                 include_once "view/product.php";
+                break;
+            case 'signmail':
+                if (isset($_POST['btnmail'])) {
+                    $emailer = $_POST['mail'];
+                    $mail = new PHPMailer\PHPMailer\PHPMailer();
+                    $mail->IsSMTP(); // enable SMTP
+
+                    $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+                    $mail->SMTPAuth = true; // authentication enabled
+                    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->Port = 465; // or 587
+                    $mail->IsHTML(true);
+                    $mail->Username = "ckienhuu12a12021@gmail.com";
+                    $mail->Password = "ajuvqcrvloxcqzox";
+                    $mail->SetFrom("ckienhuu12a12021@gmail.com");
+                    $mail->Subject = "[THANKS] MyT - STUDENT RESOURCE EXCHANGE WEBSITE";
+                    $mail->Body = "Thank you for registering, we will send you special offers as soon as possible";
+                    $mail->AddAddress($emailer);
+
+                    
+                    if(!$mail->Send()) {
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    } else {
+                        echo '<script>alert ("Chúng tôi đã gửi email cho bạn, hãy check mail nhé !");</script>';
+                        
+                    }
+                    header ('location: index.php');
+                }
                 break;
             case 'create_product':
                 include_once "view/create_product.php";
@@ -129,31 +162,9 @@
         include_once "view/home.php";
     }
     include_once "view/footer.php";
-    // PHP Mailer---------------------------------------------------------------------------------------------------------------
-    // require("view/PHPMailer/src/PHPMailer.php");
-    // require("view/PHPMailer/src/SMTP.php");
-    // require("view/PHPMailer/src/Exception.php");
+   
+    
 
-    //     $mail = new PHPMailer\PHPMailer\PHPMailer();
-    //     $mail->IsSMTP(); // enable SMTP
-
-    //     $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-    //     $mail->SMTPAuth = true; // authentication enabled
-    //     $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-    //     $mail->Host = "smtp.gmail.com";
-    //     $mail->Port = 465; // or 587
-    //     $mail->IsHTML(true);
-    //     $mail->Username = "ckienhuu12a12021@gmail.com";
-    //     $mail->Password = "ajuvqcrvloxcqzox";
-    //     $mail->SetFrom("ckienhuu12a12021@gmail.com");
-    //     $mail->Subject = "[THANKS] THÔNG BÁO ĐĂNG KÝ ƯU ĐÃI THÀNH CÔNG !";
-    //     $mail->Body = "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi những ưu đãi sớm nhất cho bạn";
-    //     $mail->AddAddress("huuckps27362@fpt.edu.vn");
-
-    //     if(!$mail->Send()) {
-    //         echo "Mailer Error: " . $mail->ErrorInfo;
-    //     } else {
-    //         echo "Message has been sent";
-    //     }
+        
 
 ?>
