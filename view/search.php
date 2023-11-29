@@ -94,7 +94,18 @@ if (!isset($search)) $search = '';
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-primary-alta mr--30" data-bs-toggle="modal" data-bs-target="#placebidModal">Mua ngay</button>
+                                        <form action="index.php?pg=shopping_cart" method="post">
+                                            <input type="hidden" name="masp" value="<?php echo $idProduct;?>">
+                                            <input type="hidden" name="iduser" value="<?php echo $idUser;?>">
+                                            <input type="hidden" name="idcate" value="<?php echo $idCategories;?>">
+                                            <input type="hidden" name="tensp" value="<?php echo $Name;?>">
+                                            <input type="hidden" name="hinh" value="<?php echo $img;?>">
+                                            <input type="hidden" name="gia" value="<?php echo $Price;?>">
+                                            <input type="hidden" name="gia2" value="<?php echo $Price_2;?>">
+                                            <input type="hidden" name="test" value="<?php echo $Test;?>">
+                                            <button type="submit" name="addcart" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> Thêm vào giỏ hàng </button>
+                                        </form>
+                                        <!-- <button type="button" class="btn btn-primary-alta mr--30" data-bs-toggle="modal" data-bs-target="#placebidModal">Mua ngay</button> -->
                                     </div>
 
                                 </div>
