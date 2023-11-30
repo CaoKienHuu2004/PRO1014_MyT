@@ -1,3 +1,10 @@
+<?php
+    if (isset($_SESSION['user'])) {
+        $count_product = "";
+        $count_product .= count(product_select_idUser($_SESSION['user']['idUser']));
+    }
+?>
+
 <div class="rn-author-bg-area bg_image--9 bg_image ptb--150">
         <div class="container">
             <div class="row">
@@ -12,7 +19,7 @@
                     <div class="author-wrapper">
                         <div class="author-inner">
                             <div class="user-thumbnail">
-                                <img src="view/layout/assets/images/slider/<?=$_SESSION['user']['Avata_img']?>" alt="">
+                                <img width="250" src="view/layout/assets/images/slider/<?=$_SESSION['user']['Avata_img']?>" alt="">
                             </div>
                             <div class="rn-author-info-content">
                                 <h4 class="title"><?=$_SESSION['user']['Name_U']?></h4>
@@ -22,10 +29,11 @@
                                 </a>
                                 <div class="follow-area">
                                     <div class="follow followers">
-                                        <span>186k <a href="#" class="color-body">followers</a></span>
+                                        <span><?=$count_product?><a href="#" class="color-body">Sản phẩm</a></span>
                                     </div>
+                                    
                                     <div class="follow following">
-                                        <span>156 <a href="#" class="color-body">following</a></span>
+                                        <span><?=$_SESSION['user']['Total_Pcoin']?><a href="#" class="color-body">PCoin</a></span>
                                     </div>
                                 </div>
                                 <div class="author-button-area">
