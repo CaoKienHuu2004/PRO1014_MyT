@@ -140,7 +140,7 @@
                                             <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                             <div class="rn-inner-top">
                                                 <h4 class="title"><a href="'.$link_user_detail.'">'.$_SESSION["user"]['Name_U'].'</a></h4>
-                                                <span><a>Quản trị viên</a></span>
+                                                <span><a>'.$_SESSION['user']['Total_Pcoin'].' PCoin</a></span>
                                             </div>
                                         </div>
                                         

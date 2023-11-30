@@ -49,6 +49,10 @@ function product_select_id($idProduct){
     $sql = "SELECT * FROM product WHERE idProduct=?";
     return pdo_query_one($sql, $idProduct);
 }
+function product_select_idUser($idUs){
+    $sql = "SELECT * FROM product WHERE idUser=?";
+    return pdo_query($sql, $idUs);
+}
 
 
 // function hang_hoa_exist($ma_hh){
@@ -104,9 +108,17 @@ function product_select_keyword($keyword){
 //     return pdo_query($sql);
 // }
 
-function filter_products($category, $minPrice, $maxPrice, $orderBy)
-{
-    $sql = "SELECT * FROM product WHERE category_id = ? AND price BETWEEN ? AND ? ORDER BY ";
+function filter_products($category, $Price, $orderBy)
+{   
+    $PriceSQL="";
+    if ($Price == 1) {
+        $PriceSQL .= "<= 50";
+    } elseif ($Price == 2) {
+        $PriceSQL .= "Between 50 and 499";
+    } elseif ($Price == 3) {
+        $PriceSQL .= "> ";
+    }
+    $sql = "SELECT * FROM product WHERE category_id = ? AND price $PriceSQL ORDER BY ";
     if ($orderBy == 1) {
         $sql .= "popularity DESC";
     } elseif ($orderBy == 2) {
@@ -114,5 +126,11 @@ function filter_products($category, $minPrice, $maxPrice, $orderBy)
     } elseif ($orderBy == 3) {
         $sql .= "date_added DESC";
     }
-    return pdo_query($sql, $category, $minPrice, $maxPrice);
+    return pdo_query($sql, $category);
 }
+function get_all_products()
+{
+    $sql = "SELECT * FROM product";
+    return pdo_query($sql);
+}
+?>

@@ -1,3 +1,4 @@
+
 <?php 
     // Sản phẩm giảm giá-------------------------------------------------------------------------------------------------------
     $html_product_sale = '';
@@ -1131,10 +1132,14 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                         <p class="subtitle">Hàng tuần, chúng tôi sẽ gửi đến cho bạn những giao dịch ưu đãi miễn phí mà bạn có thể cần nó</p>
                         <div class="subscribe-input-wrapper">
                             <div class="input-group">
-                                <input type="email" class="form-control bg-color--2" placeholder="Email của bạn ..." aria-label="Recipient's email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary-alta btn-outline-secondary" type="button">Đăng ký</button>
-                                </div>
+                                <form class="input-group" action="index.php?pg=signmail" method="post">
+                                    <input type="email" class="form-control bg-color--2" aria-label="Recipient's email" name="mail" placeholder="Email của bạn..." required />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary-alta btn-outline-secondary" type="submit" name="btnmail">Đăng ký</button>
+                                    </div>
+                                </form>
+                                <!-- <input type="email" class="form-control bg-color--2" placeholder="Email của bạn ..." aria-label="Recipient's email"> -->
+                                
                             </div>
                         </div>
                     </div>
