@@ -1,9 +1,9 @@
 <?php
 require_once 'connect_db.php';
 
-function comment_insert($idUser, $idProduct, $Content, $Date){
-    $sql = "INSERT INTO comment(idUser, idProduct, Content, Date) VALUES (?,?,?,?)";
-    pdo_execute($sql, $idUser, $idProduct, $Content, $Date);
+function comment_insert($idUser, $idProduct, $Content){
+    $sql = "INSERT INTO comment(idUser, idProducts, Content, Date) VALUES (?,?,?, now())";
+    pdo_execute($sql, $idUser, $idProduct, $Content);
 }
 
 function comment_update($idComment, $idUser, $idProduct, $Content, $Date){
@@ -38,8 +38,15 @@ function comment_exist($idComment){
     return pdo_query_value($sql, $idComment) > 0;
 }
 //-------------------------------//
-function comment_select_by_product($idProduct){
-    $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
-    return pdo_query($sql, $idProduct);
+// function comment_select_by_product($idProduct){
+//     $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
+//     return pdo_query($sql, $idProduct);
+// }
+function check_cmt($iduser, $idPro){   
+    $sql = "SELECT count(*) FROM `cart` c JOIN `order` o ON c.idOrder = o.idOrder WHERE c.idProducts = ? AND o.idUser = ?";
+    return pdo_query_value($sql, $idPro, $iduser);
 }
-function 
+function comment_select_by_product($idPro){
+    $sql = "SELECT * FROM comment WHERE idProducts=? AND `hidden` = 0 ORDER BY `Date` DESC";
+    return pdo_query($sql, $idPro);
+}

@@ -95,16 +95,24 @@
                 break;
 
             case 'product_detail':
-                if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
-                    $idProduct = $_GET['idProduct'];
-                    $product_select_id = product_select_id($idProduct);
-                    if (isset($_GET['idComment'])){
-                        
-                    }
-                    include_once "view/product_detail.php";
+            if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
+                $idProduct = $_GET['idProduct'];
+                $idUser = $_SESSION['user']['idUser'];
+                if(isset($_POST['btnCmt'])){
+                    $content = $_POST['content'];
+                    comment_insert($idUser, $idProduct, $content);
+                    header("Location: index.php?pg=product_detail&idProduct=".$idProduct);
+                }                
+                $product_select_id = product_select_id($idProduct);
+                $all_cmt = comment_select_by_product($idProduct);
+                $count_cmt = count($all_cmt);
+                // echo "jjhds"; var_dump($all_cmt);
+                include_once "view/product_detail.php";
                 }else{
                     include_once "view/home.php";
                 }
+                // var_dump($_SESSION['user']['idUser']);
+                // var_dump(check_cmt($_SESSION['user']['idUser'], 3));
                 break;
 
             case "search":
