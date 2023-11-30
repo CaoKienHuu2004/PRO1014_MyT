@@ -49,6 +49,10 @@ function product_select_id($idProduct){
     $sql = "SELECT * FROM product WHERE idProduct=?";
     return pdo_query_one($sql, $idProduct);
 }
+function product_select_idUser($idUs){
+    $sql = "SELECT * FROM product WHERE idUser=?";
+    return pdo_query($sql, $idUs);
+}
 
 
 // function hang_hoa_exist($ma_hh){
