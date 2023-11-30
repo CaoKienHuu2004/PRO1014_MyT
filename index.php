@@ -99,18 +99,18 @@ if (isset($_GET['pg'])) {
             }
             break;
 
-        case 'product_detail':
-            if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
-                $idProduct = $_GET['idProduct'];
-                $product_select_id = product_select_id($idProduct);
-                if (isset($_GET['idComment'])) {
-
+            case 'product_detail':
+                if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
+                    $idProduct = $_GET['idProduct'];
+                    $product_select_id = product_select_id($idProduct);
+                    if (isset($_GET['idComment'])){
+                        
+                    }
+                    include_once "view/product_detail.php";
+                }else{
+                    include_once "view/home.php";
                 }
-                include_once "view/product_detail.php";
-            } else {
-                include_once "view/home.php";
-            }
-            break;
+                break;
 
         case "search":
             if (isset($_POST['btnSearch'])) {
