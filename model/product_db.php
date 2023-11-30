@@ -103,3 +103,16 @@ function product_select_keyword($keyword){
 //     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$_SESSION['page_no'].", 10";
 //     return pdo_query($sql);
 // }
+
+function filter_products($category, $minPrice, $maxPrice, $orderBy)
+{
+    $sql = "SELECT * FROM product WHERE category_id = ? AND price BETWEEN ? AND ? ORDER BY ";
+    if ($orderBy == 1) {
+        $sql .= "popularity DESC";
+    } elseif ($orderBy == 2) {
+        $sql .= "date_added ASC";
+    } elseif ($orderBy == 3) {
+        $sql .= "date_added DESC";
+    }
+    return pdo_query($sql, $category, $minPrice, $maxPrice);
+}

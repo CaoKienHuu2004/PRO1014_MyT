@@ -233,52 +233,48 @@ foreach ($product_select_all as $item) {
 
         <div class="default-exp-wrapper default-exp-expand">
             <div class="inner">
-                <div class="filter-select-option">
-                    <label class="filter-leble">Giống</label>
-                    <select style="display: none;">
-                        <option data-display="Chưa chọn"></option>
-              
-                    </select>
-                </div>
 
-                <div class="filter-select-option">
-                    <label class="filter-leble">Chuyên mục</label>
-                    <select style="display: none;">
-                        <option data-display="Chưa chọn"></option>
-                        <?php
-                        foreach ($categories as $key) {
-                            echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="filter-select-option">
-                    <label class="filter-leble">Price Range</label>
-                    <div class="price_filter s-filter clear">
-                        <form action="#" method="GET">
-                            <div id="slider-range"
-                                class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                <div class="ui-slider-range ui-widget-header ui-corner-all"
-                                    style="left: 18.3673%; width: 40.8163%;"></div><span
-                                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
-                                    style="left: 18.3673%;"></span><span
-                                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
-                                    style="left: 59.1837%;"></span>
-                            </div>
-                            <div class="slider__range--output">
-                                <div class="price__output--wrap">
-                                    <div class="price--output">
-                                        <span>Price :</span><input type="text" id="amount" readonly="">
-                                    </div>
-                                    <div class="price--filter">
-                                        <a class="btn btn-primary btn-small" href="#">Filter</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <form action="" method="GET" class="d-flex align-items-center gap-4 mx-4">
+                    <div class="filter-select-option" >
+                        <label class="filter-leble">Mức Giá</label>
+                        <select style="display: none;" name="orderBy" id="orderBy">
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <option value="3">Dưới 50coin</option>
+                            <option value="1">51 coin đến 499 coin</option>
+                            <option value="2">Trên 500 coin</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="filter-select-option">
+                        <label class="filter-leble">Sắp Xếp</label>
+                        <select style="display: none;" name="orderBy" id="orderBy">
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <option value="3">Nổi Bật</option>
+                            <option value="1">Mới Nhất</option>
+                            <option value="2">Cũ Nhất</option>
+                        </select>
+                    </div>
+                    <div class="filter-select-option">
+                        <label class="filter-leble">Chuyên mục</label>
+                        <select style="display: none;">
+
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <?php
+                            foreach ($categories as $key) {
+                                echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
+                    <div class="price--filter">
+                        <a class="btn btn-primary btn-small" href="#">Filter</a>
+                    </div>
+
+                </form>
+
             </div>
         </div>
 
