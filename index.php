@@ -170,14 +170,20 @@ if (isset($_GET['pg'])) {
             break;
 
         case 'product_detail':
-            if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
+            if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
                 $idProduct = $_GET['idProduct'];
-                $product_select_id = product_select_id($idProduct);
-                if (isset($_GET['idComment'])) {
-
+                $idUser = $_SESSION['user']['idUser'];
+                if(isset($_POST['btnCmt'])){
+                    $content = $_POST['content'];
+                    comment_insert($idUser, $idProduct, $content);
+                    header("Location: index.php?pg=product_detail&idProduct=".$idProduct);
                 }
+                    
+                $product_select_id = product_select_id($idProduct);
+                $all_cmt = comment_select_by_product($idProduct);
+                $count_comment = count($all_cmt);
                 include_once "view/product_detail.php";
-            } else {
+            }else{
                 include_once "view/home.php";
             }
             break;
