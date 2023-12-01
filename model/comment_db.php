@@ -50,7 +50,7 @@ function comment_select_by_product($idProduct){
     $sql = "SELECT * FROM comment WHERE idProducts=? AND `Hidden` = 0 ORDER BY `Date` DESC";
     return pdo_query($sql, $idProduct);
 }
-function check_cmt($idComment){
+function check_comment($idComment){
     $sql = "SELECT * FROM comment WHERE idComment=?";
     return pdo_query_one($sql, $idComment);
 }
