@@ -8,7 +8,7 @@ include_once "model/connect_db.php";
 include_once "model/product_db.php";
 include_once "model/category_db.php";
 include_once "model/user_db.php";
-// include_once "model/comment_db.php";
+include_once "model/comment_db.php";
 // DATA---------------------------------------------------------------------------------------------------------------------
 $product_select_all = product_select_all();
 $product_select_sale = product_select_sale(10);
@@ -169,18 +169,23 @@ if (isset($_GET['pg'])) {
             }
             break;
 
-        case 'product_detail':
-            if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
-                $idProduct = $_GET['idProduct'];
-                $product_select_id = product_select_id($idProduct);
-                if (isset($_GET['idComment'])) {
-
+            case 'product_detail':
+                if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
+                    $idProduct = $_GET['idProduct'];
+                    $idUser = $_SESSION['user']['idUser'];
+                    if (isset($_POST['btnCmt'])) {
+                        $content = $_POST['content'];
+                        comment_insert($idUser, $idProduct, $content);
+                        header("Location: index.php?pg=product_detail&idProduct=" . $idProduct);
+                    }
+                    $product_select_id = product_select_id($idProduct);
+                    $all_cmt = comment_select_by_product($idProduct);
+                    $count_comment = count($all_cmt);
+                    include_once "view/product_detail.php";
+                } else {
+                    include_once "view/home.php";
                 }
-                include_once "view/product_detail.php";
-            } else {
-                include_once "view/home.php";
-            }
-            break;
+                break;
 
         case "search":
             if (isset($_POST['btnSearch'])) {
