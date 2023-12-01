@@ -236,11 +236,11 @@ foreach ($product_select_all as $item) {
         <div class="default-exp-wrapper default-exp-expand">
             <div class="inner">
 
-                <form action="" method="get" class="d-flex align-items-center gap-4 mx-4">
-                    <!-- <div class="filter-select-option">
+                <form action="" method="post" class="d-flex align-items-center gap-4 mx-4">
+                    <div class="filter-select-option">
                         <label class="filter-leble">Mức Giá</label>
                         <select style="display: none;" name="Price" id="Price">
-                            <option data-display="Chưa chọn"></option>
+                            <option value="0" data-display="Chưa chọn"></option>
                             <option value="0">- - -</option>
                             <option value="1">Dưới 50coin</option>
                             <option value="2">51 coin đến 499 coin</option>
@@ -250,17 +250,15 @@ foreach ($product_select_all as $item) {
                     <div class="filter-select-option">
                         <label class="filter-leble">Sắp Xếp</label>
                         <select style="display: none;" name="orderBy" id="orderBy">
-                            <option data-display="Chưa chọn"></option>
-                            <option value="0">- - -</option>
-                            <option value="3">Nổi Bật</option>
-                            <option value="1">Mới Nhất</option>
-                            <option value="2">Cũ Nhất</option>
+                            <option data-display="Nổi Bật" value="1">Nổi Bật</option>
+                          
+                            <option value="2">Mới Nhất</option>
+                            <option value="3">Cũ Nhất</option>
                         </select>
-                    </div> -->
+                    </div>
                     <div class="filter-select-option">
                         <label class="filter-leble">Chuyên mục</label>
-                        <select style="display: none;">
-
+                        <select style="display: none;" name="category">
                             <option data-display="Chưa chọn"></option>
                             <option value="0">- - -</option>
                             <?php
@@ -272,7 +270,7 @@ foreach ($product_select_all as $item) {
                     </div>
 
                     <div class="price--filter">
-                            <button type="submit" class="btn btn-primary btn-small">Filter</button>
+                        <button type="submit" name="submit" class="btn btn-primary btn-small">Filter</button>
                     </div>
 
                 </form>
@@ -283,7 +281,7 @@ foreach ($product_select_all as $item) {
         <div class="row g-5">
 
             <?php foreach ($filter as $key) {
-                echo   $html_product_all .= '
+                echo $html_product_all .= '
                 <!-- start single product -->
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">
