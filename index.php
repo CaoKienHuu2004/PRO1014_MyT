@@ -78,7 +78,7 @@ if (isset($_GET['pg'])) {
         case "edit_user":
             if (isset($_POST['submit'])) {
                 $email = $_POST['email'];
-                $Pass = $_POST['password'];
+                $Pass = $_POST['oldPass'];
                 $newpass = $_POST['new-password'];
                 $repass = $_POST['re-password'];
                 $iduser = $_SESSION["user"]["idUser"];
@@ -86,21 +86,22 @@ if (isset($_GET['pg'])) {
                 $kq2 = check_email_user($email);
                 if ($kq2) {
                     if ($kq1) {
-                        if ($newpass = !$repass) {
-                            $_SESSION['loi'] ='MẬT KHẨU KHÔNG TRÙNG KHỚP';
-                        }else{
-                            $update = Update_password($newpass,$iduser);
-                            if ($update) {
-                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
-                            } else {
+                        if ($newpass !== $repass) {
+                            $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
+                        } else {
+                            Update_password($newpass, $iduser);
+                            if (Update_password($newpass, $iduser)) {
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
+
+                            } else {
+                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
                             }
                         }
                     } else {
-                        $_SESSION['loi'] ='MẬT KHẨU CŨ KHÔNG ĐÚNG';
+                        $_SESSION['loi'] = 'MẬT KHẨU CŨ KHÔNG ĐÚNG';
                     }
                 } else {
-                    $_SESSION['loi'] ='EMAIL KHÔNG TRÙNG KHỚP';
+                    $_SESSION['loi'] = 'EMAIL KHÔNG TRÙNG KHỚP';
                 }
             }
             include_once "view/edit-profile.php";
