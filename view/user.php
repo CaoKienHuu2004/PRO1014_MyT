@@ -1,9 +1,9 @@
 <?php
-    foreach ($user_select_by_id as $item) {
-        extract($item);
+    
+        extract($user_select_by_id);
         $count_product = "";
         $count_product .= count(product_select_idUser($idUser));
-    }
+    
 // if (isset($_SESSION['user'])) {
     
 // }
