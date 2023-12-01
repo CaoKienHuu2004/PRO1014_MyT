@@ -1,35 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edit Profile || Nuron - NFT Marketplace Template</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-    <!-- CSS 
-    ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
-
-    <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body class="template-color-1 nft-body-connect">
-
-    <!-- start header area -->
 
     <?php if (isset($_SESSION['thongbao'])): ?>
         <div class="alert alert-success" role="alert">
