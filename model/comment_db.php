@@ -24,7 +24,7 @@ function comment_delete($idComment){
 }
 
 function comment_select_all(){
-    $sql = "SELECT * FROM comment bl ORDER BY Date DESC";
+    $sql = "SELECT * FROM comment ORDER BY Date DESC";
     return pdo_query($sql);
 }
 
@@ -41,4 +41,8 @@ function comment_exist($idComment){
 function comment_select_by_product($idProduct){
     $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
     return pdo_query($sql, $idProduct);
+}
+function check_cmt($idComment){
+    $sql = "SELECT * FROM comment WHERE idComment=?";
+    return pdo_query_one($sql, $idComment);
 }
