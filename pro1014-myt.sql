@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2023 lúc 04:53 AM
+-- Thời gian đã tạo: Th12 01, 2023 lúc 08:03 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -74,26 +74,6 @@ CREATE TABLE `comment` (
   `Content` text NOT NULL,
   `Star` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `img`
---
-
-CREATE TABLE `img` (
-  `idImg` int(11) NOT NULL,
-  `idProducts` int(11) NOT NULL,
-  `Img` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `img`
---
-
-INSERT INTO `img` (`idImg`, `idProducts`, `Img`) VALUES
-(1, 3, 'portfolio-06.jpg'),
-(2, 3, 'portfolio-01.jpg');
 
 -- --------------------------------------------------------
 
@@ -238,7 +218,9 @@ CREATE TABLE `withdraw` (
 -- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`idCart`);
+  ADD PRIMARY KEY (`idCart`),
+  ADD KEY `a1` (`idOrder`),
+  ADD KEY `a2` (`idProducts`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -250,37 +232,39 @@ ALTER TABLE `categories`
 -- Chỉ mục cho bảng `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`idComment`);
-
---
--- Chỉ mục cho bảng `img`
---
-ALTER TABLE `img`
-  ADD PRIMARY KEY (`idImg`);
+  ADD PRIMARY KEY (`idComment`),
+  ADD KEY `b1` (`idProducts`),
+  ADD KEY `b2` (`idUser`);
 
 --
 -- Chỉ mục cho bảng `loaded`
 --
 ALTER TABLE `loaded`
-  ADD PRIMARY KEY (`idLoaded`);
+  ADD PRIMARY KEY (`idLoaded`),
+  ADD KEY `c1` (`idUser`);
 
 --
 -- Chỉ mục cho bảng `order`
 --
 ALTER TABLE `order`
-  ADD PRIMARY KEY (`idOrder`);
+  ADD PRIMARY KEY (`idOrder`),
+  ADD KEY `d1` (`idUser`);
 
 --
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`idProduct`);
+  ADD PRIMARY KEY (`idProduct`),
+  ADD KEY `idUser` (`idUser`),
+  ADD KEY `idCategories` (`idCategories`);
 
 --
 -- Chỉ mục cho bảng `trade`
 --
 ALTER TABLE `trade`
-  ADD PRIMARY KEY (`idTrade`);
+  ADD PRIMARY KEY (`idTrade`),
+  ADD KEY `idUser` (`idUser`),
+  ADD KEY `idOrder` (`idOrder`);
 
 --
 -- Chỉ mục cho bảng `user`
@@ -292,7 +276,8 @@ ALTER TABLE `user`
 -- Chỉ mục cho bảng `withdraw`
 --
 ALTER TABLE `withdraw`
-  ADD PRIMARY KEY (`idWithdraw`);
+  ADD PRIMARY KEY (`idWithdraw`),
+  ADD KEY `idUser` (`idUser`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -303,6 +288,56 @@ ALTER TABLE `withdraw`
 --
 ALTER TABLE `product`
   MODIFY `idProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `a1` FOREIGN KEY (`idOrder`) REFERENCES `order` (`idOrder`),
+  ADD CONSTRAINT `a2` FOREIGN KEY (`idProducts`) REFERENCES `product` (`idProduct`);
+
+--
+-- Các ràng buộc cho bảng `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `b1` FOREIGN KEY (`idProducts`) REFERENCES `product` (`idProduct`),
+  ADD CONSTRAINT `b2` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
+
+--
+-- Các ràng buộc cho bảng `loaded`
+--
+ALTER TABLE `loaded`
+  ADD CONSTRAINT `c1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
+
+--
+-- Các ràng buộc cho bảng `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `d1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
+
+--
+-- Các ràng buộc cho bảng `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`),
+  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`idCategories`) REFERENCES `categories` (`idCategories`);
+
+--
+-- Các ràng buộc cho bảng `trade`
+--
+ALTER TABLE `trade`
+  ADD CONSTRAINT `trade_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`),
+  ADD CONSTRAINT `trade_ibfk_2` FOREIGN KEY (`idOrder`) REFERENCES `order` (`idOrder`);
+
+--
+-- Các ràng buộc cho bảng `withdraw`
+--
+ALTER TABLE `withdraw`
+  ADD CONSTRAINT `withdraw_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
