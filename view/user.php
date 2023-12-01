@@ -1,7 +1,11 @@
 <?php
+    foreach ($user_select_by_id as $item) {
+        extract($item);
+        $count_product = "";
+        $count_product .= count(product_select_idUser($idUser));
+    }
 // if (isset($_SESSION['user'])) {
-    // $count_product = "";
-    // $count_product .= count(product_select_idUser());
+    
 // }
 ?>
 
