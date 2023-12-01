@@ -75,6 +75,9 @@ if (isset($_GET['pg'])) {
             include_once "view/create_product.php";
             break;
 
+        case "edit_user":
+            include_once "view/edit-profile.php";
+            break;
         case 'signup':
             if (isset($_POST['submit'])) {
                 $username = $_POST['username'];
