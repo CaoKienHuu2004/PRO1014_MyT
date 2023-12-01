@@ -23,33 +23,40 @@ require_once 'connect_db.php';
 //     }
 // }
 
-function product_select_all(){
+function product_select_all()
+{
     $sql = "SELECT * FROM product";
     return pdo_query($sql);
 }
-function product_select_view($limi){
-    $sql = "SELECT * FROM product WHERE View ORDER BY View DESC LIMIT ".$limi;
+function product_select_view($limi)
+{
+    $sql = "SELECT * FROM product WHERE View ORDER BY View DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
-function product_select_sale($limi){
-    $sql = "SELECT * FROM product WHERE Price_2 LIMIT ".$limi;
+function product_select_sale($limi)
+{
+    $sql = "SELECT * FROM product WHERE Price_2 LIMIT " . $limi;
     return pdo_query($sql);
 }
-function product_select_bestsaler($limi){
-    $sql = "SELECT * FROM product WHERE best_saler LIMIT ".$limi;
+function product_select_bestsaler($limi)
+{
+    $sql = "SELECT * FROM product WHERE best_saler LIMIT " . $limi;
     return pdo_query($sql);
 }
-function product_select_category($cate,$limi){
-    $sql = "SELECT * FROM product WHERE idCategories = ".$cate." ORDER BY view DESC LIMIT ".$limi;
+function product_select_category($cate, $limi)
+{
+    $sql = "SELECT * FROM product WHERE idCategories = " . $cate . " ORDER BY view DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
 
 
-function product_select_id($idProduct){
+function product_select_id($idProduct)
+{
     $sql = "SELECT * FROM product WHERE idProduct=?";
     return pdo_query_one($sql, $idProduct);
 }
-function product_select_idUser($idUs){
+function product_select_idUser($idUs)
+{
     $sql = "SELECT * FROM product WHERE idUser=?";
     return pdo_query($sql, $idUs);
 }
@@ -60,7 +67,8 @@ function product_select_idUser($idUs){
 //     return pdo_query_value($sql, $ma_hh) > 0;
 // }
 
-function product_view_count($idPr){
+function product_view_count($idPr)
+{
     $sql = "UPDATE product SET view = view + 1 WHERE idProduct=?";
     pdo_execute($sql, $idPr);
 }
@@ -80,11 +88,12 @@ function product_view_count($idPr){
 //     return pdo_query($sql, $ma_loai);
 // }
 
-function product_select_keyword($keyword){
+function product_select_keyword($keyword)
+{
     $sql = "SELECT * FROM product hh "
-            . " JOIN categories lo ON lo.idCategories =hh.idCategories  "
-            . " WHERE Name LIKE ? OR Name_C LIKE ?";
-    return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
+        . " JOIN categories lo ON lo.idCategories =hh.idCategories  "
+        . " WHERE Name LIKE ? OR Name_C LIKE ?";
+    return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 
 // function hang_hoa_select_page(){
@@ -110,24 +119,31 @@ function product_select_keyword($keyword){
 
 function filter_products($category, $Price, $orderBy)
 {   
+    // ORDER BY GIÁ
     $PriceSQL="";
-    if ($Price == 1) {
-        $PriceSQL .= "<= 50";
+    if ($Price == 0) {
+        $PriceSQL = "";
+    } elseif ($Price == 1) {
+        $PriceSQL = "AND price < 50";
     } elseif ($Price == 2) {
-        $PriceSQL .= "Between 50 and 499";
+        $PriceSQL = "AND price BETWEEN 50 and 450";
     } elseif ($Price == 3) {
-        $PriceSQL .= "> ";
+        $PriceSQL = "AND price > 450";
     }
-    $sql = "SELECT * FROM product WHERE category_id = ? AND price $PriceSQL ORDER BY ";
+    // ORDER BY 
+    $order = "";
     if ($orderBy == 1) {
-        $sql .= "popularity DESC";
+        $order .= "ORDER BY view DESC";
     } elseif ($orderBy == 2) {
-        $sql .= "date_added ASC";
+        $order .= "ORDER BY idCategories ASC";
     } elseif ($orderBy == 3) {
-        $sql .= "date_added DESC";
+        $order .= "ORDER BY idCategories DESC";
     }
+    $sql = "SELECT * FROM product WHERE idCategories = ? $PriceSQL $order ";
+
     return pdo_query($sql, $category);
 }
+
 function get_all_products()
 {
     $sql = "SELECT * FROM product";

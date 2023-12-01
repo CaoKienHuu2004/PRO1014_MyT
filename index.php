@@ -30,16 +30,15 @@ include_once "view/header.php";
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
         case 'product':
-
-            // Initialize $filter as an empty array
-            if (isset($_GET['category']) && isset($_GET['Price']) && isset($_GET['orderBy'])) {
-                $category = $_GET['category'];
-                // $Price = $_GET['Price'];
-                // $orderBy = $_GET['orderBy'];
-                echo $_GET['category'];
-                $filter = filter_products($category, $Price, $orderBy);
+            $Price = 0;
+            $orderBy = 1;
+            if (isset($_POST['submit'])) {
+                $Price =    $_POST['Price'];
+                $orderBy =  $_POST['orderBy'];
+                $category = $_POST['category'];
+                $filter=filter_products($category, $Price, $orderBy);
             } else {
-                $filter = get_all_products();
+                $filter = get_all_products(); // lấy tất cả sản phẩm
             }
             include_once "view/product.php";
             break;
@@ -78,7 +77,7 @@ if (isset($_GET['pg'])) {
         case "edit_user":
             if (isset($_POST['submit'])) {
                 $email = $_POST['email'];
-                $Pass = $_POST['password'];
+                $Pass = $_POST['oldPass'];
                 $newpass = $_POST['new-password'];
                 $repass = $_POST['re-password'];
                 $iduser = $_SESSION["user"]["idUser"];
@@ -87,13 +86,23 @@ if (isset($_GET['pg'])) {
                 $update = Update_password($newpass, $iduser);
                 if ($kq2) {
                     if ($kq1) {
+<<<<<<< HEAD
                         if ($newpass != $repass) {
                             $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
                         } else {
                             if (isset($update)) {
                                 $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
                             } else {
+=======
+                        if ($newpass = !$repass) {
+                            $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
+                        } else {
+                            $update = Update_password($newpass, $iduser);
+                            if ($update) {
+>>>>>>> c766c8594af9a71964a1a1b65c574748ad53e789
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
+                            } else {
+                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
                             }
                         }
                     } else {

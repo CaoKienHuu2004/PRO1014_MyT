@@ -202,22 +202,22 @@
                                     <hr />
                                     <div class="email-area">
                                         <label for="Email2" class="form-label">Enter Email</label>
-                                        <input name="email" id="Email2" type="email" value="">
+                                        <input name="email" id="email" type="email">
                                     </div>
                                 </div>
                                 <div class="input-two-wrapper mt--15">
                                     <div class="old-password half-wid">
                                         <label for="oldPass" class="form-label">Enter Old Password</label>
-                                        <input name="password" id="oldPass" type="password">
+                                        <input name="oldPass" id="oldPass" type="oldPass">
                                     </div>
                                     <div class="new-password half-wid">
                                         <label for="NewPass" class="form-label">Create New Password</label>
-                                        <input name="new-password" id="NewPass" type="password">
+                                        <input name="new-password" id="new-password" type="new-password">
                                     </div>
                                 </div>
                                 <div class="email-area mt--15">
                                     <label for="rePass" class="form-label">Confirm Password</label>
-                                    <input name="re-password" id="rePass" type="password" value="">
+                                    <input name="re-password" id="re-password" type="re-password">
                                 </div>
                                 <button type="submit" name="submit" class="btn btn-primary save-btn-edit">Save</button>
                             </form>
