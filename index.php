@@ -90,7 +90,7 @@ if (isset($_GET['pg'])) {
                         if ($newpass = !$repass) {
                             $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
                         } else {
-                            $update = Update_password($newpass, $iduser);
+                            // $update = Update_password($newpass, $iduser);
                             if ($update) {
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
                             } else {
@@ -123,14 +123,15 @@ if (isset($_GET['pg'])) {
                     } else if ($kq2) {
                         $_SESSION['loi'] = 'Email <strong>' . $email . '</strong> ĐÃ TỒN TẠI';
                     } else {
-                        $img = 'view/layout/assets/images/newUser/AvatarBase.jpg';
-                        $background = 'view/layout/assets/images/newUser/BackgroundBase.png';
-                        $insertResult = Insert_user($username, $pass, $name_u, $email, $img, $background);
+                        $img = 'newUser/AvatarBase.jpg';
+                        // $background = 'view/layout/assets/images/newUser/BackgroundBase.png';
+                        $insertResult = Insert_user($username, $pass, $name_u, $email, $img);
                         if ($insertResult) {
                             $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI TẠO TÀI KHOẢN';
 
                         } else {
                             $_SESSION['thongbao'] = 'ĐÃ TẠO TÀI KHOẢN THÀNH CÔNG!';
+                            header('location: index.php?pg=login');
                         }
                     }
                 } else {
@@ -139,7 +140,7 @@ if (isset($_GET['pg'])) {
                 }
 
             } else {
-                echo 'chưa nhận được dữ liệu!';
+                // echo 'chưa nhận được dữ liệu!';
             }
 
             include_once "view/signup.php";

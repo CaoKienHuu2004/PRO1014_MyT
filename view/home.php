@@ -4,7 +4,8 @@
     $html_product_sale = '';
     foreach ($product_select_sale as $item) {
         extract($item);
-        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
         
         $cert = "";
         if ($Test == 1) {
@@ -102,7 +103,8 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
     $html_product_bestsaler = '';
     foreach ($product_select_bestsaler as $item) {
         extract($item);
-        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
         $cert = "";
         if ($Test == 1) {
             $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
@@ -817,7 +819,8 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
      $html_product_category_5 = '';
      foreach ($product_select_category_5 as $item) {
          extract($item);
-        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
          $cert = "";
          if ($Test == 1) {
              $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';

@@ -4,7 +4,7 @@
         $count_product = "";
         $count_order = "";
         $count_product .= count(product_select_idUser($idUser));
-        $count_order .= count(order_product_buyer($idUser));
+        // $count_order .= count(order_product_buyer($idUser));
     
 // if (isset($_SESSION['user'])) {
     
@@ -43,12 +43,20 @@
                                     </div>
                                 </div>
                                 <?php 
-                                    if (isset($_SESSION['user'])) {
+                                    if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                                         echo '
                                         <div class="author-button-area">
                                             <a href="index.php?pg=create_product">"<span class="btn at-follw follow-button"><i data-feather="upload-cloud"></i> Tải tài nguyên</span></a>
-                                            <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i></span>
+                                            <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i> Share</span>
                                             <a href="index.php?pg=edit_user" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
+                                        </div>
+                                        ';
+                                    }else {
+                                        echo '
+                                        <div class="author-button-area">
+                                            <a href="">"<span class="btn at-follw follow-button"><i data-feather="upload-cloud"></i>Không có gì</span></a>
+                                            <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i> Share</span>
+                                            <a href="" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i>ở đây cũng v</a>
                                         </div>
                                         ';
                                     }

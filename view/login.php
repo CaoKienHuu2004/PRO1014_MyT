@@ -31,12 +31,12 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="social-share-media form-wrapper-one">
-                        <h6>Another way to log in</h6>
-                        <p> Lorem ipsum dolor sit, amet sectetur adipisicing elit.cumque.</p>
-                        <button class="another-login login-facebook"> <img class="small-image" src="assets/images/icons/google.png" alt=""> <span>Log in with Google</span></button>
-                        <button class="another-login login-facebook"> <img class="small-image" src="assets/images/icons/facebook.png" alt=""> <span>Log in with Facebook</span></button>
-                        <button class="another-login login-twitter"> <img class="small-image" src="assets/images/icons/tweeter.png" alt=""> <span>Log in with Twitter</span></button>
-                        <button class="another-login login-linkedin"> <img class="small-image" src="assets/images/icons/linkedin.png" alt=""> <span>Log in with linkedin</span></button>
+                        <h6>Hoặc bạn có thể đăng nhập mạng xã hội</h6>
+                        <p> Dễ dàng kết nối với bạn bè của bạn</p>
+                        <button class="another-login login-facebook"> <img class="small-image" src="view/layout/assets/images/icons/google.png" alt=""> <span>Log in with Google</span></button>
+                        <button class="another-login login-facebook"> <img class="small-image" src="view/layout/assets/images/icons/facebook.png" alt=""> <span>Log in with Facebook</span></button>
+                        <button class="another-login login-twitter"> <img class="small-image" src="view/layout/assets/images/icons/tweeter.png" alt=""> <span>Log in with Twitter</span></button>
+                        <button class="another-login login-linkedin"> <img class="small-image" src="view/layout/assets/images/icons/linkedin.png" alt=""> <span>Log in with linkedin</span></button>
                     </div>
                 </div>
             </div>

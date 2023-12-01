@@ -86,10 +86,10 @@ function check_pass_user($Pass)
 //     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 // }
 
-function Insert_user($username, $pass, $name_u, $email,$img,$background)
+function Insert_user($username, $pass, $name_u, $email,$img)
 {
-    $sql = "INSERT INTO user(`Username`, `Pass`,  `Name_U`, `Email`,`Avata_img`,`Banner_img`) VALUES (?,?,?,?,?,?)";
-    return pdo_execute($sql,$username, $pass, $name_u, $email,$img,$background);
+    $sql = "INSERT INTO user(`Username`, `Pass`,  `Name_U`, `Email`,`Avata_img`) VALUES (?,?,?,?,?)";
+    return pdo_execute($sql,$username, $pass, $name_u, $email,$img);
 }
 
 function Update_password($newpass,$iduser)
