@@ -308,7 +308,7 @@ foreach ($all_cmt as $value) {
                             <!-- end Community single box -->
                             <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Comment</h3><a style="color: #f27322;" href="post_details.html" class="comments">
                                 <i class="feather-message-circle"></i>
-                                <span><?= $count_cmt ?> Comments</span>
+                                <span><?= $count_comment ?> Comments</span>
                             </a>
 
                             
