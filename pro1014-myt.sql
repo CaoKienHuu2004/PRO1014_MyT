@@ -72,8 +72,16 @@ CREATE TABLE `comment` (
   `Date` date NOT NULL,
   `Good_or_bad` int(11) DEFAULT NULL,
   `Content` text NOT NULL,
-  `Star` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `Star` int(11) NOT NULL,
+  `Hidden` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đỗ dữ liệu bảng 'comment'
+--
+
+INSERT INTO `comment` (`idComment`, `idUser`, `idProducts`, `Date`, `Good_or_bad`, `Content`, `Star`, `Hidden`) VALUES
+(1, 1, 1, '2023-12-01', 1, 'cmt', 0, 0);
 
 -- --------------------------------------------------------
 

@@ -8,7 +8,7 @@ include_once "model/connect_db.php";
 include_once "model/product_db.php";
 include_once "model/category_db.php";
 include_once "model/user_db.php";
-// include_once "model/comment_db.php";
+include_once "model/comment_db.php";
 // DATA---------------------------------------------------------------------------------------------------------------------
 $product_select_all = product_select_all();
 $product_select_sale = product_select_sale(10);
@@ -66,7 +66,6 @@ if (isset($_GET['pg'])) {
                     echo "Mailer Error: " . $mail->ErrorInfo;
                 } else {
                     echo '<script>alert ("Chúng tôi đã gửi email cho bạn, hãy check mail nhé !");</script>';
-
                 }
                 header('location: index.php');
             }
@@ -87,11 +86,20 @@ if (isset($_GET['pg'])) {
                 $update = Update_password($newpass, $iduser);
                 if ($kq2) {
                     if ($kq1) {
+<<<<<<< HEAD
+                        if ($newpass != $repass) {
+                            $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
+                        } else {
+                            if (isset($update)) {
+                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
+                            } else {
+=======
                         if ($newpass = !$repass) {
                             $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
                         } else {
                             // $update = Update_password($newpass, $iduser);
                             if ($update) {
+>>>>>>> c766c8594af9a71964a1a1b65c574748ad53e789
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
                             } else {
                                 $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
@@ -128,7 +136,6 @@ if (isset($_GET['pg'])) {
                         $insertResult = Insert_user($username, $pass, $name_u, $email, $img);
                         if ($insertResult) {
                             $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI TẠO TÀI KHOẢN';
-
                         } else {
                             $_SESSION['thongbao'] = 'ĐÃ TẠO TÀI KHOẢN THÀNH CÔNG!';
                             header('location: index.php?pg=login');
@@ -138,7 +145,6 @@ if (isset($_GET['pg'])) {
 
                     $_SESSION['loi'] = "Bạn cần phải đồng ý với các điều khoản và điều kiện để tạo tài khoản.";
                 }
-
             } else {
                 // echo 'chưa nhận được dữ liệu!';
             }
@@ -157,7 +163,6 @@ if (isset($_GET['pg'])) {
                 } else {
                     $_SESSION['loi'] = '<i style="color: red;">Tên đăng nhập hoặc mật khẩu không đúng, vui lòng thử lại !</i>';
                 }
-
             }
             include_once "view/login.php";
             break;
@@ -172,10 +177,15 @@ if (isset($_GET['pg'])) {
         case 'product_detail':
             if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
                 $idProduct = $_GET['idProduct'];
-                $product_select_id = product_select_id($idProduct);
-                if (isset($_GET['idComment'])) {
-
+                $idUser = $_SESSION['user']['idUser'];
+                if (isset($_POST['btnCmt'])) {
+                    $content = $_POST['content'];
+                    comment_insert($idUser, $idProduct, $content);
+                    header("Location: index.php?pg=product_detail&idProduct=" . $idProduct);
                 }
+                $product_select_id = product_select_id($idProduct);
+                $all_cmt = comment_select_by_product($idProduct);
+                $count_comment = count($all_cmt);
                 include_once "view/product_detail.php";
             } else {
                 include_once "view/home.php";
@@ -244,9 +254,3 @@ if (isset($_GET['pg'])) {
     include_once "view/home.php";
 }
 include_once "view/footer.php";
-
-
-
-
-
-?>
