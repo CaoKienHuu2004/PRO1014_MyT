@@ -5,7 +5,7 @@ if (isset($_SESSION['user'])) {
 }
 ?>
 
-<div class="rn-author-bg-area <?= $_SESSION['user']['Banner_img'] ?> bg_image ptb--150">
+<div class="rn-author-bg-area bg_image--9 bg_image ptb--150">
         <div class="container">
             <div class="row">
             </div>
@@ -57,7 +57,7 @@ if (isset($_SESSION['user'])) {
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="edit-profile.html" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
+                                    <a href="index.php?pg=edit_user" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
 
 
                                 </div>
