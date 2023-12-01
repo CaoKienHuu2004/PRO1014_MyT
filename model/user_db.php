@@ -23,12 +23,14 @@ require_once 'connect_db.php';
 //     }
 // }
 
-function user_select_all(){
+function user_select_all()
+{
     $sql = "SELECT * FROM khach_hang";
     return pdo_query($sql);
 }
 
-function user_select_by_id($idus){
+function user_select_by_id($idus)
+{
     $sql = "SELECT * FROM user WHERE idUser=?";
     return pdo_query_one($sql, $idus);
 }
@@ -37,22 +39,36 @@ function user_select_by_id($idus){
 //     return pdo_query($sql);
 // }
 
-function User_Check_Login($user,$pass){
-    $sql ="SELECT * FROM user WHERE Username=? AND Pass=?";
-    return pdo_query_one($sql,$user,$pass);
+function User_Check_Login($user, $pass)
+{
+    $sql = "SELECT * FROM user WHERE Username=? AND Pass=?";
+    return pdo_query_one($sql, $user, $pass);
 }
 
-function img_select_by_id($idpr){
-    $sql = "SELECT * FROM img WHERE idProducts=".$idpr;
+function img_select_by_id($idpr)
+{
+    $sql = "SELECT * FROM img WHERE idProducts=" . $idpr;
     return pdo_query($sql);
 }
-function check_name_user($idU){
+function check_name_user($idU)
+{
     $sql = "SELECT Name_U FROM user WHERE idUser=?";
     return pdo_query_value($sql, $idU);
 }
-function check_uname_user($idU){
+function check_uname_user($idU)
+{
     $sql = "SELECT Username FROM user WHERE idUser=?";
     return pdo_query_value($sql, $idU);
+}
+function check_username_user($username)
+{
+    $sql = "SELECT Username FROM user WHERE Username=?";
+    return pdo_query_one($sql, $username);
+}
+function check_email_user($email)
+{
+    $sql = "SELECT Email FROM user WHERE Email=?";
+    return pdo_query_one($sql, $email);
 }
 
 // function khach_hang_select_by_role($vai_tro){
@@ -64,3 +80,10 @@ function check_uname_user($idU){
 //     $sql = "UPDATE khach_hang SET mat_khau=? WHERE ma_kh=?";
 //     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 // }
+
+function Insert_user($username, $pass, $name_u, $email,$img,$background)
+{
+    $sql = "INSERT INTO user(`Username`, `Pass`,  `Name_U`, `Email`,`Avata_img`,`Banner_img`) VALUES (?,?,?,?,?,?)";
+    return pdo_execute($sql,$username, $pass, $name_u, $email,$img,$background);
+}
+

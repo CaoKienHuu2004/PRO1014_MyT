@@ -236,7 +236,7 @@ foreach ($product_select_all as $item) {
         <div class="default-exp-wrapper default-exp-expand">
             <div class="inner">
 
-                <form action="" method="POST" class="d-flex align-items-center gap-4 mx-4">
+                <form action="" method="get" class="d-flex align-items-center gap-4 mx-4">
                     <!-- <div class="filter-select-option">
                         <label class="filter-leble">Mức Giá</label>
                         <select style="display: none;" name="Price" id="Price">

@@ -29,13 +29,13 @@ include_once "view/header.php";
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
         case 'product':
-           
-             // Initialize $filter as an empty array
-            if (isset($_POST['category']) && isset($_POST['Price']) && isset($_POST['orderBy'])) {
-                $category = $_POST['category'];
-                // $Price = $_POST['Price'];
-                // $orderBy = $_POST['orderBy'];
-                echo $_POST['category'];
+
+            // Initialize $filter as an empty array
+            if (isset($_GET['category']) && isset($_GET['Price']) && isset($_GET['orderBy'])) {
+                $category = $_GET['category'];
+                // $Price = $_GET['Price'];
+                // $orderBy = $_GET['orderBy'];
+                echo $_GET['category'];
                 $filter = filter_products($category, $Price, $orderBy);
             } else {
                 $filter = get_all_products();
@@ -75,6 +75,45 @@ if (isset($_GET['pg'])) {
             include_once "view/create_product.php";
             break;
 
+        case 'signup':
+            if (isset($_POST['submit'])) {
+                $username = $_POST['username'];
+                $pass = $_POST['password'];
+                $repass = $_POST['re-password'];
+                $name_u = $_POST['name_U'];
+                $email = $_POST['email'];
+                $kq = check_username_user($username);
+                $kq2= check_email_user($email);
+                if ($pass != $repass) {
+                    $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP, VUI LÒNG NHẬP LẠI!';
+                } else if (isset($_POST['check']) && $_POST['check'] == '0') {
+                    if ($kq) {
+                        $_SESSION['loi'] = 'TÀI KHOẢN <strong>' . $username . '</strong> ĐÃ TỒN TẠI';
+                    }else if ($kq2){
+                        $_SESSION['loi'] = 'Email <strong>' . $email . '</strong> ĐÃ TỒN TẠI';
+                    }
+                     else {
+                        $img='view/layout/assets/images/newUser/AvatarBase.jpg';
+                        $background='view/layout/assets/images/newUser/BackgroundBase.png';
+                        $insertResult =  Insert_user($username, $pass, $name_u, $email,$img,$background);
+                        if ($insertResult) {
+                            $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI TẠO TÀI KHOẢN';
+
+                        } else {
+                            $_SESSION['thongbao'] = 'ĐÃ TẠO TÀI KHOẢN THÀNH CÔNG!';
+                        }
+                    }
+                } else {
+
+                    $_SESSION['loi'] = "Bạn cần phải đồng ý với các điều khoản và điều kiện để tạo tài khoản.";
+                }
+
+            } else {
+                echo 'chưa nhận được dữ liệu!';
+            }
+
+            include_once "view/signup.php";
+            break;
         case 'login':
             if (isset($_POST['btnlogin']) && ($_POST['btnlogin'])) {
                 // input
@@ -99,18 +138,18 @@ if (isset($_GET['pg'])) {
             }
             break;
 
-            case 'product_detail':
-                if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
-                    $idProduct = $_GET['idProduct'];
-                    $product_select_id = product_select_id($idProduct);
-                    if (isset($_GET['idComment'])){
-                        
-                    }
-                    include_once "view/product_detail.php";
-                }else{
-                    include_once "view/home.php";
+        case 'product_detail':
+            if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
+                $idProduct = $_GET['idProduct'];
+                $product_select_id = product_select_id($idProduct);
+                if (isset($_GET['idComment'])) {
+
                 }
-                break;
+                include_once "view/product_detail.php";
+            } else {
+                include_once "view/home.php";
+            }
+            break;
 
         case "search":
             if (isset($_POST['btnSearch'])) {

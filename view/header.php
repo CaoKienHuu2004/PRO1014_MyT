@@ -166,7 +166,7 @@
                         </div>
                         <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                             <div class="icon-box">
-                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="sign-up.html">Đăng ký</a>
+                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="index.php?pg=signup">Đăng ký</a>
                             </div>
                         </div>';
                         }
