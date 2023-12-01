@@ -25,7 +25,7 @@
                     <div class="author-wrapper">
                         <div class="author-inner">
                             <div class="user-thumbnail">
-                                <img width="250" src="view/layout/assets/images/<?= $_SESSION['user']['Avata_img'] ?>" alt="">
+                                <img width="250" src="view/layout/assets/images/<?= $Avata_img ?>" alt="">
                             </div>
                             <div class="rn-author-info-content">
                                 <h4 class="title"><?= $Name_U?></h4>

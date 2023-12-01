@@ -210,7 +210,7 @@ foreach ($all_cmt as $value) {
                                         <a href="index.php?pg=user&idUser=<?=$idUser?>"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
-                                        <a href="#">
+                                        <a href="index.php?pg=user&idUser=<?=$idUser?>">
                                             <h6 class="name"><?php echo $Name_U ?></h6>
                                         </a>
                                     </div>
