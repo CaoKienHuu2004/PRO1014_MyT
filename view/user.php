@@ -1,8 +1,8 @@
 <?php
-if (isset($_SESSION['user'])) {
-    $count_product = "";
-    $count_product .= count(product_select_idUser($_SESSION['user']['idUser']));
-}
+// if (isset($_SESSION['user'])) {
+    // $count_product = "";
+    // $count_product .= count(product_select_idUser());
+// }
 ?>
 
 <div class="rn-author-bg-area bg_image--9 bg_image ptb--150">

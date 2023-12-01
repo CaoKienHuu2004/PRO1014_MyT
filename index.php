@@ -189,11 +189,18 @@ if (isset($_GET['pg'])) {
             include_once "view/search.php";
             break;
         case "user":
-            if (isset($_SESSION['user'])) {
+            // if (isset($_SESSION['user'])) {
+            //     include_once "view/user.php";
+            // } else {
+            //     header('Location: index.php');
+            // }
+            if (isset($_GET['idUser']) && ($_GET['idUser'] >= 0)){
+                $user_select_by_id = user_select_by_id($_GET['idUser']);
                 include_once "view/user.php";
-            } else {
-                header('Location: index.php');
+            }else{
+                include_once "view/home.php";
             }
+            
             break;
         case "shopping_cart":
             //Lấy dữ liệu từ form
