@@ -85,13 +85,13 @@ if (isset($_GET['pg'])) {
                 $iduser = $_SESSION["user"]["idUser"];
                 $kq1 = check_pass_user($Pass);
                 $kq2 = check_email_user($email);
+                $update = Update_password($newpass,$iduser);
                 if ($kq2) {
                     if ($kq1) {
-                        if ($newpass = !$repass) {
+                        if ($newpass != $repass) {
                             $_SESSION['loi'] ='MẬT KHẨU KHÔNG TRÙNG KHỚP';
                         }else{
-                            $update = Update_password($newpass,$iduser);
-                            if ($update) {
+                            if (isset($update)) {
                                 $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
                             } else {
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
