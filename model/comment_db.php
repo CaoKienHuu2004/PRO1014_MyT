@@ -24,7 +24,7 @@ function comment_delete($idComment){
 }
 
 function comment_select_all(){
-    $sql = "SELECT * FROM comment bl ORDER BY Date DESC";
+    $sql = "SELECT * FROM comment ORDER BY Date DESC";
     return pdo_query($sql);
 }
 
@@ -49,4 +49,8 @@ function check_cmt($iduser, $idProduct){
 function comment_select_by_product($idProduct){
     $sql = "SELECT * FROM comment WHERE idProducts=? AND `Hidden` = 0 ORDER BY `Date` DESC";
     return pdo_query($sql, $idProduct);
+}
+function check_cmt($idComment){
+    $sql = "SELECT * FROM comment WHERE idComment=?";
+    return pdo_query_one($sql, $idComment);
 }

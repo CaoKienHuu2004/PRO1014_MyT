@@ -94,6 +94,6 @@ function Insert_user($username, $pass, $name_u, $email,$img,$background)
 
 function Update_password($newpass,$iduser)
 {
-    $sql= "UPDATE user SET Pass=? WHERE idUser = ?";
+    $sql= "UPDATE user SET Pass=? WHERE idUser=?";
     return pdo_execute($sql,$newpass,$iduser);
 }

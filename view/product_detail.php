@@ -3,6 +3,7 @@ extract($product_select_id);
 product_view_count($idProduct);
 $category_select_by_id = category_select_by_id($idCategories);
 $user_select_by_id = user_select_by_id($idUser);
+$comment_select_all = comment_select_all();
 extract($category_select_by_id);
 extract($user_select_by_id);
 
@@ -74,7 +75,7 @@ if ($Price_2 == 0) {
             </div>';
 }
 $html_cmt = '';
-foreach ($all_cmt as $value) {
+foreach ($comment_select_all as $value) {
     extract($value);
     $user = user_select_by_id($idUser);
     $html_cmt .= '<div class="forum-single-ans">
