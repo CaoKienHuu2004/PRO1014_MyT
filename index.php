@@ -8,6 +8,7 @@ include_once "model/connect_db.php";
 include_once "model/product_db.php";
 include_once "model/category_db.php";
 include_once "model/user_db.php";
+// include_once "model/comment_db.php";
 // DATA---------------------------------------------------------------------------------------------------------------------
 $product_select_all = product_select_all();
 $product_select_sale = product_select_sale(10);
@@ -84,13 +85,16 @@ if (isset($_GET['pg'])) {
                 $iduser = $_SESSION["user"]["idUser"];
                 $kq1 = check_pass_user($Pass);
                 $kq2 = check_email_user($email);
+                $update = Update_password($newpass,$iduser);
                 if ($kq2) {
                     if ($kq1) {
-                        if ($newpass !== $repass) {
-                            $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP';
-                        } else {
-                            Update_password($newpass, $iduser);
-                            if (Update_password($newpass, $iduser)) {
+                        if ($newpass = !$repass) {
+                            $_SESSION['loi'] ='MẬT KHẨU KHÔNG TRÙNG KHỚP';
+                        }else{
+                            $update = Update_password($newpass,$iduser);
+                            if ($update) {
+                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
+                            } else {
                                 $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
 
                             } else {
@@ -189,11 +193,18 @@ if (isset($_GET['pg'])) {
             include_once "view/search.php";
             break;
         case "user":
-            if (isset($_SESSION['user'])) {
+            // if (isset($_SESSION['user'])) {
+            //     include_once "view/user.php";
+            // } else {
+            //     header('Location: index.php');
+            // }
+            if (isset($_GET['idUser']) && ($_GET['idUser'] >= 0)){
+                $user_select_by_id = user_select_by_id($_GET['idUser']);
                 include_once "view/user.php";
-            } else {
-                header('Location: index.php');
+            }else{
+                include_once "view/home.php";
             }
+            
             break;
         case "shopping_cart":
             //Lấy dữ liệu từ form

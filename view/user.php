@@ -1,11 +1,17 @@
 <?php
-if (isset($_SESSION['user'])) {
-    $count_product = "";
-    $count_product .= count(product_select_idUser($_SESSION['user']['idUser']));
-}
+    
+        extract($user_select_by_id);
+        $count_product = "";
+        $count_order = "";
+        $count_product .= count(product_select_idUser($idUser));
+        $count_order .= count(order_product_buyer($idUser));
+    
+// if (isset($_SESSION['user'])) {
+    
+// }
 ?>
 
-<div class="rn-author-bg-area <?= $_SESSION['user']['Banner_img'] ?> bg_image ptb--150">
+<div class="rn-author-bg-area bg_image--9 bg_image ptb--150">
         <div class="container">
             <div class="row">
             </div>
@@ -22,10 +28,10 @@ if (isset($_SESSION['user'])) {
                                 <img width="250" src="view/layout/assets/images/<?= $_SESSION['user']['Avata_img'] ?>" alt="">
                             </div>
                             <div class="rn-author-info-content">
-                                <h4 class="title"><?= $_SESSION['user']['Name_U'] ?></h4>
+                                <h4 class="title"><?= $Name_U?></h4>
                                 <a href="#" class="social-follw">
                                     <i data-feather="twitter"></i>
-                                    <span class="user-name"><?= $_SESSION['user']['Username'] ?></span>
+                                    <span class="user-name"><?= $Username ?></span>
                                 </a>
                                 <div class="follow-area">
                                     <div class="follow followers">
@@ -33,34 +39,21 @@ if (isset($_SESSION['user'])) {
                                     </div>
                                     
                                     <div class="follow following">
-                                        <span><?= $_SESSION['user']['Total_Pcoin'] ?><a href="#" class="color-body">PCoin</a></span>
+                                        <span><?= $Total_Pcoin ?><a href="#" class="color-body">PCoin</a></span>
                                     </div>
                                 </div>
-                                <div class="author-button-area">
-                                    <span class="btn at-follw follow-button"><i data-feather="user-plus"></i> Follow</span>
-                                    <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i></span>
-                                    <div class="count at-follw">
-                                        <div class="share-btn share-btn-activation dropdown">
-                                            <button class="icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                                                </svg>
-                                            </button>
-
-                                            <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                                    Report
-                                                </button>
-                                                <button type="button" class="btn-setting-text report-text">
-                                                    Claim Owenership
-                                                </button>
-                                            </div>
+                                <?php 
+                                    if (isset($_SESSION['user'])) {
+                                        echo '
+                                        <div class="author-button-area">
+                                            <a href="index.php?pg=create_product">"<span class="btn at-follw follow-button"><i data-feather="upload-cloud"></i> Tải tài nguyên</span></a>
+                                            <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i></span>
+                                            <a href="index.php?pg=edit_user" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
                                         </div>
-                                    </div>
-                                    <a href="edit-profile.html" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
-
-
-                                </div>
+                                        ';
+                                    }
+                                ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -2027,7 +2020,7 @@ if (isset($_SESSION['user'])) {
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content share-wrapper">
                 <div class="modal-header share-area">
-                    <h5 class="modal-title">Share this NFT</h5>
+                    <h5 class="modal-title">Chia sẽ với bạn bè</h5>
                 </div>
                 <div class="modal-body">
                     <ul class="social-share-default">
@@ -2041,26 +2034,4 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="rn-popup-modal report-modal-wrapper modal fade" id="reportModal" tabindex="-1" aria-hidden="true">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i data-feather="x"></i></button>
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content report-content-wrapper">
-                <div class="modal-header report-modal-header">
-                    <h5 class="modal-title">Why are you reporting?
-                    </h5>
-                </div>
-                <div class="modal-body">
-                    <p>Describe why you think this item should be removed from marketplace</p>
-                    <div class="report-form-box">
-                        <h6 class="title">Message</h6>
-                        <textarea name="message" placeholder="Write issues"></textarea>
-                        <div class="report-button">
-                            <button type="button" class="btn btn-primary mr--10 w-auto">Report</button>
-                            <button type="button" class="btn btn-primary-alta w-auto" data-bs-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    

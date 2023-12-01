@@ -24,7 +24,7 @@ function comment_delete($idComment){
 }
 
 function comment_select_all(){
-    $sql = "SELECT * FROM comment bl ORDER BY Date DESC";
+    $sql = "SELECT * FROM comment ORDER BY Date DESC";
     return pdo_query($sql);
 }
 
@@ -38,7 +38,19 @@ function comment_exist($idComment){
     return pdo_query_value($sql, $idComment) > 0;
 }
 //-------------------------------//
+// function comment_select_by_product($idProduct){
+//     $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
+//     return pdo_query($sql, $idProduct);
+// }
+function check_cmt($iduser, $idProduct){   
+    $sql = "SELECT count(*) FROM `cart` c JOIN `order` o ON c.idOrder = o.idOrder WHERE c.idProducts = ? AND o.idUser = ?";
+    return pdo_query_value($sql, $idProduct, $iduser);
+}
 function comment_select_by_product($idProduct){
-    $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
+    $sql = "SELECT * FROM comment WHERE idProducts=? AND `Hidden` = 0 ORDER BY `Date` DESC";
     return pdo_query($sql, $idProduct);
+}
+function check_comment($idComment){
+    $sql = "SELECT * FROM comment WHERE idComment=?";
+    return pdo_query_one($sql, $idComment);
 }
