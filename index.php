@@ -33,10 +33,10 @@ if (isset($_GET['pg'])) {
             $Price = 0;
             $orderBy = 1;
             if (isset($_POST['submit'])) {
-                $Price =    $_POST['Price'];
-                $orderBy =  $_POST['orderBy'];
+                $Price    = $_POST['Price'];
+                $orderBy  = $_POST['orderBy'];
                 $category = $_POST['category'];
-                $filter=filter_products($category, $Price, $orderBy);
+                $filter   = filter_products($category, $Price, $orderBy);
             } else {
                 $filter = get_all_products(); // lấy tất cả sản phẩm
             }
