@@ -169,7 +169,6 @@ if (isset($_GET['pg'])) {
             }
             break;
 
-<<<<<<< HEAD
             case 'product_detail':
                 if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
                     $idProduct = $_GET['idProduct'];
@@ -187,26 +186,6 @@ if (isset($_GET['pg'])) {
                     include_once "view/home.php";
                 }
                 break;
-=======
-        case 'product_detail':
-            if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
-                $idProduct = $_GET['idProduct'];
-                $idUser = $_SESSION['user']['idUser'];
-                if(isset($_POST['btnCmt'])){
-                    $content = $_POST['content'];
-                    comment_insert($idUser, $idProduct, $content);
-                    header("Location: index.php?pg=product_detail&idProduct=".$idProduct);
-                }
-                    
-                $product_select_id = product_select_id($idProduct);
-                $all_cmt = comment_select_by_product($idProduct);
-                $count_comment = count($all_cmt);
-                include_once "view/product_detail.php";
-            }else{
-                include_once "view/home.php";
-            }
-            break;
->>>>>>> 9fd19de50c3b6417cce99924166389676b8722ed
 
         case "search":
             if (isset($_POST['btnSearch'])) {
