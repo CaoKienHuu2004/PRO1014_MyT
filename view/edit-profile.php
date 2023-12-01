@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,133 +29,28 @@
 
 <body class="template-color-1 nft-body-connect">
 
-<!-- start header area -->
-    <!-- Start Header -->
-    <header class="rn-header haeder-default header--sticky">
-        <div class="container">
-            <div class="header-inner">
-                <div class="header-left">
-                    <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
-                    </div>
-                    <div class="mainmenu-wrapper">
-                        <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
-                            <!-- Start Mainmanu Nav -->
-                            <ul class="mainmenu">
-                                <li class="has-menu-child-item">
-                                    <a href="index.html">Trang chủ</a>
-                                    
-                                </li>
-                                <li><a href="about.html">Về chúng tôi</a>
-                                </li>
-                                <li class="has-menu-child-item">
-                                    <a href="product.html">Tài nguyên</a>
-                                    
-                                </li>
-                                <li><a href="contact.html">Hỗ trợ</a></li>
-                            </ul>
-                            <!-- End Mainmanu Nav -->
-                        </nav>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="setting-option d-none d-lg-block">
-                        <form class="search-form-wrapper" action="#">
-                            <input type="search" placeholder="Tìm kiếm ở đây ..." aria-label="Search">
-                            <div class="search-icon">
-                                <button><i class="feather-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="setting-option rn-icon-list d-block d-lg-none">
-                        <div class="icon-box search-mobile-icon">
-                            <button><i class="feather-search"></i></button>
-                        </div>
-                        <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
-                            <div class="rn-search-mobile form-group">
-                                <button type="submit" class="search-button"><i class="feather-search"></i></button>
-                                <input type="text" placeholder="Tìm ...">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="setting-option rn-icon-list notification-badge">
-                        <div class="icon-box">
-                            <a href="activity.html"><i class="feather-bell"></i><span class="badge">10</span></a>
-                        </div>
-                    </div>
-                    <!-- <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
-                        <div class="icon-box">
-                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="login.html">Đăng nhập</a>
-                        </div>
-                    </div>
-                    <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
-                        <div class="icon-box">
-                            <a id="connectbtn" class="btn btn-primary-alta btn-small" href="sign-up.html">Đăng ký</a>
-                        </div>
-                    </div> -->
-                    <div class="header_admin" id="header_admin">
-                        <div class="setting-option rn-icon-list user-account">
-                            <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
-                                <div class="rn-dropdown">
-                                    <div style="display: flex; gap: 10px;">
-                                        <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
-                                        <div class="rn-inner-top">
-                                            <h4 class="title"><a href="author.html">Cao Kiến Hựu</a></h4>
-                                            <span><a>Quản trị viên</a></span>
-                                        </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    <ul class="list-inner">
-                                        <li><a href="author.html">Thông tin của tôi</a></li>
-                                        <li><a href="edit-profile.html">Chỉnh sửa hồ sơ</a></li>
-                                        
-                                        <li><a href="login.html">Đăng xuất</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- start header area -->
 
-
-                    <div class="setting-option mobile-menu-bar d-block d-xl-none">
-                        <div class="hamberger">
-                            <button class="hamberger-button">
-                                <i class="feather-menu"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="my_switcher" class="my_switcher setting-option">
-                        <ul>
-                            <li>
-                                <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-
-                </div>
-            </div>
+    <?php if (isset($_SESSION['thongbao'])): ?>
+        <div class="alert alert-success" role="alert">
+            CD0104
+            <?= $_SESSION['thongbao'] ?>
         </div>
-    </header>
-    <!-- End Header Area -->
-
+    <?php endif;
+    unset($_SESSION['thongbao']); ?>
+    <?php if (isset($_SESSION['loi'])): ?>
+        <div class="alert alert-danger" role="alert">
+            <?= $_SESSION['loi'] ?>
+        </div>
+    <?php endif;
+    unset($_SESSION['loi']); ?>
     <div class="popup-mobile-menu">
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
                     <a class="logo-light" href="index.html"><img src="assets/images/logo/MyT-01.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo_MyT-01.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo_MyT-01.png"
+                            alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -169,13 +63,13 @@
                 <ul class="mainmenu">
                     <li class="has-menu-child-item">
                         <a href="index.html">Trang chủ</a>
-                        
+
                     </li>
                     <li><a href="about.html">Về chúng tôi</a>
                     </li>
                     <li class="has-menu-child-item">
                         <a href="product.html">Tài nguyên</a>
-                        
+
                     </li>
                     <li><a href="contact.html">Hỗ trợ</a></li>
                 </ul>
@@ -184,7 +78,7 @@
         </div>
     </div>
     <!-- ENd Header Area -->
-<!-- end header -->
+    <!-- end header -->
 
     <!-- start page title area -->
     <div class="rn-breadcrumb-inner ptb--30">
@@ -220,10 +114,18 @@
                     <!-- Start tabs area -->
                     <nav class="left-nav rbt-sticky-top-adjust-five">
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="feather-edit"></i>Edit Profile Image</button>
-                            <button class="nav-link" id="nav-home-tabs" data-bs-toggle="tab" data-bs-target="#nav-homes" type="button" role="tab" aria-controls="nav-homes" aria-selected="false"><i class="feather-user"></i>Personal Information</button>
-                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> <i class="feather-unlock"></i>Change Password</button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="feather-bell"></i>Notification Setting</button>
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true"><i class="feather-edit"></i>Edit Profile Image</button>
+                            <button class="nav-link" id="nav-home-tabs" data-bs-toggle="tab" data-bs-target="#nav-homes"
+                                type="button" role="tab" aria-controls="nav-homes" aria-selected="false"><i
+                                    class="feather-user"></i>Personal Information</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false"> <i class="feather-unlock"></i>Change Password</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false"><i class="feather-bell"></i>Notification Setting</button>
                         </div>
                     </nav>
                     <!-- End tabs area -->
@@ -232,7 +134,8 @@
                     <div class="tab-content tab-content-edit-wrapepr" id="nav-tabContent">
 
                         <!-- sigle tab content -->
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
                             <!-- start personal information -->
                             <div class="nuron-information">
 
@@ -240,7 +143,9 @@
                                     <div class="profile-left col-lg-4">
                                         <div class="profile-image mb--30">
                                             <h6 class="title">Change Your Profile Picture</h6>
-                                            <img id="rbtinput1" src="assets/images/profile/profile-01.jpg" alt="Profile-NFT">
+                                            <img id="rbtinput1"
+                                                src="view/layout/assets/images/<?= $_SESSION["user"]['Avata_img'] ?>"
+                                                alt="Profile-NFT">
                                         </div>
                                         <div class="button-area">
                                             <div class="brows-file-wrapper">
@@ -254,22 +159,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="profile-left right col-lg-8">
-                                        <div class="profile-image mb--30">
-                                            <h6 class="title">Change Your Cover Photo</h6>
-                                            <img id="rbtinput2" src="assets/images/profile/cover-04.png" alt="Profile-NFT">
-                                        </div>
-                                        <div class="button-area">
-                                            <div class="brows-file-wrapper">
-                                                <!-- actual upload which is hidden -->
-                                                <input name="nipa" id="nipa" type="file">
-                                                <!-- our custom upload button -->
-                                                <label for="nipa" title="No File Choosen">
-                                                    <span class="text-center color-white">Upload Cover</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <!-- End personal information -->
@@ -288,7 +178,8 @@
                                         </div>
                                         <div class="last-name half-wid">
                                             <label for="contact-name-last" class="form-label">Last Name</label>
-                                            <input name="contact-name" id="contact-name-last" type="text" value="Sunayra">
+                                            <input name="contact-name" id="contact-name-last" type="text"
+                                                value="Sunayra">
                                         </div>
                                     </div>
                                     <div class="email-area">
@@ -356,8 +247,10 @@
                                     </div>
                                 </div>
                                 <div class="button-area save-btn-edit">
-                                    <a href="#" class="btn btn-primary-alta mr--15" onclick="customAlert.alert('Cancel Edit Profile?')">Cancel</a>
-                                    <a href="#" class="btn btn-primary" onclick="customAlert.alert('Successfully Saved Your Profile?')">Save</a>
+                                    <a href="#" class="btn btn-primary-alta mr--15"
+                                        onclick="customAlert.alert('Cancel Edit Profile?')">Cancel</a>
+                                    <a href="#" class="btn btn-primary"
+                                        onclick="customAlert.alert('Successfully Saved Your Profile?')">Save</a>
                                 </div>
 
                             </div>
@@ -367,13 +260,11 @@
 
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <!-- change password area Start -->
-                            <div class="nuron-information">
+                            <form class="nuron-information" action="" method="post">
                                 <div class="condition">
-                                    <h5 class="title">Create Your Password</h5>
+                                    <h5 class="title">Change Your Password</h5>
                                     <p class="condition">
-                                        Passwords are a critical part of information and network security. Passwords
-                                        serve to protect user accounts but a poorly chosen password, if compromised,
-                                        could put the entire network at risk.
+                                        Choose a password that is easy to remember but difficult for others to guess.
                                     </p>
                                     <hr />
                                     <div class="email-area">
@@ -384,19 +275,19 @@
                                 <div class="input-two-wrapper mt--15">
                                     <div class="old-password half-wid">
                                         <label for="oldPass" class="form-label">Enter Old Password</label>
-                                        <input name="pass" id="oldPass" type="password">
+                                        <input name="password" id="oldPass" type="password">
                                     </div>
                                     <div class="new-password half-wid">
                                         <label for="NewPass" class="form-label">Create New Password</label>
-                                        <input name="password" id="NewPass" type="password">
+                                        <input name="new-password" id="NewPass" type="password">
                                     </div>
                                 </div>
                                 <div class="email-area mt--15">
                                     <label for="rePass" class="form-label">Confirm Password</label>
-                                    <input name="Password" id="rePass" type="password" value="">
+                                    <input name="re-password" id="rePass" type="password" value="">
                                 </div>
-                                <a href="#" class="btn btn-primary save-btn-edit" onclick="customAlert.alert('Successfully Changed Password?')">Save</a>
-                            </div>
+                                <button type="submit" name="submit" class="btn btn-primary save-btn-edit">Save</button>
+                            </form>
                             <!-- change password area ENd -->
                         </div>
 
@@ -418,7 +309,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting">
                                             <div class="input">
-                                                <input type="checkbox" id="themeSwitch" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="themeSwitch" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="themeSwitch" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -432,7 +324,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting mt--15">
                                             <div class="input">
-                                                <input type="checkbox" id="themeSwitchs" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="themeSwitchs" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="themeSwitchs" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -446,7 +339,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting mt--15">
                                             <div class="input">
-                                                <input type="checkbox" id="OrderNotice" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="OrderNotice" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="OrderNotice" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -460,7 +354,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting mt--15">
                                             <div class="input">
-                                                <input type="checkbox" id="newPAy" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="newPAy" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="newPAy" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -474,7 +369,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting mt--15">
                                             <div class="input">
-                                                <input type="checkbox" id="EndBid" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="EndBid" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="EndBid" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -488,7 +384,8 @@
                                         <!-- single notice wrapper -->
                                         <div class="single-notice-setting mt--15">
                                             <div class="input">
-                                                <input type="checkbox" id="Approve" name="theme-switch" class="theme-switch__input" />
+                                                <input type="checkbox" id="Approve" name="theme-switch"
+                                                    class="theme-switch__input" />
                                                 <label for="Approve" class="theme-switch__label">
                                                     <span></span>
                                                 </label>
@@ -506,7 +403,8 @@
                                     </div>
                                 </div>
                                 <!-- end notice wrapper parrent -->
-                                <a href="#" class="btn btn-primary save-btn-edit" onclick="customAlert.alert('Successfully saved Your Notificationm setting')">Save</a>
+                                <a href="#" class="btn btn-primary save-btn-edit"
+                                    onclick="customAlert.alert('Successfully saved Your Notificationm setting')">Save</a>
                             </div>
                             <!-- End Notification Setting  -->
 
@@ -529,8 +427,10 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png"
+                                        alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png"
+                                        alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -539,9 +439,11 @@
                         <div class="widget-bottom mt--40 pt--40">
                             <h6 class="title">Get The Latest Nuron Updates </h6>
                             <div class="input-group">
-                                <input type="text" class="form-control bg-color--2" placeholder="Your username" aria-label="Recipient's username">
+                                <input type="text" class="form-control bg-color--2" placeholder="Your username"
+                                    aria-label="Recipient's username">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary-alta btn-outline-secondary" type="button">Subscribe</button>
+                                    <button class="btn btn-primary-alta btn-outline-secondary"
+                                        type="button">Subscribe</button>
                                 </div>
                             </div>
                             <div class="newsletter-dsc">

@@ -70,6 +70,11 @@ function check_email_user($email)
     $sql = "SELECT Email FROM user WHERE Email=?";
     return pdo_query_one($sql, $email);
 }
+function check_pass_user($Pass)
+{
+    $sql = "SELECT Pass FROM user WHERE Pass=?";
+    return pdo_query_one($sql, $Pass);
+}
 
 // function khach_hang_select_by_role($vai_tro){
 //     $sql = "SELECT * FROM khach_hang WHERE vai_tro=?";
@@ -87,3 +92,8 @@ function Insert_user($username, $pass, $name_u, $email,$img,$background)
     return pdo_execute($sql,$username, $pass, $name_u, $email,$img,$background);
 }
 
+function Update_password($newpass,$iduser)
+{
+    $sql= "UPDATE user SET Pass=? WHERE idUser = ?";
+    return pdo_execute($sql,$newpass,$iduser);
+}

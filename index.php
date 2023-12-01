@@ -76,6 +76,33 @@ if (isset($_GET['pg'])) {
             break;
 
         case "edit_user":
+            if (isset($_POST['submit'])) {
+                $email = $_POST['email'];
+                $Pass = $_POST['password'];
+                $newpass = $_POST['new-password'];
+                $repass = $_POST['re-password'];
+                $iduser = $_SESSION["user"]["idUser"];
+                $kq1 = check_pass_user($Pass);
+                $kq2 = check_email_user($email);
+                if ($kq2) {
+                    if ($kq1) {
+                        if ($newpass = !$repass) {
+                            $_SESSION['loi'] ='MẬT KHẨU KHÔNG TRÙNG KHỚP';
+                        }else{
+                            $update = Update_password($newpass,$iduser);
+                            if ($update) {
+                                $_SESSION['thongbao'] = 'ĐÃ ĐỔI THÀNH CÔNG!';
+                            } else {
+                                $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI ĐỔI MẬT KHẨU';
+                            }
+                        }
+                    } else {
+                        $_SESSION['loi'] ='MẬT KHẨU CŨ KHÔNG ĐÚNG';
+                    }
+                } else {
+                    $_SESSION['loi'] ='EMAIL KHÔNG TRÙNG KHỚP';
+                }
+            }
             include_once "view/edit-profile.php";
             break;
         case 'signup':
@@ -86,19 +113,18 @@ if (isset($_GET['pg'])) {
                 $name_u = $_POST['name_U'];
                 $email = $_POST['email'];
                 $kq = check_username_user($username);
-                $kq2= check_email_user($email);
+                $kq2 = check_email_user($email);
                 if ($pass != $repass) {
                     $_SESSION['loi'] = 'MẬT KHẨU KHÔNG TRÙNG KHỚP, VUI LÒNG NHẬP LẠI!';
                 } else if (isset($_POST['check']) && $_POST['check'] == '0') {
                     if ($kq) {
                         $_SESSION['loi'] = 'TÀI KHOẢN <strong>' . $username . '</strong> ĐÃ TỒN TẠI';
-                    }else if ($kq2){
+                    } else if ($kq2) {
                         $_SESSION['loi'] = 'Email <strong>' . $email . '</strong> ĐÃ TỒN TẠI';
-                    }
-                     else {
-                        $img='view/layout/assets/images/newUser/AvatarBase.jpg';
-                        $background='view/layout/assets/images/newUser/BackgroundBase.png';
-                        $insertResult =  Insert_user($username, $pass, $name_u, $email,$img,$background);
+                    } else {
+                        $img = 'view/layout/assets/images/newUser/AvatarBase.jpg';
+                        $background = 'view/layout/assets/images/newUser/BackgroundBase.png';
+                        $insertResult = Insert_user($username, $pass, $name_u, $email, $img, $background);
                         if ($insertResult) {
                             $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI TẠO TÀI KHOẢN';
 
