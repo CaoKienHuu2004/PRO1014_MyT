@@ -42,11 +42,11 @@ function comment_exist($idComment){
 //     $sql = "SELECT bl.*, h.Name FROM comment bl JOIN product h ON h.idProduct=b.idProduct WHERE b.idProduct=? ORDER BY Date DESC";
 //     return pdo_query($sql, $idProduct);
 // }
-function check_cmt($iduser, $idPro){   
+function check_cmt($iduser, $idProduct){   
     $sql = "SELECT count(*) FROM `cart` c JOIN `order` o ON c.idOrder = o.idOrder WHERE c.idProducts = ? AND o.idUser = ?";
-    return pdo_query_value($sql, $idPro, $iduser);
+    return pdo_query_value($sql, $idProduct, $iduser);
 }
-function comment_select_by_product($idPro){
+function comment_select_by_product($idProduct){
     $sql = "SELECT * FROM comment WHERE idProducts=? AND `hidden` = 0 ORDER BY `Date` DESC";
-    return pdo_query($sql, $idPro);
+    return pdo_query($sql, $idProduct);
 }
