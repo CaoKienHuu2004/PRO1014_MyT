@@ -123,7 +123,6 @@
                     </div> -->
 
 
-
                     <?php 
                         if (isset($_SESSION["user"])) {
                             // extract($_SESSION["user"]);
@@ -134,10 +133,10 @@
                             echo '<div class="header_admin" id="header_admin">
                             <div class="setting-option rn-icon-list user-account">
                                 <div class="icon-box">
-                                    <a href="login.php"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
+                                    <a href="'.$link_user_detail.'"><img src="view/layout/assets/images/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                     <div class="rn-dropdown">
                                         <div style="display: flex; gap: 10px;">
-                                            <a href="index.php?pg=user&idUser=0"><img src="view/layout/assets/images/icons/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
+                                            <a href="index.php?pg=user&idUser=0"><img width="46px" src="view/layout/assets/images/'.$_SESSION["user"]['Avata_img'].'" alt="Images"></a>
                                             <div class="rn-inner-top">
                                                 <h4 class="title"><a href="'.$link_user_detail.'">'.$_SESSION["user"]['Name_U'].'</a></h4>
                                                 <span><a>'.$_SESSION['user']['Total_Pcoin'].' PCoin</a></span>
@@ -166,7 +165,7 @@
                         </div>
                         <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                             <div class="icon-box">
-                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="sign-up.html">Đăng ký</a>
+                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="index.php?pg=signup">Đăng ký</a>
                             </div>
                         </div>';
                         }

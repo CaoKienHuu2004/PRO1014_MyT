@@ -47,6 +47,6 @@ function check_cmt($iduser, $idProduct){
     return pdo_query_value($sql, $idProduct, $iduser);
 }
 function comment_select_by_product($idProduct){
-    $sql = "SELECT * FROM comment WHERE idProducts=? AND `hidden` = 0 ORDER BY `Date` DESC";
+    $sql = "SELECT * FROM comment WHERE idProducts=? AND `Hidden` = 0 ORDER BY `Date` DESC";
     return pdo_query($sql, $idProduct);
 }

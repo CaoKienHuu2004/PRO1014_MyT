@@ -170,6 +170,8 @@ foreach ($product_select_all as $item) {
         <!-- end single product -->
         ';
 }
+
+
 ?>
 
 <!-- start page title area -->
@@ -233,57 +235,108 @@ foreach ($product_select_all as $item) {
 
         <div class="default-exp-wrapper default-exp-expand">
             <div class="inner">
-                <div class="filter-select-option">
-                    <label class="filter-leble">Giống</label>
-                    <select style="display: none;">
-                        <option data-display="Chưa chọn"></option>
-              
-                    </select>
-                </div>
 
-                <div class="filter-select-option">
-                    <label class="filter-leble">Chuyên mục</label>
-                    <select style="display: none;">
-                        <option data-display="Chưa chọn"></option>
-                        <?php
-                        foreach ($categories as $key) {
-                            echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="filter-select-option">
-                    <label class="filter-leble">Price Range</label>
-                    <div class="price_filter s-filter clear">
-                        <form action="#" method="GET">
-                            <div id="slider-range"
-                                class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                <div class="ui-slider-range ui-widget-header ui-corner-all"
-                                    style="left: 18.3673%; width: 40.8163%;"></div><span
-                                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
-                                    style="left: 18.3673%;"></span><span
-                                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
-                                    style="left: 59.1837%;"></span>
-                            </div>
-                            <div class="slider__range--output">
-                                <div class="price__output--wrap">
-                                    <div class="price--output">
-                                        <span>Price :</span><input type="text" id="amount" readonly="">
-                                    </div>
-                                    <div class="price--filter">
-                                        <a class="btn btn-primary btn-small" href="#">Filter</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <form action="" method="get" class="d-flex align-items-center gap-4 mx-4">
+                    <!-- <div class="filter-select-option">
+                        <label class="filter-leble">Mức Giá</label>
+                        <select style="display: none;" name="Price" id="Price">
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <option value="1">Dưới 50coin</option>
+                            <option value="2">51 coin đến 499 coin</option>
+                            <option value="3">Trên 500 coin</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="filter-select-option">
+                        <label class="filter-leble">Sắp Xếp</label>
+                        <select style="display: none;" name="orderBy" id="orderBy">
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <option value="3">Nổi Bật</option>
+                            <option value="1">Mới Nhất</option>
+                            <option value="2">Cũ Nhất</option>
+                        </select>
+                    </div> -->
+                    <div class="filter-select-option">
+                        <label class="filter-leble">Chuyên mục</label>
+                        <select style="display: none;">
+
+                            <option data-display="Chưa chọn"></option>
+                            <option value="0">- - -</option>
+                            <?php
+                            foreach ($categories as $key) {
+                                echo '<option value="' . $key['idCategories'] . '">' . $key['Name_C'] . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
+                    <div class="price--filter">
+                            <button type="submit" class="btn btn-primary btn-small">Filter</button>
+                    </div>
+
+                </form>
+
             </div>
         </div>
 
         <div class="row g-5">
-            <?= $html_product_all ?>
+
+            <?php foreach ($filter as $key) {
+                echo   $html_product_all .= '
+                <!-- start single product -->
+                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-style-one overlay">
+                        <div class="card-thumbnail">
+                            <a href="' . $link_productdetails . '"><img style="width: 100%;" src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                            <div class="countdown" data-date="' . $Date_Sale . '">
+                                <div class="countdown-container days">
+                                    <span class="countdown-value">87</span>
+                                    <span class="countdown-heading">Ds</span>
+                                </div>
+                                <div class="countdown-container hours">
+                                    <span class="countdown-value">23</span>
+                                    <span class="countdown-heading">Hs</span>
+                                </div>
+                                <div class="countdown-container minutes">
+                                    <span class="countdown-value">38</span>
+                                    <span class="countdown-heading">Mins</span>
+                                </div>
+                                <div class="countdown-container seconds">
+                                    <span class="countdown-value">27</span>
+                                    <span class="countdown-heading">Sec</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-share-wrapper">
+                            <a href="' . $link_productdetails . '"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
+                            <div class="share-btn share-btn-activation dropdown">
+                                <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                                    </svg>
+                                </button>
+        
+                                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                                    <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                        Share
+                                    </button>
+                                    <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+                                        Report
+                                    </button>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center">' . $cert . '<span class=""><b style="color: #f27322">Lượt bán:</b> ' . $best_saler . '</div>
+                        <br>
+                        <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">' . $Describe . '</span></div>
+                        ' . $gia . '
+                    </div>
+                </div>
+                <!-- end single product -->
+                ';
+            } ?>
         </div>
     </div>
 </div>

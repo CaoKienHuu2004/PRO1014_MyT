@@ -1,11 +1,11 @@
 <?php
-    if (isset($_SESSION['user'])) {
-        $count_product = "";
-        $count_product .= count(product_select_idUser($_SESSION['user']['idUser']));
-    }
+if (isset($_SESSION['user'])) {
+    $count_product = "";
+    $count_product .= count(product_select_idUser($_SESSION['user']['idUser']));
+}
 ?>
 
-<div class="rn-author-bg-area bg_image--9 bg_image ptb--150">
+<div class="rn-author-bg-area <?= $_SESSION['user']['Banner_img'] ?> bg_image ptb--150">
         <div class="container">
             <div class="row">
             </div>
@@ -19,21 +19,21 @@
                     <div class="author-wrapper">
                         <div class="author-inner">
                             <div class="user-thumbnail">
-                                <img width="250" src="view/layout/assets/images/slider/<?=$_SESSION['user']['Avata_img']?>" alt="">
+                                <img width="250" src="view/layout/assets/images/<?= $_SESSION['user']['Avata_img'] ?>" alt="">
                             </div>
                             <div class="rn-author-info-content">
-                                <h4 class="title"><?=$_SESSION['user']['Name_U']?></h4>
+                                <h4 class="title"><?= $_SESSION['user']['Name_U'] ?></h4>
                                 <a href="#" class="social-follw">
                                     <i data-feather="twitter"></i>
-                                    <span class="user-name"><?=$_SESSION['user']['Username']?></span>
+                                    <span class="user-name"><?= $_SESSION['user']['Username'] ?></span>
                                 </a>
                                 <div class="follow-area">
                                     <div class="follow followers">
-                                        <span><?=$count_product?><a href="#" class="color-body">Sản phẩm</a></span>
+                                        <span><?= $count_product ?><a href="#" class="color-body">Sản phẩm</a></span>
                                     </div>
                                     
                                     <div class="follow following">
-                                        <span><?=$_SESSION['user']['Total_Pcoin']?><a href="#" class="color-body">PCoin</a></span>
+                                        <span><?= $_SESSION['user']['Total_Pcoin'] ?><a href="#" class="color-body">PCoin</a></span>
                                     </div>
                                 </div>
                                 <div class="author-button-area">
