@@ -43,9 +43,9 @@
                         <div class="product-share-wrapper">
                             <!-- all bids -->
                             <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="@'.$user_select_by_id['Username'].'" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                <a href="index.php?pg=user&idUser='.$user_select_by_id['idUser'].'" class="avatar" data-tooltip="@'.$user_select_by_id['Username'].'" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
-                                <a class="more-author-text" href="#" tabindex="0">'.$user_select_by_id['Name_U'].'</a>
+                                <a class="more-author-text" href="index.php?pg=user&idUser='.$user_select_by_id['idUser'].'" tabindex="0">'.$user_select_by_id['Name_U'].'</a>
                                 '.$cert.'
                             </div>
                             <!-- all bids End--> 

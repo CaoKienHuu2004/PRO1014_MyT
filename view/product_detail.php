@@ -207,10 +207,10 @@ foreach ($all_cmt as $value) {
                             <div class="top-seller-inner-one">
                                 <div class="top-seller-wrapper">
                                     <div class="thumbnail">
-                                        <a href="#"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
+                                        <a href="index.php?pg=user&idUser=<?=$idUser?>"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
-                                        <a href="#">
+                                        <a href="index.php?pg=user&idUser=<?=$idUser?>">
                                             <h6 class="name"><?php echo $Name_U ?></h6>
                                         </a>
                                     </div>
@@ -308,7 +308,7 @@ foreach ($all_cmt as $value) {
                             <!-- end Community single box -->
                             <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Comment</h3><a style="color: #f27322;" href="post_details.html" class="comments">
                                 <i class="feather-message-circle"></i>
-                                <span><?= $count_cmt ?> Comments</span>
+                                <span><?= $count_comment ?> Comments</span>
                             </a>
 
                             
