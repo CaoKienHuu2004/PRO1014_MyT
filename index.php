@@ -71,6 +71,9 @@ if (isset($_GET['pg'])) {
                 header('location: index.php');
             }
             break;
+        case 'category':
+            include_once "view/Category-page.php";
+            break;
         case 'create_product':
             include_once "view/create_product.php";
             break;

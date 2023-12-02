@@ -51,13 +51,13 @@
                                     <a href="index.php">Trang chủ</a>
                                     
                                 </li>
-                                <li><a href="categories.html">Chuyên mục</a>
+                                <li><a href="index.php?pg=category">Chuyên mục</a>
                                 </li>
                                 <li class="has-menu-child-item">
                                     <a href="index.php?pg=product">Tài nguyên</a>
                                     
                                 </li>
-                                <li><a href="contact.html">Hỗ trợ</a></li>
+                                <li><a href="index.php?pg=contact">Hỗ trợ</a></li>
                             </ul>
                             <!-- End Mainmanu Nav -->
                         </nav>
