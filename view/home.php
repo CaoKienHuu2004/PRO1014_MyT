@@ -1043,7 +1043,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             </div>
             <div class="row g-5">
                 <!-- start single service -->
-                <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
                     <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="rn-service-one color-shape-7">
                         <div class="inner">
                             <div class="icon">
@@ -1061,7 +1061,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                 </div>
                 <!-- End single service -->
                 <!-- start single service -->
-                <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
                     <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="rn-service-one color-shape-1">
                         <div class="inner">
                             <div class="icon">
@@ -1079,7 +1079,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                 </div>
                 <!-- End single service -->
                 <!-- start single service -->
-                <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
                     <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="rn-service-one color-shape-5">
                         <div class="inner">
                             <div class="icon">

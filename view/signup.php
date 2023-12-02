@@ -106,14 +106,13 @@
                         <?php endif;
                         unset($_SESSION['loi']); ?>
                         <form action="" method="post">
-
-                            <div class="mb-5">
-                                <label for="username" class="form-label">Full name</label>
-                                <input type="username" name="username" id="username">
-                            </div>
                             <div class="mb-5">
                                 <label for="name_U" class="form-label">Full name</label>
                                 <input type="name_U" name="name_U" id="name_U">
+                            </div>
+                            <div class="mb-5">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="username" name="username" id="username">
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="form-label">Email address</label>
