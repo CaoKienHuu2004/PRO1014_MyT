@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
-                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="item"><a href="index.html">TRANG CHỦ</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
                         <li class="item current">Edit Profile</li>
                     </ul>
@@ -47,11 +47,11 @@
                     <!-- Start tabs area -->
                     <nav class="left-nav rbt-sticky-top-adjust-five">
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ"
                                 aria-selected="true"><i class="feather-edit"></i>Edit Profile Image</button>
-                            <button class="nav-link" id="nav-home-tabs" data-bs-toggle="tab" data-bs-target="#nav-homes"
-                                type="button" role="tab" aria-controls="nav-homes" aria-selected="false"><i
+                            <button class="nav-link" id="nav-TRANG CHỦ-tabs" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦs"
+                                type="button" role="tab" aria-controls="nav-TRANG CHỦs" aria-selected="false"><i
                                     class="feather-user"></i>Personal Information</button>
                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
@@ -67,8 +67,8 @@
                     <div class="tab-content tab-content-edit-wrapepr" id="nav-tabContent">
 
                         <!-- sigle tab content -->
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                            aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-TRANG CHỦ" role="tabpanel"
+                            aria-labelledby="nav-TRANG CHỦ-tab">
                             <!-- start personal information -->
                             <div class="nuron-information">
 
@@ -99,7 +99,7 @@
                         </div>
                         <!-- End single tabv content -->
                         <!-- sigle tab content -->
-                        <div class="tab-pane fade" id="nav-homes" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade" id="nav-TRANG CHỦs" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
                             <!-- start personal information -->
                             <div class="nuron-information">
 

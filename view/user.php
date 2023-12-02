@@ -80,7 +80,7 @@
                                 echo '
                                     <nav class="tab-button-one">
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Đã đăng</button>
+                                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
                                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Đang chờ duyệt</button>
                                             <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Đơn hàng của tôi</button>
                                         </div>
@@ -90,7 +90,7 @@
                                 echo '
                                     <nav class="tab-button-one">
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Đã đăng</button>
+                                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
                                         </div>
                                     </nav>
                                 ';
@@ -102,7 +102,7 @@
             <?php 
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                     echo '
-                    <div class="tab-pane row g-5 d-flex fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane row g-5 d-flex fade show active" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
                         ';foreach ($product_select_idUser as $item) {
                             
                             extract($item);
@@ -312,7 +312,7 @@
                 }
             ?>
             <div class="tab-content rn-bid-content" id="nav-tabContent">
-                <div class="tab-pane row g-5 d-flex fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="tab-pane row g-5 d-flex fade show active" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
                     <!-- start single product -->
                     <div class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="product-style-one no-overlay with-placeBid">

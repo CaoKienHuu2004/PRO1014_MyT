@@ -927,7 +927,7 @@ foreach ($product_select_category_5 as $item) {
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-list">
-                    <li class="item"><a href="index.php">Home</a></li>
+                    <li class="item"><a href="index.php">TRANG CHỦ</a></li>
                     <li class="separator"><i class="feather-chevron-right"></i></li>
                     <li class="item current">CHUYÊN MỤC</li>
                 </ul>

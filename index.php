@@ -74,6 +74,9 @@ if (isset($_GET['pg'])) {
         case 'category':
             include_once "view/Category-page.php";
             break;
+        case 'contact':
+            include_once "view/contact.php";
+            break;
         case 'create_product':
             include_once "view/create_product.php";
             break;
