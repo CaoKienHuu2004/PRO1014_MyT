@@ -103,8 +103,7 @@
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                     echo '
                     <div class="tab-pane row g-5 d-flex fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        ';foreach ($product_select_idUser as $item) {
-                            
+                        ';foreach ($product_select_idUser as $item){  
                             extract($item);
                             $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                             $cert = "";
@@ -119,9 +118,7 @@
                                             <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                                             <div class="react-area">
                                                 <i class="feather-download-cloud" style="padding-right: 10px;"></i>
-                                                
                                                     <a href="view/layout/assets/files/'.$File.'"> <button style="border: none;" type="submit" name="addcart" class="number">Tải xuống</button></a>
-                                                
                                             </div>
                                         </div>';
                             }else {
@@ -129,9 +126,7 @@
                                             <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                                             <div class="react-area">
                                                 <i class="feather-download-cloud" style="padding-right: 10px;"></i>
-                                                
                                                     <button style="border: none;" type="submit" name="addcart" class="number">Tải xuống</button>
-                                                
                                             </div>
                                         </div>
                                         <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
