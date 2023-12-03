@@ -57,7 +57,7 @@ function product_select_id($idProduct)
 }
 function product_select_idUser($idUs)
 {
-    $sql = "SELECT * FROM product WHERE idUser=?";
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='approved'";
     return pdo_query($sql, $idUs);
 }
 
