@@ -281,7 +281,52 @@ foreach ($product_select_all as $item) {
         <div class="row g-5">
 
             <?php foreach ($filter as $key) {
-                echo $html_product_all .= '
+                extract($key);
+                $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+                $cert = "";
+                if ($Test == 1) {
+                    $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
+                } else {
+                    $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
+                }
+                $gia = "";
+                if ($Price_2 == 0) {
+                    $gia = '<div class="bid-react-area">
+                                    <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
+                                    <div class="react-area">
+                                        <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                                        <form action="index.php?pg=shopping_cart" method="post">
+                                            <input type="hidden" name="masp" value="' . $idProduct . '">
+                                            <input type="hidden" name="iduser" value="' . $idUser . '">
+                                            <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                            <input type="hidden" name="tensp" value="' . $Name . '">
+                                            <input type="hidden" name="hinh" value="' . $img . '">
+                                            <input type="hidden" name="gia" value="' . $Price . '">
+                                            <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                            <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                                        </form>
+                                    </div>
+                                </div>';
+                } else {
+                    $gia = '<div class="bid-react-area">
+                                    <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
+                                    <div class="react-area">
+                                        <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
+                                        <form action="index.php?pg=shopping_cart" method="post">
+                                            <input type="hidden" name="masp" value="' . $idProduct . '">
+                                            <input type="hidden" name="iduser" value="' . $idUser . '">
+                                            <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                            <input type="hidden" name="tensp" value="' . $Name . '">
+                                            <input type="hidden" name="hinh" value="' . $img . '">
+                                            <input type="hidden" name="gia" value="' . $Price . '">
+                                            <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                            <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+                }
+                echo '
                 <!-- start single product -->
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="product-style-one overlay">

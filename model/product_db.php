@@ -25,7 +25,7 @@ require_once 'connect_db.php';
 
 function product_select_all()
 {
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
 function product_select_view($limi)
@@ -119,6 +119,7 @@ function product_select_keyword($keyword)
 
 function filter_products($category, $Price, $orderBy)
 {   
+    
     // ORDER BY GIÁ
     $PriceSQL="";
     if ($Price == 0) {

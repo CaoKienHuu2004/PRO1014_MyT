@@ -99,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-content rn-bid-content" id="nav-tabContent">
             <?php 
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                     echo '
@@ -328,8 +329,9 @@
                     ';
                 }
             ?>
+            </div>
             <div class="tab-content rn-bid-content" id="nav-tabContent">
-                <div class="tab-pane row g-5 d-flex fade" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
+                <div class="tab-pane row g-5 d-flex fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <!-- start single product -->
                     <div class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="product-style-one no-overlay with-placeBid">
