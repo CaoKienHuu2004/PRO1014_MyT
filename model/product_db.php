@@ -61,6 +61,11 @@ function product_select_idUser($idUs)
     return pdo_query($sql, $idUs);
 }
 
+function product_select_idUser_pending($idUs)
+{
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='pending'";
+    return pdo_query($sql, $idUs);
+}
 
 // function hang_hoa_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";

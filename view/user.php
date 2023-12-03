@@ -1,6 +1,7 @@
 <?php
         extract($user_select_by_id);
         $product_select_idUser = product_select_idUser($idUser);
+        $product_select_idUser_pending = product_select_idUser_pending($idUser);
         $count_product = "";
         $count_order = "";
         $count_product .= count(product_select_idUser($idUser));
