@@ -80,7 +80,7 @@
                                 echo '
                                     <nav class="tab-button-one">
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
+                                            <button class="nav-link active" id="nav-show-tab" data-bs-toggle="tab" data-bs-target="#nav-show" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
                                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Đang chờ duyệt</button>
                                             <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Đơn hàng của tôi</button>
                                         </div>
@@ -90,7 +90,7 @@
                                 echo '
                                     <nav class="tab-button-one">
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
+                                            <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-show" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="true">Đã đăng</button>
                                         </div>
                                     </nav>
                                 ';
@@ -102,7 +102,7 @@
             <?php 
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                     echo '
-                    <div class="tab-pane row g-5 d-flex fade show active" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
+                    <div class="tab-pane row g-5 d-flex fade show active" id="nav-show" role="tabpanel" aria-labelledby="nav-show-tab">
                         ';foreach ($product_select_idUser as $item) {
                             
                             extract($item);
@@ -118,36 +118,20 @@
                                 $gia = '<div class="bid-react-area">
                                             <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                                             <div class="react-area">
-                                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
-                                                <form action="index.php?pg=shopping_cart" method="post">
-                                                    <input type="hidden" name="masp" value="'.$idProduct.'">
-                                                    <input type="hidden" name="iduser" value="'.$idUser.'">
-                                                    <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                                    <input type="hidden" name="tensp" value="'.$Name.'">
-                                                    <input type="hidden" name="hinh" value="'.$img.'">
-                                                    <input type="hidden" name="gia" value="'.$Price.'">
-                                                    <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                                    <input type="hidden" name="test" value="'.$Test.'">
-                                                    <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
-                                                </form>
+                                                <i class="feather-download-cloud" style="padding-right: 10px;"></i>
+                                                
+                                                    <a href="view/layout/assets/files/'.$File.'"> <button style="border: none;" type="submit" name="addcart" class="number">Tải xuống</button></a>
+                                                
                                             </div>
                                         </div>';
                             }else {
                                 $gia = '<div class="bid-react-area">
                                             <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                                             <div class="react-area">
-                                                <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
-                                                <form action="index.php?pg=shopping_cart" method="post">
-                                                    <input type="hidden" name="masp" value="'.$idProduct.'">
-                                                    <input type="hidden" name="iduser" value="'.$idUser.'">
-                                                    <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                                    <input type="hidden" name="tensp" value="'.$Name.'">
-                                                    <input type="hidden" name="hinh" value="'.$img.'">
-                                                    <input type="hidden" name="gia" value="'.$Price.'">
-                                                    <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                                    <input type="hidden" name="test" value="'.$Test.'">
-                                                    <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
-                                                </form>
+                                                <i class="feather-download-cloud" style="padding-right: 10px;"></i>
+                                                
+                                                    <button style="border: none;" type="submit" name="addcart" class="number">Tải xuống</button>
+                                                
                                             </div>
                                         </div>
                                         <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
@@ -187,11 +171,11 @@
                                             </button>
 
                                             <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                                                <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                                                    Share
+                                                <button href="index.php" type="button" class="btn-setting-text share-text" >
+                                                    Sửa sản phẩm
                                                 </button>
-                                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                                                    Report
+                                                <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                                    Xóa sản phẩm
                                                 </button>
                                             </div>
 
@@ -312,7 +296,7 @@
                 }
             ?>
             <div class="tab-content rn-bid-content" id="nav-tabContent">
-                <div class="tab-pane row g-5 d-flex fade show active" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
+                <div class="tab-pane row g-5 d-flex fade" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
                     <!-- start single product -->
                     <div class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="product-style-one no-overlay with-placeBid">
