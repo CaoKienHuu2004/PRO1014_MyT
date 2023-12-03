@@ -50,8 +50,8 @@
                             <button class="nav-link active" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ"
                                 aria-selected="true"><i class="feather-edit"></i>Edit Profile Image</button>
-                            <button class="nav-link" id="nav-TRANG CHỦ-tabs" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦs"
-                                type="button" role="tab" aria-controls="nav-TRANG CHỦs" aria-selected="false"><i
+                            <button class="nav-link" id="nav-TRANG CHỦ-tabs" data-bs-toggle="tab" data-bs-target="#nav-shows"
+                                type="button" role="tab" aria-controls="nav-shows" aria-selected="false"><i
                                     class="feather-user"></i>Personal Information</button>
                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
@@ -99,10 +99,9 @@
                         </div>
                         <!-- End single tabv content -->
                         <!-- sigle tab content -->
-                        <div class="tab-pane fade" id="nav-TRANG CHỦs" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
+                        <div class="tab-pane fade" id="nav-shows" role="tabpanel" aria-labelledby="nav-shows-tab">
                             <!-- start personal information -->
                             <div class="nuron-information">
-
                                 <div class="profile-form-wrapper">
                                     <div class="input-two-wrapper mb--15">
                                         <div class="first-name half-wid">
@@ -120,8 +119,6 @@
                                         <input name="email" id="Email" type="email" value="example@gmail.com">
                                     </div>
                                 </div>
-
-
                                 <!-- edit bio area Start-->
                                 <div class="edit-bio-area mt--20">
                                     <label for="Discription" class="form-label">Edit Your Bio</label>
