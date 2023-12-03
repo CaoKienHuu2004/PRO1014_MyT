@@ -1,12 +1,33 @@
 
 <?php 
+
     // Sản phẩm giảm giá-------------------------------------------------------------------------------------------------------
     $html_product_sale = '';
     foreach ($product_select_sale as $item) {
         extract($item);
        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
-        
+        $btn_cart = '';
+        if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||(select_order_product_by_idUser($_SESSION['user']['idUser']))) {
+            $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
+            <form action="view/layout/assets/files/'.$File.'" method="post">
+                <button style="border: none;" type="submit" name="addcart" class="number">Tải về</button>
+            </form>
+            ';
+        }else{
+            $btn_cart .= '<i class="feather-shopping-cart" style="padding-right: 5px;"></i>
+            <form action="index.php?pg=shopping_cart" method="post">
+                <input type="hidden" name="masp" value="'.$idProduct.'">
+                <input type="hidden" name="iduser" value="'.$idUser.'">
+                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                <input type="hidden" name="tensp" value="'.$Name.'">
+                <input type="hidden" name="hinh" value="'.$img.'">
+                <input type="hidden" name="gia" value="'.$Price.'">
+                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                <input type="hidden" name="test" value="'.$Test.'">
+                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+            </form>';
+        }
         $cert = "";
         if ($Test == 1) {
             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
@@ -60,18 +81,8 @@
                     <div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 5px;"></i>
-                            <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
-                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
-                            </form>
+                            
+                            '.$btn_cart.'
                         </div>
                     </div>
                 <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>
@@ -85,7 +96,7 @@
     $html_category_select_all = '';
     foreach ($category_select_all as $item) {
         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
+        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $html_category_select_all .='
             <!-- start single category -->
             <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
@@ -105,6 +116,27 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         extract($item);
        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
+        $btn_cart = '';
+        if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
+            $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
+            <form action="view/layout/assets/files/'.$File.'" method="post">
+                <button style="border: none;" type="submit" name="addcart" class="number">Tải về</button>
+            </form>
+            ';
+        }else{
+            $btn_cart .= '<i class="feather-shopping-cart" style="padding-right: 5px;"></i>
+            <form action="index.php?pg=shopping_cart" method="post">
+                <input type="hidden" name="masp" value="'.$idProduct.'">
+                <input type="hidden" name="iduser" value="'.$idUser.'">
+                <input type="hidden" name="idcate" value="'.$idCategories.'">
+                <input type="hidden" name="tensp" value="'.$Name.'">
+                <input type="hidden" name="hinh" value="'.$img.'">
+                <input type="hidden" name="gia" value="'.$Price.'">
+                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                <input type="hidden" name="test" value="'.$Test.'">
+                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
+            </form>';
+        }
         $cert = "";
         if ($Test == 1) {
             $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
@@ -116,36 +148,14 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
-                            <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
-                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
-                            </form>
+                            '.$btn_cart.'
                         </div>
                     </div>';
         }else {
             $gia = '<div class="bid-react-area">
                         <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
                         <div class="react-area">
-                            <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
-                            <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
-                                <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
-                            </form>
+                            '.$btn_cart.'
                         </div>
                     </div>
                     <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
