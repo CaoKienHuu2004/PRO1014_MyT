@@ -4,8 +4,12 @@
         $product_select_idUser_pending = product_select_idUser_pending($idUser);
         $select_order_product_by_idUser = select_order_product_by_idUser($idUser);
         $count_product = "";
+        $count_product_free = "";
+        $count_product_notfree = "";
         $count_order = "";
         $count_product .= count(product_select_idUser($idUser));
+        $count_product_free .= count(product_select_idUser_free($idUser));
+        $count_product_notfree .= count(product_select_idUser_notfree($idUser));
         // $count_order .= count(order_product_buyer($idUser));
     
 // if (isset($_SESSION['user'])) {
@@ -37,18 +41,23 @@
                                 </a>
                                 <div class="follow-area">
                                     <div class="follow followers">
-                                        <span><?= $count_product ?><a href="#" class="color-body">Sản phẩm</a></span>
+                                        <span><?= $count_product ?><a href="#" class="color-body">Tài nguyên</a></span>
+                                    </div>
+                                    <div class="follow followers">
+                                        <span><?= $count_product_free ?><a href="#" class="color-body"> Tài nguyên Miễn phí</a></span>
+                                    </div>
+                                    <div class="follow followers">
+                                        <span><?= $count_product_notfree ?><a href="#" class="color-body"> Tài nguyên Có phí</a></span>
                                     </div>
                                     
-                                    <div class="follow following">
-                                        <span><?= $Total_Pcoin ?><a href="#" class="color-body">PCoin</a></span>
-                                    </div>
+                                    
                                 </div>
                                 <?php 
                                     if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
                                         echo '
                                         <div class="author-button-area">
                                             <a href="index.php?pg=create_product">"<span class="btn at-follw follow-button"><i data-feather="upload-cloud"></i> Tải tài nguyên</span></a>
+                                            <a href="roduct">"<span class="btn at-follw follow-button"><i data-feather="award"></i> <b>'.$_SESSION['user']['Total_Pcoin'].' PCoin</b></span></a>
                                             <span class="btn at-follw share-button" data-bs-toggle="modal" data-bs-target="#shareModal"><i data-feather="share-2"></i> Share</span>
                                             <a href="index.php?pg=edit_user" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
                                         </div>
