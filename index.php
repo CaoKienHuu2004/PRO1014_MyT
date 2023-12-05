@@ -179,7 +179,9 @@ if (isset($_GET['pg'])) {
             case 'product_detail':
                 if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
                     $idProduct = $_GET['idProduct'];
-                    $idUser = $_SESSION['user']['idUser'];
+                    if (isset($_SESSION['user'])) {
+                        $idUser = $_SESSION['user']['idUser'];
+                    }
                     if (isset($_POST['btnCmt'])) {
                         $content = $_POST['content'];
                         comment_insert($idUser, $idProduct, $content);
