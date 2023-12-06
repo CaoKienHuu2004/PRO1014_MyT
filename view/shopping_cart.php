@@ -137,12 +137,15 @@
                             
                         </ul>
                         <!-- Tab Content End -->
-                        <?php 
-                            if (isset($_SESSION['giohang'])) {
+
+                        <?php
+                            
+                            if (isset($_SESSION['giohang'])&&($_SESSION['giohang'])) {
                                 echo $html_cart;
                             }else{
-                                echo "<h6>Giỏ hàng của bạn đang trống !</h6>";
+                                echo "<h6 align='center' style='color: red;'>GIỎ HÀNG CỦA BẠN ĐANG TRỐNG !</h6>";
                             }
+                            
                         ?>
                         
                     </div>
@@ -163,7 +166,8 @@
                             </ul>
                         </div>
                     </div>
-                    <button class="btn btn-primary add-community" href="#" style="margin-top: 50px;" >Tiếp tục thanh toán <i class="feather-arrow-right"></i></button>
+                    
+                    <a href="index.php?pg=check_out"><button class="btn btn-primary add-community" style="margin-top: 50px;" >Tiếp tục thanh toán <i class="feather-arrow-right"></i></button></a>
 
                     
                 </div>
