@@ -223,19 +223,47 @@
                         </div>
                     </div>
                     <?php 
+                        $tongxu = 0;
+                        $tongxugiam = 0;
+                        $xugiam = 0;
+                        $thanhtien = 0;
                         foreach ($_SESSION['giohang'] as $item) {
                             extract($item);
                             $user_select_by_id = user_select_by_id($iduser);
                             extract($user_select_by_id);
+                            $gia = "";
+                            if ($price_2 == null) {
+                                $gia = '<div class="read-content" style="margin-left: 0px;">
+                                            <div class="share-wrapper d-flex">
+                                                
+                                                    <h6 class="latest-bid" style="color: #f27322;margin: 0px;">'.$price.'PCoin</h6>
+                                                
+                                            </div>
+                                        </div>';
+                                $tongxu += $price;
+                            }else {
+                                $gia = '<div class="read-content" style="margin-left: 0px;">
+                                            <div class="share-wrapper d-flex" style="justify-content: center;">
+                                            <del style="color: var(--color-body);"><span class="last-bid" style="margin: 0px; color: var(--color-body);">'.$price.' PCoin</span></del>
+                                                    <h6 class="latest-bid" style="color: #f27322; margin: 0px 0px 0px 15px;">'.$price_2.' PCoin</h6>
+                                                    
+                                            </div>
+                                        </div>
+                                        ';
+                                $tongxu += $price;
+                                $tongxugiam += $price_2;
+                                $xugiam += number_format($price - $price_2);
+                            }
                             echo '
                                 <form method="POST" action="index.php?pg=order">
                                     <input type="hidden" name="idUser" value="'.$_SESSION['user']['idUser'].'">
                                     <input type="hidden" name="Name_seller" value="'.$Name_U.'">
-                                    <input type="hidden" name="Phone_seller" value="">
-                                    <input type="hidden" name="Email_seller" value="">
-                                    <input type="hidden" name="Name_buyer" value="">
-                                    <input type="hidden" name="Phone_buyer" value="">
-                                    <input type="hidden" name="Email_buyer" value="">
+                                    <input type="hidden" name="Phone_seller" value="'.$Phone.'">
+                                    <input type="hidden" name="Email_seller" value="'.$Email.'">
+                                    <input type="hidden" name="Name_buyer" value="'.$_SESSION['user']['Name_U'].'">
+                                    <input type="hidden" name="Phone_buyer" value="'.$_SESSION['user']['Phone'].'">
+                                    <input type="hidden" name="Email_buyer" value="'.$_SESSION['user']['Email'].'">
+                                    <input type="hidden" name="Total_Pcoin" value="'.number_format($tongxu - $xugiam).'">
                                     <button type="submit" class="btn btn-primary add-community" style="margin-top: 25px;" data-bs-toggle="modal" data-bs-target="#shareModal">Tiến hành tải về<i class="feather-download-cloud"></i></button>
                                 </form>
                             ';
