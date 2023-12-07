@@ -227,6 +227,8 @@
                         $tongxugiam = 0;
                         $xugiam = 0;
                         $thanhtien = 0;
+                        echo '<form method="POST" action="index.php?pg=order">';
+                        
                         foreach ($_SESSION['giohang'] as $item) {
                             extract($item);
                             $user_select_by_id = user_select_by_id($iduser);
@@ -254,8 +256,10 @@
                                 $tongxugiam += $price_2;
                                 $xugiam += number_format($price - $price_2);
                             }
-                            echo '
-                                <form method="POST" action="index.php?pg=order">
+                            
+                        }
+                        echo '
+                                
                                     <input type="hidden" name="idUser" value="'.$_SESSION['user']['idUser'].'">
                                     <input type="hidden" name="Name_seller" value="'.$Name_U.'">
                                     <input type="hidden" name="Phone_seller" value="'.$Phone.'">
@@ -264,10 +268,11 @@
                                     <input type="hidden" name="Phone_buyer" value="'.$_SESSION['user']['Phone'].'">
                                     <input type="hidden" name="Email_buyer" value="'.$_SESSION['user']['Email'].'">
                                     <input type="hidden" name="Total_Pcoin" value="'.number_format($tongxu - $xugiam).'">
-                                    <button type="submit" class="btn btn-primary add-community" style="margin-top: 25px;" data-bs-toggle="modal" data-bs-target="#shareModal">Tiến hành tải về<i class="feather-download-cloud"></i></button>
-                                </form>
+                                
                             ';
-                        }
+                        echo '
+                            <button name="btnorder" type="submit" class="btn btn-primary add-community" style="margin-top: 25px;" data-bs-toggle="modal" data-bs-target="#shareModal">Tiến hành tải về<i class="feather-download-cloud"></i></button></form>
+                        ';
                     ?>
                     <a></a>
                     <!-- <a href="index.php?pg=product" style="color: gray;"><div class="add-community" href="#" style="margin-top: 25px;" >Đặt hàng thêm <i class="feather-arrow-right"></i></div></a> -->

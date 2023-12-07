@@ -40,7 +40,7 @@ function product_select_sale($limi)
 }
 function product_select_bestsaler($limi)
 {
-    $sql = "SELECT * FROM product WHERE best_saler AND status='approved' LIMIT " . $limi;
+    $sql = "SELECT * FROM product WHERE best_saler AND status='approved' ORDER BY best_saler DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
 function product_select_category($cate, $limi)

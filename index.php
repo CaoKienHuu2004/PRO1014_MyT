@@ -69,7 +69,6 @@ if (isset($_GET['pg'])) {
                     echo "Mailer Error: " . $mail->ErrorInfo;
                 } else {
                     echo '<script>alert ("Chúng tôi đã gửi email cho bạn, hãy check mail nhé !");</script>';
-
                 }
                 header('location: index.php');
             }
@@ -127,6 +126,7 @@ if (isset($_GET['pg'])) {
                 $repass = $_POST['re-password'];
                 $name_u = $_POST['name_U'];
                 $email = $_POST['email'];
+                $phone = $_POST['phone'];
                 $kq = check_username_user($username);
                 $kq2 = check_email_user($email);
                 if ($pass != $repass) {
@@ -139,10 +139,9 @@ if (isset($_GET['pg'])) {
                     } else {
                         $img = 'newUser/AvatarBase.jpg';
                         // $background = 'view/layout/assets/images/newUser/BackgroundBase.png';
-                        $insertResult = Insert_user($username, $pass, $name_u, $email, $img);
+                        $insertResult = Insert_user($username, $pass, $name_u, $email,$phone, $img);
                         if ($insertResult) {
                             $_SESSION['loi'] = 'ĐÃ XẢY RA LỖI KHI TẠO TÀI KHOẢN';
-
                         } else {
                             $_SESSION['thongbao'] = 'ĐÃ TẠO TÀI KHOẢN THÀNH CÔNG!';
                             header('location: index.php?pg=login');
@@ -152,7 +151,6 @@ if (isset($_GET['pg'])) {
 
                     $_SESSION['loi'] = "Bạn cần phải đồng ý với các điều khoản và điều kiện để tạo tài khoản.";
                 }
-
             } else {
                 // echo 'chưa nhận được dữ liệu!';
             }
@@ -172,7 +170,6 @@ if (isset($_GET['pg'])) {
                 } else {
                     $_SESSION['loi'] = '<i style="color: red;">Tên đăng nhập hoặc mật khẩu không đúng, vui lòng thử lại !</i>';
                 }
-
             }
             include_once "view/login.php";
             break;
@@ -185,26 +182,26 @@ if (isset($_GET['pg'])) {
             }
             break;
 
-            case 'product_detail':
-                $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
-                if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
-                    $idProduct = $_GET['idProduct'];
-                    if (isset($_SESSION['user'])) {
-                        $idUser = $_SESSION['user']['idUser'];
-                    }
-                    if (isset($_POST['btnCmt'])) {
-                        $content = $_POST['content'];
-                        comment_insert($idUser, $idProduct, $content);
-                        header("Location: index.php?pg=product_detail&idProduct=" . $idProduct);
-                    }
-                    $product_select_id = product_select_id($idProduct);
-                    $all_cmt = comment_select_by_product($idProduct);
-                    $count_comment = count($all_cmt);
-                    include_once "view/product_detail.php";
-                } else {
-                    include_once "view/home.php";
+        case 'product_detail':
+            $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
+            if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
+                $idProduct = $_GET['idProduct'];
+                if (isset($_SESSION['user'])) {
+                    $idUser = $_SESSION['user']['idUser'];
                 }
-                break;
+                if (isset($_POST['btnCmt'])) {
+                    $content = $_POST['content'];
+                    comment_insert($idUser, $idProduct, $content);
+                    header("Location: index.php?pg=product_detail&idProduct=" . $idProduct);
+                }
+                $product_select_id = product_select_id($idProduct);
+                $all_cmt = comment_select_by_product($idProduct);
+                $count_comment = count($all_cmt);
+                include_once "view/product_detail.php";
+            } else {
+                include_once "view/home.php";
+            }
+            break;
 
         case "search":
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
@@ -276,28 +273,49 @@ if (isset($_GET['pg'])) {
 
             break;
         case 'check_out':
+            // var_dump(product_select_id($_SESSION['giohang'][1]['idproduct'])['idUser']);
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
-            if (isset($_SESSION['user'])&&($_SESSION['user'])) {
-                if (isset($_SESSION['giohang'])&&($_SESSION['giohang'])) {
+
+            if (isset($_SESSION['user']) && ($_SESSION['user'])) {
+                if (isset($_SESSION['giohang']) && ($_SESSION['giohang'])) {
                     include_once "view/checkout.php";
-                }else{
+                } else {
                     echo "<h6 align='center' style='color: red; margin-top: 50px;'>Vui lòng thêm sản phẩm bất kì vào giỏ hàng !</h6>
                     <a href='index.php?pg=product' style='display: flex; justify-content: center;'><button align='center' class='btn btn-primary add-community' style='margin-top: 25px;'' >VÀO XEM CÁC SẢN PHẨM<i class='feather-arrow-right'></i></button></a>
                             
                     ";
                 }
-                
-            }else{
+            } else {
                 echo "
                     <h6 align='center' style='color: red; margin-top: 50px;'>Vui lòng đăng nhập để có thể thanh toán  !</h6>
                     <a href='index.php?pg=login' style='display: flex; justify-content: center;'><button align='center' class='btn btn-primary add-community' style='margin-top: 25px;'' >ĐĂNG NHẬP<i class='feather-arrow-right'></i></button></a>
                 ";
             }
-            
+
             break;
         case 'order':
             if (isset($_POST['btnorder'])) {
-                
+                $idUser = $_POST['idUser'];
+                // $idproduct = $_POST['idproduct'];
+                $Name_seller = $_POST['Name_seller'];
+                $Phone_seller = $_POST['Phone_seller'];
+                $Email_seller = $_POST['Email_seller'];
+                $Name_buyer = $_POST['Name_buyer'];
+                $Phone_buyer = $_POST['Phone_buyer'];
+                $Email_buyer = $_POST['Email_buyer'];
+                $Total_Pcoin = $_POST['Total_Pcoin'];
+                $lastInsert = order_insert($idUser, $Name_seller, $Phone_seller, $Email_seller, $Name_buyer, $Phone_buyer, $Email_buyer, $Total_Pcoin);
+                tru_tien($idUser, $Total_Pcoin);
+                foreach ($_SESSION['giohang'] as $index => $value) {
+                    $idProduct = $_SESSION['giohang'][$index]['idproduct'];
+                    $idSeller = product_select_id($idProduct)['idUser'];
+                    ($_SESSION['giohang'][$index]['price_2'] > 0) ? $sotien = $_SESSION['giohang'][$index]['price_2'] :  $sotien = $_SESSION['giohang'][$index]['price'];
+                    cong_tien($idSeller, $sotien);
+                    cart_insert($idProduct, $lastInsert);
+                    
+                }
+                unset($_SESSION['giohang']);
+                header ('location: index.php?pg=user&idUser='.$_SESSION['user']['idUser']);
             }
             break;
         default:
@@ -310,9 +328,3 @@ if (isset($_GET['pg'])) {
     include_once "view/home.php";
 }
 include_once "view/footer.php";
-
-
-
-
-
-?>
