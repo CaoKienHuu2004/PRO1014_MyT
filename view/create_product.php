@@ -39,12 +39,13 @@
                 <div class="col-lg-7">
                     <div class="form-wrapper-one">
                         <h4>Đăng tải tài nguyên</h4>
-                        <form class="row" action="#">
+                        <form class="row" id="registrationForm">
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
-                                    <label for="name" class="form-label">Tên sản phẩm *</label>
-                                    <input id="name" placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
+                                    <label class="form-label">Tên sản phẩm *</label>
+                                    <label id="nameError" class="form-label"></label>
+                                    <input id="name" name="Name" placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
                                 </div>
                             </div>
 
@@ -130,7 +131,7 @@
 
                             <div class="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
                                 <div class="input-box">
-                                    <button class="btn btn-primary btn-large">Đăng bán</button>
+                                    <button class="btn btn-primary btn-large" onclick="validateForm()">Đăng bán</button>
                                 </div>
                             </div>
                             
@@ -146,3 +147,37 @@
         </div>
     </div>
     <!-- create new product area -->
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Kiểm tra xem các trường dữ liệu có được điền đầy đủ và có định dạng hợp lệ không
+            if (username.trim() === "") {
+                document.getElementById("usernameError").innerText = "Vui lòng nhập tên người dùng.";
+            } else {
+                document.getElementById("usernameError").innerText = "";
+            }
+
+            if (email.trim() === "") {
+                document.getElementById("emailError").innerText = "Vui lòng nhập địa chỉ email.";
+            } else if (!validateEmail(email)) {
+                document.getElementById("emailError").innerText = "Vui lòng nhập một địa chỉ email hợp lệ.";
+            } else {
+                document.getElementById("emailError").innerText = "";
+            }
+
+            if (password.trim() === "") {
+                document.getElementById("passwordError").innerText = "Vui lòng nhập mật khẩu.";
+            } else {
+                document.getElementById("passwordError").innerText = "";
+            }
+        }
+
+        // Hàm kiểm tra định dạng email
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
