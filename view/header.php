@@ -51,13 +51,13 @@
                                     <a href="index.php">Trang chủ</a>
                                     
                                 </li>
-                                <li><a href="categories.html">Chuyên mục</a>
+                                <li><a href="index.php?pg=category">Chuyên mục</a>
                                 </li>
                                 <li class="has-menu-child-item">
                                     <a href="index.php?pg=product">Tài nguyên</a>
                                     
                                 </li>
-                                <li><a href="contact.html">Hỗ trợ</a></li>
+                                <li><a href="index.php?pg=contact">Hỗ trợ</a></li>
                             </ul>
                             <!-- End Mainmanu Nav -->
                         </nav>
@@ -108,7 +108,7 @@
                     </div> -->
                     <div class="setting-option rn-icon-list notification-badge">
                         <div class="icon-box">
-                            <a href="index.php?pg=view_cart"><i class="feather-shopping-cart"></i><span class="badge">3</span></a>
+                            <a href="index.php?pg=view_cart"><i class="feather-shopping-cart"></i><span class="badge"><?php echo count($_SESSION['giohang']); ?></span></a>
                         </div>
                     </div>
                     <!-- <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">

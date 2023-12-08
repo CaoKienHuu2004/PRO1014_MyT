@@ -116,7 +116,7 @@ foreach ($all_cmt as $value) {
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-list">
-                    <li class="item"><a href="index.html">Home</a></li>
+                    <li class="item"><a href="index.html">TRANG CHỦ</a></li>
                     <li class="separator"><i class="feather-chevron-right"></i></li>
                     <li class="item current"><?php echo $Name; ?>
                     </li>
@@ -137,7 +137,7 @@ foreach ($all_cmt as $value) {
                 <div class="product-tab-wrapper rbt-sticky-top-adjust">
                     <div class="">
                         <!-- <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                <button class="nav-link active" id="v-pills-TRANG CHỦ-tab" data-bs-toggle="pill" data-bs-target="#v-pills-TRANG CHỦ" type="button" role="tab" aria-controls="v-pills-TRANG CHỦ" aria-selected="true">
                                     <span class="rn-pd-sm-thumbnail">
                                         <img src="view/layout/assets/images/portfolio/sm/<?php echo $img ?>" alt="Nft_Profile">
                                     </span>
@@ -150,7 +150,7 @@ foreach ($all_cmt as $value) {
                             </div> -->
 
                         <div class="tab-content rn-pd-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="tab-pane fade show active" id="v-pills-TRANG CHỦ" role="tabpanel" aria-labelledby="v-pills-TRANG CHỦ-tab">
                                 <div class="rn-pd-thumbnail">
                                     <img src="view/layout/assets/images/portfolio/lg/<?php echo $img ?>" alt="Nft_Profile">
                                 </div>
@@ -210,7 +210,7 @@ foreach ($all_cmt as $value) {
                                         <a href="index.php?pg=user&idUser=<?=$idUser?>"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
-                                        <a href="#">
+                                        <a href="index.php?pg=user&idUser=<?=$idUser?>">
                                             <h6 class="name"><?php echo $Name_U ?></h6>
                                         </a>
                                     </div>
@@ -222,7 +222,7 @@ foreach ($all_cmt as $value) {
                         <div class="tab-wrapper-one">
                             <!-- <nav class="tab-button-one">
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Bids</button>
+                                        <button class="nav-link" id="nav-TRANG CHỦ-tab" data-bs-toggle="tab" data-bs-target="#nav-TRANG CHỦ" type="button" role="tab" aria-controls="nav-TRANG CHỦ" aria-selected="false">Bids</button>
                                         <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">Details</button>
                                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">History</button>
                                     </div>

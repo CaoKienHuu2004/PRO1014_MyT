@@ -1,25 +1,25 @@
 
-<?php 
-    // Sản phẩm giảm giá-------------------------------------------------------------------------------------------------------
-    $html_product_sale = '';
-    foreach ($product_select_sale as $item) {
-        extract($item);
-       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
-        
-        $cert = "";
-        if ($Test == 1) {
-            $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-        }else {
-            $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-        }
-        $html_product_sale .='
+<?php
+// Sản phẩm giảm giá-------------------------------------------------------------------------------------------------------
+$html_product_sale = '';
+foreach ($product_select_sale as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $link_userdetails = 'index.php?pg=user&idUser=' . $idUser;
+
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $html_product_sale .= '
             <!-- start single product -->
             <div class="single-slide-product">
                 <div class="product-style-one">
                     <div class="card-thumbnail">
-                        <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                        <div class="countdown" data-date="'.$Date_Sale.'">
+                        <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                        <div class="countdown" data-date="' . $Date_Sale . '">
                             <div class="countdown-container days">
                                 <span class="countdown-value">0</span>
                                 <span class="countdown-heading">Ngày</span>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="product-share-wrapper">
-                        <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                        <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                         <div class="share-btn share-btn-activation dropdown">
                             <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                 <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -56,107 +56,107 @@
                             </div>
                         </div>
                     </div>
-                    '.$cert.'
+                    ' . $cert . '
                     <div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 5px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>
+                <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>
                 </div>
             </div>
             <!-- end single product -->
         ';
-    }
+}
 
-    // Danh mục -------------------------------------------------------------------------------------------------------
-    $html_category_select_all = '';
-    foreach ($category_select_all as $item) {
-        extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-        $html_category_select_all .='
+// Danh mục -------------------------------------------------------------------------------------------------------
+$html_category_select_all = '';
+foreach ($category_select_all as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $html_category_select_all .= '
             <!-- start single category -->
             <div class="col-lg-3 col-xl-2 col-md-4 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
                 <a class="category-style-one" href="#">
-                    <i class="feather-'.$Img_C.'"></i>
-                    <span class="category-label">'.$Name_C.'</span>
+                    <i class="feather-' . $Img_C . '"></i>
+                    <span class="category-label">' . $Name_C . '</span>
                 </a>
             </div>
             <!-- end single category -->
         ';
+}
+
+
+// Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
+$html_product_bestsaler = '';
+foreach ($product_select_bestsaler as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $link_userdetails = 'index.php?pg=user&idUser=' . $idUser;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
+    } else {
+        $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
     }
-
-
-    // Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
-    $html_product_bestsaler = '';
-    foreach ($product_select_bestsaler as $item) {
-        extract($item);
-       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
-        $cert = "";
-        if ($Test == 1) {
-            $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
-        }else {
-            $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
-        }
-        $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-        $html_product_bestsaler .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_bestsaler .= '
         <!-- start single product -->
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="product-style-one overlay">
                 <div class="card-thumbnail">
-                    <a href="'.$link_productdetails.'"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                    <div class="countdown" data-date="'.$Date_Sale.'">
+                    <a href="' . $link_productdetails . '"><img style="width: 100%;" src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                    <div class="countdown" data-date="' . $Date_Sale . '">
                         <div class="countdown-container days">
                             <span class="countdown-value">87</span>
                             <span class="countdown-heading">Ds</span>
@@ -176,7 +176,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                     </div>
                 </div>
                 <div class="product-share-wrapper">
-                    <a href="'.$link_productdetails.'"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <a href="' . $link_productdetails . '"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                     <div class="share-btn share-btn-activation dropdown">
                         <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -195,73 +195,73 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center">'.$cert.'<span class=""><b style="color: #f27322">Lượt bán:</b> '.$best_saler.'</div>
+                <div style="display: flex; justify-content: space-between; align-items: center">' . $cert . '<span class=""><b style="color: #f27322">Lượt bán:</b> ' . $best_saler . '</div>
                 <br>
-                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">'.$Describe.'</span></div>
-                '.$gia.'
+                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">' . $Describe . '</span></div>
+                ' . $gia . '
             </div>
         </div>
         <!-- end single product -->
         ';
-    }
+}
 
-    // Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
-    $html_product_view = '';
-    foreach ($product_select_view as $item) {
-        extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-        $cert = "";
-        if ($Test == 1) {
-            $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
-        }else {
-            $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
-        }
-        $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm bán chạy-------------------------------------------------------------------------------------------------------
+$html_product_view = '';
+foreach ($product_select_view as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<span><i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span></span>';
+    } else {
+        $cert = '<span><i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span></span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-        $html_product_view .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_view .= '
         <!-- start single product -->
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="product-style-one overlay">
                 <div class="card-thumbnail">
-                    <a href="'.$link_productdetails.'"><img style="width: 100%;" src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                    <div class="countdown" data-date="'.$Date_Sale.'">
+                    <a href="' . $link_productdetails . '"><img style="width: 100%;" src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                    <div class="countdown" data-date="' . $Date_Sale . '">
                         <div class="countdown-container days">
                             <span class="countdown-value">87</span>
                             <span class="countdown-heading">Ds</span>
@@ -281,7 +281,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                     </div>
                 </div>
                 <div class="product-share-wrapper">
-                    <a href="'.$link_productdetails.'"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                    <a href="' . $link_productdetails . '"><span class="product-name" style="  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                     <div class="share-btn share-btn-activation dropdown">
                         <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -300,73 +300,73 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center">'.$cert.'<span class=""><b style="color: #f27322">Lượt bán:</b> '.$best_saler.'</div>
+                <div style="display: flex; justify-content: space-between; align-items: center">' . $cert . '<span class=""><b style="color: #f27322">Lượt bán:</b> ' . $best_saler . '</div>
                 <br>
-                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">'.$Describe.'</span></div>
-                '.$gia.'
+                <div style="overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;"><span style="font-weight: 400; font-size: 15px; margin-top: 20px; ">' . $Describe . '</span></div>
+                ' . $gia . '
             </div>
         </div>
         <!-- end single product -->
         ';
+}
+
+// Sản phẩm với danh mục "Lập Trình"-------------------------------------------------------------------------------------------------------
+$html_product_category_0 = '';
+foreach ($product_select_category_0 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
     }
-
-     // Sản phẩm với danh mục "Lập Trình"-------------------------------------------------------------------------------------------------------
-     $html_product_category_0 = '';
-     foreach ($product_select_category_0 as $item) {
-         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_0 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_0 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -386,7 +386,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -403,71 +403,71 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
+}
 
-     // Sản phẩm với danh mục "Đồ Họa"-------------------------------------------------------------------------------------------------------
-     $html_product_category_1 = '';
-     foreach ($product_select_category_1 as $item) {
-         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm với danh mục "Đồ Họa"-------------------------------------------------------------------------------------------------------
+$html_product_category_1 = '';
+foreach ($product_select_category_1 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_1 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_1 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -487,7 +487,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -504,71 +504,71 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
+}
 
-     // Sản phẩm với danh mục "Marketing"-------------------------------------------------------------------------------------------------------
-     $html_product_category_2 = '';
-     foreach ($product_select_category_2 as $item) {
-         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm với danh mục "Marketing"-------------------------------------------------------------------------------------------------------
+$html_product_category_2 = '';
+foreach ($product_select_category_2 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_2 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_2 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -588,7 +588,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -605,71 +605,71 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
+}
 
-     // Sản phẩm với danh mục "GIÁO TRÌNH"-------------------------------------------------------------------------------------------------------
-     $html_product_category_3 = '';
-     foreach ($product_select_category_3 as $item) {
-         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm với danh mục "GIÁO TRÌNH"-------------------------------------------------------------------------------------------------------
+$html_product_category_3 = '';
+foreach ($product_select_category_3 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_3 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_3 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -689,7 +689,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -706,71 +706,71 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
+}
 
-     // Sản phẩm với danh mục "NGOẠI NGỮ"-------------------------------------------------------------------------------------------------------
-     $html_product_category_4 = '';
-     foreach ($product_select_category_4 as $item) {
-         extract($item);
-$link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm với danh mục "NGOẠI NGỮ"-------------------------------------------------------------------------------------------------------
+$html_product_category_4 = '';
+foreach ($product_select_category_4 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_4 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_4 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -790,7 +790,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -807,72 +807,72 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
+}
 
-     // Sản phẩm với danh mục "TIN HỌC"-------------------------------------------------------------------------------------------------------
-     $html_product_category_5 = '';
-     foreach ($product_select_category_5 as $item) {
-         extract($item);
-       $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
-        $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
-         $cert = "";
-         if ($Test == 1) {
-             $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
-         }else {
-             $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
-         }
-         $gia = "";
-        if ($Price_2 == 0) {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price.' PCoin</h6>
+// Sản phẩm với danh mục "TIN HỌC"-------------------------------------------------------------------------------------------------------
+$html_product_category_5 = '';
+foreach ($product_select_category_5 as $item) {
+    extract($item);
+    $link_productdetails = 'index.php?pg=product_detail&idProduct=' . $idProduct;
+    $link_userdetails = 'index.php?pg=user&idUser=' . $idUser;
+    $cert = "";
+    if ($Test == 1) {
+        $cert = '<i class="feather-check-circle" style="padding-right: 5px; color: #f27322;"></i><span class="more-author-text" style="color: #f27322;">Đã kiểm duyệt</span>';
+    } else {
+        $cert = '<i class="feather-x-circle" style="padding-right: 5px; color: gray;"></i><span class="more-author-text" >Chưa kiểm duyệt</span>';
+    }
+    $gia = "";
+    if ($Price_2 == 0) {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>';
-        }else {
-            $gia = '<div class="bid-react-area">
-                        <h6 class="last-bid" style="margin: 0px;">'.$Price_2.' PCoin</h6>
+    } else {
+        $gia = '<div class="bid-react-area">
+                        <h6 class="last-bid" style="margin: 0px;">' . $Price_2 . ' PCoin</h6>
                         <div class="react-area">
                             <i class="feather-shopping-cart" style="padding-right: 10px;"></i>
                             <form action="index.php?pg=shopping_cart" method="post">
-                                <input type="hidden" name="masp" value="'.$idProduct.'">
-                                <input type="hidden" name="iduser" value="'.$idUser.'">
-                                <input type="hidden" name="idcate" value="'.$idCategories.'">
-                                <input type="hidden" name="tensp" value="'.$Name.'">
-                                <input type="hidden" name="hinh" value="'.$img.'">
-                                <input type="hidden" name="gia" value="'.$Price.'">
-                                <input type="hidden" name="gia2" value="'.$Price_2.'">
-                                <input type="hidden" name="test" value="'.$Test.'">
+                                <input type="hidden" name="masp" value="' . $idProduct . '">
+                                <input type="hidden" name="iduser" value="' . $idUser . '">
+                                <input type="hidden" name="idcate" value="' . $idCategories . '">
+                                <input type="hidden" name="tensp" value="' . $Name . '">
+                                <input type="hidden" name="hinh" value="' . $img . '">
+                                <input type="hidden" name="gia" value="' . $Price . '">
+                                <input type="hidden" name="gia2" value="' . $Price_2 . '">
+                                <input type="hidden" name="test" value="' . $Test . '">
                                 <button style="border: none;" type="submit" name="addcart" class="number">Giỏ hàng</button>
                             </form>
                         </div>
                     </div>
-                    <span class="last-bid" style="margin: 0px;"><del>'.$Price.' PCoin</del></span>';
-        }
-         $html_product_category_5 .='
+                    <span class="last-bid" style="margin: 0px;"><del>' . $Price . ' PCoin</del></span>';
+    }
+    $html_product_category_5 .= '
              <!-- start single product -->
              <div class="single-slide-product">
                  <div class="product-style-one">
                      <div class="card-thumbnail">
-                         <a href="'.$link_productdetails.'"><img src="view/layout/assets/images/product/'.$img.'" alt="NFT_portfolio"></a>
-                         <div class="countdown" data-date="'.$Date_Sale.'">
+                         <a href="' . $link_productdetails . '"><img src="view/layout/assets/images/product/' . $img . '" alt="NFT_portfolio"></a>
+                         <div class="countdown" data-date="' . $Date_Sale . '">
                              <div class="countdown-container days">
                                  <span class="countdown-value">0</span>
                                  <span class="countdown-heading">Ngày</span>
@@ -892,7 +892,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                          </div>
                      </div>
                      <div class="product-share-wrapper">
-                         <a href="'.$link_productdetails.'"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">'.$Name.'</span></a>
+                         <a href="' . $link_productdetails . '"><span class="product-name" style="margin: 0px;  overflow: hidden; text-overflow: ellipsis; max-height: 3em; line-height: 1.5em;">' . $Name . '</span></a>
                          <div class="share-btn share-btn-activation dropdown">
                              <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
                                  <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
@@ -909,248 +909,45 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
                              </div>
                          </div>
                      </div>
-                     '.$cert.'
-                    '.$gia.'
+                     ' . $cert . '
+                    ' . $gia . '
                  </div>
              </div>
              <!-- end single product -->
          ';
-     }
-    
+}
+
 ?>
-   
-   <!-- banner 16 -->
-   <div class="banner-area banner-16 pt--100 pb--120 pt_md--70 pt_sm--30 pb_md--90 pb_sm--50 bg-color--2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-lg-1 order-md-2 order-sm-2 order-2">
-                    <div class="left-banner-16-wrapepr mt_md--100 mt_sm--100">
-                        <h1 class="title">
-                            Trao đổi & giao dịch <br><span> Tài nguyên học tập <br></span></h1>
-                        <h6>MyT - STUDENT RESOURCE EXCHANGE WEBSITE</h6>
-                        <p class="disc">Nơi trao đổi, giao dịch những tài liệu, tài nguyên học tập liên quan giữa các sinh viên và tất cả mọi người.</p>
-                        <div class="button-group d-flex flex-wrap">
-                            <a class="btn btn-large btn-primary mr--30" href="#01">Xem Ngay</a>
-                            <?php 
-                                if (isset($_SESSION['user'])) {
-                                    echo '<a class="btn btn-large btn-primary-alta" href="index.php?pg=create_product">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> ';
-                                }else{
-                                    echo '<a class="btn btn-large btn-primary-alta" href="index.php?pg=login" onclick="thongbao()">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> ';
-                                }
-                            ?>
-                            <script>function thongbao() {alert ('Bạn chưa đăng nhập, hãy đăng nhập nhé !');}</script>
-                        </div>
-                        <div class="odometer-area-slide ">
-                            <div class="single-odometer" data-sal-delay="400" data-sal="slide-left" data-sal-duration="800">
-                                <h3 class="counter">
-                                    <span class="odometer" data-count="725">00</span>
-                                    <span class="counter-label">Lượt giao dịch</span>
-                                </h3>
-                            </div>
-                            <div class="single-odometer" data-sal-delay="600" data-sal="slide-left" data-sal-duration="800">
-                                <h3 class="counter">
-                                    <span class="odometer" data-count="950">00</span>
-                                    <span class="counter-label">Thành viên</span>
-                                </h3>
-                            </div>
-                            <div class="single-odometer" data-sal-delay="800" data-sal="slide-left" data-sal-duration="800">
-                                <h3 class="counter">
-                                    <span class="odometer" data-count="237">00</span>
-                                    <span class="counter-label">Sản phẩm giao dịch</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-2 order-md-1 order-sm-1 order-1">
-                    <div class="tilt-image-banner-16">
-                        <img class="tilt" src="view/layout/assets/images/banner/banner-06.png" alt="Nft-profile">
-                        <div class="joined-people-wrapper">
-                            <div class="product-share-wrapper">
-                                <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="N.Hùng" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Tuan Tran" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Hựu" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Hotb" tabindex="0"><img class="large" src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                    <a class="more-author-text" href="#" tabindex="0">+ 1k sinh viên </a>
-                                </div>
-                            </div>
-                            <p class="disc">Hàng ngàn sinh viên đã tin dùng và trao đổi với nhau. Hãy tạo giao dịch tài nguyên của bạn !</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- banner 16 ENd -->
-
-<!-- Explore Style Carousel -->
-<div class="rn-live-bidding-area rn-section-gapTop" id="01">
+   <!-- start page title area -->
+<div class="rn-breadcrumb-inner ptb--30">
     <div class="container">
-        <div class="row mb--50">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h3 class="title mb--0 live-bidding-title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">GIẢM GIÁ GIỜ VÀNG !</h3>
-                </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <h5 class="title text-center text-md-start">CHUYÊN MỤC</h5>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                    <?=$html_product_sale?>
-                </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-list">
+                    <li class="item"><a href="index.php">TRANG CHỦ</a></li>
+                    <li class="separator"><i class="feather-chevron-right"></i></li>
+                    <li class="item current">CHUYÊN MỤC</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<!-- Explore Style Carousel End-->
+<!-- end page title area -->
 
     <!-- start category area -->
     <div class="category-area pt--110 pt_md--70 pt_sm--50">
         <div class="container">
             <div class="row g-5">
-                <?=$html_category_select_all?>
+                <?= $html_category_select_all ?>
             </div>
         </div>
     </div>
     <!-- end category area -->
 
     
-<!-- New items Start -->
-<div class="rn-new-items rn-section-gapTop">
-    <div class="container">
-        <div class="row mb--50 align-items-center">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">SẢN PHẨM BÁN CHẠY</h3>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                    <a class="btn-transparent" href="product.html">XEM TẤT CẢ<i data-feather="arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="row g-5">
-        <?=$html_product_bestsaler?>
-        </div>
-    </div>
-</div>
-<!-- New items End -->.
-
-<!-- start service area -->
-<div class="rn-service-area rn-section-gapTop">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb--50">
-                    <h3 class="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">TẠO VÀ GIAO DỊCH TRÊN MyT</h3>
-                </div>
-            </div>
-            <div class="row g-5">
-                <!-- start single service -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
-                    <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="rn-service-one color-shape-7">
-                        <div class="inner">
-                            <div class="icon">
-                                <img src="view/layout/assets/images/icons/shape-1.png" alt="Shape">
-                            </div>
-                            <div class="subtitle">Bước 01</div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Tạo tài khoản / Đăng nhập</a></h4>
-                                <p class="description">Hãy tạo tài khoản và gia nhập thành viên của MyT chúng tôi (Nếu bạn đã là thành viên, còn chần chờ gì mà vào nhà nào !)</p>
-                                <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <a class="over-link" href="#"></a>
-                    </div>
-                </div>
-                <!-- End single service -->
-                <!-- start single service -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
-                    <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="rn-service-one color-shape-1">
-                        <div class="inner">
-                            <div class="icon">
-                                <img src="view/layout/assets/images/icons/shape-6.png" alt="Shape">
-                            </div>
-                            <div class="subtitle">Bước 02</div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Xác thực tài khoản</a></h4>
-                                <p class="description">Để chứng minh là một thành viên chất lượng, hãy xác thực danh tính của bạn, mọi người có thể biết đến bạn nhiều hơn.</p>
-                                <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <a class="over-link" href="#"></a>
-                    </div>
-                </div>
-                <!-- End single service -->
-                <!-- start single service -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 col-sm-6 col-12" >
-                    <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="rn-service-one color-shape-5">
-                        <div class="inner">
-                            <div class="icon">
-                                <img src="view/layout/assets/images/icons/shape-5.png" alt="Shape">
-                            </div>
-                            <div class="subtitle">Bước 03</div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Tạo sản phẩm giao dịch</a></h4>
-                                <p class="description">Hãy tạo ra một số sản phẩm giao dịch thật là chất lượng để có thể trao đổi trên cộng đồng MyT một cách lành mạnh !</p>
-                                <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <a class="over-link" href="#"></a>
-                    </div>
-                </div>
-                <!-- End single service -->
-                
-            </div>
-        </div>
-    </div>
-    <!-- End service area -->
-
-<!-- New items Start -->
-<div class="rn-new-items rn-section-gapTop">
-    <div class="container">
-        <div class="row mb--50 align-items-center">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">QUAN TÂM NHIỀU NHẤT</h3>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                    <a class="btn-transparent" href="product.html">XEM TẤT CẢ<i data-feather="arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="row g-5">
-            <?=$html_product_view?>
-        </div>
-    </div>
-</div>
-<!-- New items End -->
-
-    <!-- start subscribe area -->
-    <div class="nu-subscribe-area rn-section-gapTop" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="subscribe-wrapper_1 text-center">
-                        <h3 class="title mb--10">Nhận thông báo ưu đãi giao dịch</h3>
-                        <p class="subtitle">Hàng tuần, chúng tôi sẽ gửi đến cho bạn những giao dịch ưu đãi miễn phí mà bạn có thể cần nó</p>
-                        <div class="subscribe-input-wrapper">
-                            <div class="input-group">
-                                <form class="input-group" action="index.php?pg=signmail" method="post">
-                                    <input type="email" class="form-control bg-color--2" aria-label="Recipient's email" name="mail" placeholder="Email của bạn..." required />
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary-alta btn-outline-secondary" type="submit" name="btnmail">Đăng ký</button>
-                                    </div>
-                                </form>
-                                <!-- <input type="email" class="form-control bg-color--2" placeholder="Email của bạn ..." aria-label="Recipient's email"> -->
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end subscribe area -->
 
     <!-- Explore Style Carousel -->
     <div class="rn-live-bidding-area rn-section-gapTop" id="01">
@@ -1165,7 +962,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_0?>
+                       <?= $html_product_category_0 ?>
                     </div>
                 </div>
             </div>
@@ -1185,7 +982,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_1?>
+                       <?= $html_product_category_1 ?>
                     </div>
                 </div>
             </div>
@@ -1205,7 +1002,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_2?>
+                       <?= $html_product_category_2 ?>
                     </div>
                 </div>
             </div>
@@ -1225,7 +1022,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_4?>
+                       <?= $html_product_category_4 ?>
                     </div>
                 </div>
             </div>
@@ -1245,7 +1042,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_5?>
+                       <?= $html_product_category_5 ?>
                     </div>
                 </div>
             </div>
@@ -1265,7 +1062,7 @@ $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-one-slick slick-activation-03 slick-arrow-style-one rn-slick-dot-style slick-gutter-15">
-                       <?= $html_product_category_3?>
+                       <?= $html_product_category_3 ?>
                     </div>
                 </div>
             </div>

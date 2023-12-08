@@ -17,7 +17,7 @@
         </div>
         <div class="container">
             <div class="row gx-5">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--40">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt_mobile--40">
                     <div class="footer-widget widget-quicklink">
                         <h6 class="widget-title">MyT</h6>
                         <ul class="footer-list-one">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
                     <div class="footer-widget widget-information">
                         <h6 class="widget-title">Thông tin</h6>
                         <ul class="footer-list-one">
@@ -73,26 +73,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
-                    <div class="footer-widget">
-                        <h6 class="widget-title">Gần đây đã bán hết</h6>
-                        <ul class="footer-recent-post">
-                            <li class="recent-post">
-                                <div class="thumbnail">
-                                    <a href="product-details.html">
-                                        <img src="view/layout/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h6 class="title"><a href="product-details.html">#21 The Wonder</a></h6>
-                                    <p>Công Nghệ Thông Tin</p>
-                                    <span class="price">05 PCoin</span>
-                                </div>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
+             
             </div>
         </div>
     </div>

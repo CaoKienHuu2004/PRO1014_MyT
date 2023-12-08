@@ -43,9 +43,9 @@
                         <div class="product-share-wrapper">
                             <!-- all bids -->
                             <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="@'.$user_select_by_id['Username'].'" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                <a href="index.php?pg=user&idUser='.$user_select_by_id['idUser'].'" class="avatar" data-tooltip="@'.$user_select_by_id['Username'].'" tabindex="0"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
                                 
-                                <a class="more-author-text" href="#" tabindex="0">'.$user_select_by_id['Name_U'].'</a>
+                                <a class="more-author-text" href="index.php?pg=user&idUser='.$user_select_by_id['idUser'].'" tabindex="0">'.$user_select_by_id['Name_U'].'</a>
                                 '.$cert.'
                             </div>
                             <!-- all bids End--> 
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
-                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="item"><a href="index.html">TRANG CHỦ</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
                         <li class="item current">Giỏ hàng</li>
                     </ul>
@@ -126,7 +126,7 @@
                         <!-- tav Button area  End-->
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <!-- <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab">Recent Content</button>
+                                <button class="nav-link active" id="TRANG CHỦ-tab">Recent Content</button>
                             </li> -->
                             <li class="nav-item" role="presentation">
                                 <button onclick="window.location.href='index.php?pg=action_cart&del_cart'" class="nav-link"  id="profile-tab">Xóa tất cả giỏ hàng</button>

@@ -12,7 +12,7 @@ if (!isset($search)) $search = '';
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-list">
-                    <li class="item"><a href="index.html">Home</a></li>
+                    <li class="item"><a href="index.html">TRANG CHỦ</a></li>
                     <li class="separator"><i class="feather-chevron-right"></i></li>
                     <li class="item current">Tìm kiếm: "<?= $search ?>"</li>
                 </ul>
@@ -33,7 +33,7 @@ if (!isset($search)) $search = '';
             <div class="col-lg-12 custom-product-col">
                 <!-- <h2 class="text-left mb--50">OUR All NFT'S</h2> -->
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane  lg-product_tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane  lg-product_tab-pane fade show active" id="nav-TRANG CHỦ" role="tabpanel" aria-labelledby="nav-TRANG CHỦ-tab">
                         <?php
                         if (count($pro_search) < 1) {
                             echo "Không có dữ liệu cho kết quả: ".$search;
