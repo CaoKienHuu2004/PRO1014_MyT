@@ -68,11 +68,6 @@
                     </div>
                     <!-- end upoad file area -->
 
-                    <div class="mt--100 mt_sm--30 mt_md--30 d-none d-lg-block">
-                        <h5> Note: </h5>
-                        <span> Service fee : <strong>2.5%</strong> </span> <br>
-                        <span> You will receive : <strong>25.00 ETH $50,000</strong></span>
-                    </div>
 
                 </div>
 
@@ -141,7 +136,7 @@
                                 <div class="input-box pb--20 rn-check-box">
                                     <input class="rn-check-box-input" type="checkbox" id="instantsaleprice">
                                     <label class="rn-check-box-label" for="instantsaleprice">
-                                        Bạn tick vào nút này, sẽ đồng ý với các điều khoản & chính sách cộng đồng
+                                        Bạn tick vào nút này, sẽ đồng ý với các điều khoản & chính sách cộng đồng từ phía MyT đề ra 
                                     </label>
                                 </div>
                             </div>
@@ -165,10 +160,7 @@
 
                 </div>
 
-                <div class="mt--100 mt_sm--30 mt_md--30 d-block d-lg-none">
-                    <h5> Ghi chú: </h5>
-                    <span> Phí đăng tải: <strong>5%</strong> số xu đăng bán </span> <br>
-                </div>
+              
             </div>
         </div>
     </div>
