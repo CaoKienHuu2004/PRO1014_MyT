@@ -85,15 +85,30 @@ function check_pass_user($Pass)
 //     $sql = "UPDATE khach_hang SET mat_khau=? WHERE ma_kh=?";
 //     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 // }
-
-function Insert_user($username, $pass, $name_u, $email,$img)
+function check_coin($id){
+    $sql = "SELECT Total_Pcoin FROM user WHERE idUser=?";
+    return pdo_query_value($sql, $id);
+}
+function Insert_user($username, $pass, $name_u, $email, $phone,$img)
 {
-    $sql = "INSERT INTO user(`Username`, `Pass`,  `Name_U`, `Email`,`Avata_img`) VALUES (?,?,?,?,?)";
-    return pdo_execute($sql,$username, $pass, $name_u, $email,$img);
+    $sql = "INSERT INTO user(`Username`, `Pass`,  `Name_U`, `Email`, `Phone`, `Avata_img`) VALUES (?,?,?,?,?,?)";
+    return pdo_execute($sql,$username, $pass, $name_u, $email,$phone,$img);
 }
 
 function Update_password($newpass,$iduser)
 {
     $sql= "UPDATE user SET Pass=? WHERE idUser=?";
     return pdo_execute($sql,$newpass,$iduser);
+}
+function cong_tien($id, $sotien){
+    $Toltal_Pcoin = check_coin($id);
+    $sql = "UPDATE user SET Total_Pcoin=? WHERE idUser=?";
+    $Toltal_Pcoin = $Toltal_Pcoin + $sotien;
+    return pdo_execute($sql, $Toltal_Pcoin, $id);
+}
+function tru_tien($id, $sotien){
+    $Toltal_Pcoin = check_coin($id);
+    $sql = "UPDATE user SET Total_Pcoin=? WHERE idUser=?";
+    $Toltal_Pcoin = $Toltal_Pcoin - $sotien;
+    return pdo_execute($sql, $Toltal_Pcoin, $id);
 }

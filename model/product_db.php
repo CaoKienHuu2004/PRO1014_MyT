@@ -25,42 +25,57 @@ require_once 'connect_db.php';
 
 function product_select_all()
 {
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
 function product_select_view($limi)
 {
-    $sql = "SELECT * FROM product WHERE View ORDER BY View DESC LIMIT " . $limi;
+    $sql = "SELECT * FROM product WHERE View AND status='approved' ORDER BY View DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
 function product_select_sale($limi)
 {
-    $sql = "SELECT * FROM product WHERE Price_2 LIMIT " . $limi;
+    $sql = "SELECT * FROM product WHERE Price_2 AND status='approved' LIMIT " . $limi;
     return pdo_query($sql);
 }
 function product_select_bestsaler($limi)
 {
-    $sql = "SELECT * FROM product WHERE best_saler LIMIT " . $limi;
+    $sql = "SELECT * FROM product WHERE best_saler AND status='approved' ORDER BY best_saler DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
 function product_select_category($cate, $limi)
 {
-    $sql = "SELECT * FROM product WHERE idCategories = " . $cate . " ORDER BY view DESC LIMIT " . $limi;
+    $sql = "SELECT * FROM product WHERE idCategories = " . $cate . " AND status='approved' ORDER BY view DESC LIMIT " . $limi;
     return pdo_query($sql);
 }
 
 
 function product_select_id($idProduct)
 {
-    $sql = "SELECT * FROM product WHERE idProduct=?";
+    $sql = "SELECT * FROM product WHERE idProduct=? AND status='approved'";
     return pdo_query_one($sql, $idProduct);
 }
 function product_select_idUser($idUs)
 {
-    $sql = "SELECT * FROM product WHERE idUser=?";
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='approved'";
+    return pdo_query($sql, $idUs);
+}
+function product_select_idUser_free($idUs)
+{
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='approved' AND Price = 0 OR Price_2 = 0";
+    return pdo_query($sql, $idUs);
+}
+function product_select_idUser_notfree($idUs)
+{
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='approved' AND Price > 0";
     return pdo_query($sql, $idUs);
 }
 
+function product_select_idUser_pending($idUs)
+{
+    $sql = "SELECT * FROM product WHERE idUser=? AND status='pending'";
+    return pdo_query($sql, $idUs);
+}
 
 // function hang_hoa_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
@@ -69,7 +84,7 @@ function product_select_idUser($idUs)
 
 function product_view_count($idPr)
 {
-    $sql = "UPDATE product SET view = view + 1 WHERE idProduct=?";
+    $sql = "UPDATE product SET view = view + 1 WHERE idProduct=? AND status='approved'";
     pdo_execute($sql, $idPr);
 }
 
@@ -92,7 +107,7 @@ function product_select_keyword($keyword)
 {
     $sql = "SELECT * FROM product hh "
         . " JOIN categories lo ON lo.idCategories =hh.idCategories  "
-        . " WHERE Name LIKE ? OR Name_C LIKE ?";
+        . " WHERE Name LIKE ? OR Name_C LIKE ? AND status='approved'";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
 
@@ -119,6 +134,7 @@ function product_select_keyword($keyword)
 
 function filter_products($category, $Price, $orderBy)
 {   
+    
     // ORDER BY GIÁ
     $PriceSQL="";
     if ($Price == 0) {
@@ -139,14 +155,14 @@ function filter_products($category, $Price, $orderBy)
     } elseif ($orderBy == 3) {
         $order .= "ORDER BY idCategories DESC";
     }
-    $sql = "SELECT * FROM product WHERE idCategories = ? $PriceSQL $order ";
+    $sql = "SELECT * FROM product WHERE idCategories = ? $PriceSQL $order AND status='approved'";
 
     return pdo_query($sql, $category);
 }
 
 function get_all_products()
 {
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
 ?>
