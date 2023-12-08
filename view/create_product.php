@@ -1,20 +1,4 @@
 <!-- start page title area -->
-<div class="rn-breadcrumb-inner ptb--30">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <h5 class="title text-center text-md-start">Đăng tải tài nguyên</h5>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-list">
-                        <li class="item"><a href="index.html">TRANG CHỦ</a></li>
-                        <li class="separator"><i class="feather-chevron-right"></i></li>
-                        <li class="item current">Đăng tải tài nguyên</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- end page title area -->
     <!-- create new product area -->
     <div class="create-area rn-section-gapTop">
@@ -35,7 +19,7 @@
                         <div class="brows-file-wrapper">
                             <!-- actual upload which is hidden -->
                             <input name="createinputfile" id="createinputfile" type="file" class="inputfile" />
-                            <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6"> -->
+                            <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="1"> -->
                             <!-- our custom upload button -->
                             <label for="createinputfile" title="No File Choosen">
                                 <i class="feather-upload"></i>
@@ -43,28 +27,9 @@
                                 <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1GB</p>
                             </label>
                         </div>
-                        <br>
-                        <br>
-                        <div class="upload-formate mb--30">
-                            <h6 class="title">
-                               <b> Upload tài nguyên cần đăng bán </b>
-                            </h6>
-                            <p class="formate">
-                                Hãy nén tệp dạng file .ZIP hoặc .RAR trước khi đăng nhé !
-                            </p>
-                        </div>
+                        
 
-                        <div class="brows-file-wrapper">
-                            <!-- actual upload which is hidden -->
-                            <input name="createinputfile" id="createinputfile" type="file" class="inputfile" />
-                            <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="6"> -->
-                            <!-- our custom upload button -->
-                            <label for="createinputfile" title="No File Choosen">
-                                <i class="feather-upload"></i>
-                                <span class="text-center">Chọn file trên máy</span>
-                                <p class="text-center mt--10">Chấp nhận tất cả các tệp<br>    Tối đa 1GB</p>
-                            </label>
-                        </div>
+                        
                     </div>
                     <!-- end upoad file area -->
 
@@ -73,6 +38,7 @@
 
                 <div class="col-lg-7">
                     <div class="form-wrapper-one">
+                        <h4>Đăng tải tài nguyên</h4>
                         <form class="row" action="#">
 
                             <div class="col-md-12">
@@ -104,7 +70,7 @@
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
-                                    <label for="dollerValue" class="form-label">Giá sản phẩm *</label>
+                                    <label for="dollerValue" class="form-label">Phí tải về *</label>
                                     <input id="dollerValue" placeholder="50 Pcoin">
                                 </div>
                             </div>
@@ -118,11 +84,29 @@
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
-                                    <label for="Propertie" class="form-label">Thời gian khuyến mãi (nếu có)</label>
+                                    <label for="Propertie" class="form-label">Thời hạn khuyến mãi (nếu có)</label>
                                     <input id="Propertie" type="date">
                                 </div>
                             </div>
-
+                            <div class="col-md-12">
+                                <div class="input-box pb--20">
+                                    <label for="dollerValue" class="form-label">Upload tài nguyên sản phẩm *</label>
+                                    <input id="dollerValue" type="file">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <span class="input-box pb--20" style="padding:10px; background-color: var(--color-gray-2); margin-bottom:20px;">
+                                    <span  rows="3" > <b>LƯU Ý:</b> <br>
+                                    - Mọi thông tin của thành viên đăng tải trên diễn đàn MyT phải chính xác.<br>
+                                    - Mọi tài nguyên khi upload phải đảm bảo chạy tốt, mô tả đầy đủ thông tin và đúng như hình ảnh đính kèm.<br>
+                                    - Nội dung file nén đã được kiểm tra, đảm bảo không chứa tệp tin không khả dụng, độc hại, virus hoặc bất cứ liên kết khác...<br>
+                                    - Có đầy đủ file chạy, thông tin chi tiết về tài nguyên, hướng dẫn cài đặt<br>
+                                    - Cam kết hỗ trợ hoặc fix lỗi, khi người mua liên lạc qua email hoặc số điện thoại của bạn do phí download đã bao gồm phí hỗ trợ.<br>
+                                    - Tất cả tài nguyên bị báo cáo vi phạm bản quyền nếu được ban quản trị xác nhận là đúng, tài nguyên sẽ bị xóa bỏ.<br>
+                                    - Tài nguyên đã upload lên MyT là thành viên upload đã đồng ý cho phép các thành viên download và sử dụng.<br>
+                                </span>
+                                </div>
+                            <br><br>
                             <div class="col-md-4 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
                                     <input class="rn-check-box-input" type="checkbox" id="putonsale">
@@ -141,21 +125,18 @@
                                 </div>
                             </div>
 
-                            <
-
-                            <div class="col-md-12 col-xl-4">
-                                <div class="input-box">
-                                    <button type="button" class="btn btn-primary-alta btn-large w-100" data-bs-toggle="modal" data-bs-target="#uploadModal">Preview</button>
-                                </div>
-                            </div>
+                            .
+                            
 
                             <div class="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
                                 <div class="input-box">
-                                    <button class="btn btn-primary btn-large w-100">Submit Item</button>
+                                    <button class="btn btn-primary btn-large">Đăng bán</button>
                                 </div>
                             </div>
-
+                            
+                            
                         </form>
+
                     </div>
 
                 </div>
