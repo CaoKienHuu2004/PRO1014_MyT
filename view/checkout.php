@@ -258,6 +258,7 @@
                             }
                             
                         }
+                        
                         echo '
                                 
                                     <input type="hidden" name="idUser" value="'.$_SESSION['user']['idUser'].'">
@@ -271,7 +272,7 @@
                                 
                             ';
                         echo '
-                            <button name="btnorder" type="submit" class="btn btn-primary add-community" style="margin-top: 25px;" data-bs-toggle="modal" data-bs-target="#shareModal">Tiến hành tải về<i class="feather-download-cloud"></i></button></form>
+                            <button name="btnorder" type="submit" class="btn btn-primary add-community" style="margin-top: 25px;">Tiến hành tải về<i class="feather-download-cloud"></i></button></form>
                         ';
                     ?>
                     <a></a>

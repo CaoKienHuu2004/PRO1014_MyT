@@ -47,10 +47,10 @@
                         <br>
                         <div class="upload-formate mb--30">
                             <h6 class="title">
-                               <b> Tải ảnh demo sản phẩm </b>
+                               <b> Upload tài nguyên cần đăng bán </b>
                             </h6>
                             <p class="formate">
-                                Kéo hoặc chọn file ảnh cần upload
+                                Hãy nén tệp dạng file .ZIP hoặc .RAR trước khi đăng nhé !
                             </p>
                         </div>
 
@@ -166,9 +166,8 @@
                 </div>
 
                 <div class="mt--100 mt_sm--30 mt_md--30 d-block d-lg-none">
-                    <h5> Note: </h5>
-                    <span> Service fee : <strong>2.5%</strong> </span> <br>
-                    <span> You will receive : <strong>25.00 ETH $50,000</strong></span>
+                    <h5> Ghi chú: </h5>
+                    <span> Phí đăng tải: <strong>5%</strong> số xu đăng bán </span> <br>
                 </div>
             </div>
         </div>

@@ -304,18 +304,24 @@ if (isset($_GET['pg'])) {
                 $Phone_buyer = $_POST['Phone_buyer'];
                 $Email_buyer = $_POST['Email_buyer'];
                 $Total_Pcoin = $_POST['Total_Pcoin'];
-                $lastInsert = order_insert($idUser, $Name_seller, $Phone_seller, $Email_seller, $Name_buyer, $Phone_buyer, $Email_buyer, $Total_Pcoin);
-                tru_tien($idUser, $Total_Pcoin);
-                foreach ($_SESSION['giohang'] as $index => $value) {
-                    $idProduct = $_SESSION['giohang'][$index]['idproduct'];
-                    $idSeller = product_select_id($idProduct)['idUser'];
-                    ($_SESSION['giohang'][$index]['price_2'] > 0) ? $sotien = $_SESSION['giohang'][$index]['price_2'] :  $sotien = $_SESSION['giohang'][$index]['price'];
-                    cong_tien($idSeller, $sotien);
-                    cart_insert($idProduct, $lastInsert);
-                    
+                if (isset($_SESSION['user'])&&($_SESSION['user']['Total_Pcoin']>=$Total_Pcoin)) {
+                    $lastInsert = order_insert($idUser, $Name_seller, $Phone_seller, $Email_seller, $Name_buyer, $Phone_buyer, $Email_buyer, $Total_Pcoin);
+                    tru_tien($idUser, $Total_Pcoin);
+                    foreach ($_SESSION['giohang'] as $index => $value) {
+                        $idProduct = $_SESSION['giohang'][$index]['idproduct'];
+                        $idSeller = product_select_id($idProduct)['idUser'];
+                        ($_SESSION['giohang'][$index]['price_2'] > 0) ? $sotien = $_SESSION['giohang'][$index]['price_2'] :  $sotien = $_SESSION['giohang'][$index]['price'];
+                        cong_tien($idSeller, $sotien);
+                        cart_insert($idProduct, $lastInsert);
+                        
+                    }
+                    unset($_SESSION['giohang']);
+                    header ('location: index.php?pg=user&idUser='.$_SESSION['user']['idUser']);
+                }else{
+                    echo "<h6 align='center' style='color: red;'>Bạn đang không đủ xu trong tài khoản !</h6>
+                    <a href='index.php?pg=nap_rut' style='display: flex; justify-content: center;'><button align='center' class='btn btn-primary add-community' style='margin-top: 25px;'' >NẠP NGAY <i class='feather-arrow-right'></i></button></a>";
                 }
-                unset($_SESSION['giohang']);
-                header ('location: index.php?pg=user&idUser='.$_SESSION['user']['idUser']);
+                
             }
             break;
         default:
