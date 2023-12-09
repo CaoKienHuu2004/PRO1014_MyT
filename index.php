@@ -46,7 +46,7 @@ if (isset($_GET['pg'])) {
             include_once "view/product.php";
             break;
         case 'signmail':
-            $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
+            // $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];    
             if (isset($_POST['btnmail'])) {
                 $emailer = $_POST['mail'];
                 $mail = new PHPMailer\PHPMailer\PHPMailer();

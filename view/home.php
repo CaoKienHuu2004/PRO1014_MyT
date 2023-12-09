@@ -8,7 +8,7 @@
        $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $link_userdetails = 'index.php?pg=user&idUser='.$idUser;
         $btn_cart = '';
-        if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||(select_order_product_by_idUser($_SESSION['user']['idUser']))) {
+        if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
             $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
             <form action="view/layout/assets/files/'.$File.'" method="post">
                 <button style="border: none;" type="submit" name="addcart" class="number">Tải về</button>
