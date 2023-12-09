@@ -4,13 +4,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
-                    <h5 class="title text-center text-md-start">Sign Up</h5>
+                    <h5 class="title text-center text-md-start">ĐĂNG KÝ</h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
                         <li class="item"><a href="index.html">TRANG CHỦ</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
-                        <li class="item current">Sign Up</li>
+                        <li class="item current">ĐĂNG KÝ</li>
                     </ul>
                 </div>
             </div>
@@ -39,22 +39,21 @@
                         <?php endif;
                         unset($_SESSION['loi']); ?>
                         <form action="" method="post">
-
-                            <div class="mb-5">
-                                <label for="username" class="form-label">Full name</label>
-                                <input type="username" name="username" id="username">
-                            </div>
                             <div class="mb-5">
                                 <label for="name_U" class="form-label">Họ và Tên</label>
                                 <input type="name_U" name="name_U" id="name_U">
                             </div>
                             <div class="mb-5">
-                                <label for="username" class="form-label">Username</label>
+                                <label for="username" class="form-label">Tên đăng nhập</label>
                                 <input type="username" name="username" id="username">
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" id="email">
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="form-label">Số điện thoại</label>
+                                <input type="text" name="phone" id="email">
                             </div>
                             <div class="mb-5">
                                 <label for="newPassword" class="form-label">Tạo mật khẩu</label>

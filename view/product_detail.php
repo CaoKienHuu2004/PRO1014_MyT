@@ -265,21 +265,30 @@ foreach ($all_cmt as $value) {
 
                                     </div>
                                     <!-- <a class="btn btn-primary-alta mt--30" href="#">Place a Bid</a> -->
-                                    <div style="display: flex; justify-content: space-between; gap: 5px;">
-                                        <form action="index.php?pg=shopping_cart" method="post">
-                                            <input type="hidden" name="masp" value="<?php echo $idProduct; ?>">
-                                            <input type="hidden" name="iduser" value="<?php echo $idUser; ?>">
-                                            <input type="hidden" name="idcate" value="<?php echo $idCategories; ?>">
-                                            <input type="hidden" name="tensp" value="<?php echo $Name; ?>">
-                                            <input type="hidden" name="hinh" value="<?php echo $img; ?>">
-                                            <input type="hidden" name="gia" value="<?php echo $Price; ?>">
-                                            <input type="hidden" name="gia2" value="<?php echo $Price_2; ?>">
-                                            <input type="hidden" name="test" value="<?php echo $Test; ?>">
-                                            <button type="submit" name="addcart" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> TẢI VỀ NGAY </button>
-                                        </form>
-                                        <!-- <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button> -->
+                                    <?php 
+                                        if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)) {
+                                            echo '
+                                                <a href="view/layout/assets/files/'.$File.'">"<button type="submit" name="addcart" class="btn btn-primary-alta mt--30"><i class="feather-download"></i>TẢI TÀI LIỆU VỀ</button></a>
+                                            ';
+                                        }else{
+                                            echo '<div style="display: flex; justify-content: space-between; gap: 5px;">
+                                                <form action="index.php?pg=shopping_cart" method="post">
+                                                    <input type="hidden" name="masp" value="'.$idProduct.'">
+                                                    <input type="hidden" name="iduser" value="'.$idUser.'">
+                                                    <input type="hidden" name="idcate" value="'.$idCategories.'">
+                                                    <input type="hidden" name="tensp" value="'.$Name.'">
+                                                    <input type="hidden" name="hinh" value="'.$img.'">
+                                                    <input type="hidden" name="gia" value="'.$Price.'">
+                                                    <input type="hidden" name="gia2" value="'.$Price_2.'">
+                                                    <input type="hidden" name="test" value="'.$Test.'">
+                                                    <button type="submit" name="addcart" class="btn btn-primary-alta mt--30"><i class="feather-shopping-cart"></i> TẢI VỀ NGAY </button>
+                                                </form>
+                                                <!-- <button type="button" class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#placebidModal" style="background-color:#F27322;">TẢI TÀI NGUYÊN VỀ</button> -->
+        
+                                            </div>';
 
-                                    </div>
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
