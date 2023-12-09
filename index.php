@@ -49,36 +49,19 @@ if (isset($_GET['pg'])) {
             // $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];    
             if (isset($_POST['btnmail'])) {
                 $emailer = $_POST['mail'];
-                $mail = new PHPMailer\PHPMailer\PHPMailer();
-                $mail->IsSMTP(); // enable SMTP
+                
 
-                $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-                $mail->SMTPAuth = true; // authentication enabled
-                $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-                $mail->Host = "smtp.gmail.com";
-                $mail->Port = 465; // or 587
-                $mail->IsHTML(true);
-                $mail->Username = "ckienhuu12a12021@gmail.com";
-                $mail->Password = "ajuvqcrvloxcqzox";
-                $mail->SetFrom("ckienhuu12a12021@gmail.com");
-                $mail->Subject = "[THANKS] MyT - STUDENT RESOURCE EXCHANGE WEBSITE";
-                $mail->Body = "Thank you for registering, we will send you special offers as soon as possible";
-                $mail->AddAddress($emailer);
-
-
-                if (!$mail->Send()) {
-                    echo "Mailer Error: " . $mail->ErrorInfo;
-                } else {
-                    echo '<script>alert ("Chúng tôi đã gửi email cho bạn, hãy check mail nhé !");</script>';
-                }
+                
                 header('location: index.php');
             }
             break;
         case 'create_product':
-            $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
+            // $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             include_once "view/create_product.php";
             break;
-
+        case 'creat':
+            echo'HẾT CỨU';
+            break;
         case "edit_user":
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             if (isset($_POST['submit'])) {

@@ -39,26 +39,41 @@
                 <div class="col-lg-7">
                     <div class="form-wrapper-one">
                         <h4>Đăng tải tài nguyên</h4>
-                        <form class="row" id="registrationForm">
+                        <form method="post" action="index.php?pg=create" class="row" id="registrationForm">
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label class="form-label">Tên sản phẩm *</label>
                                     <div id="nameError" class="form-label"></div>
-                                    <input id="namePr" required placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
+                                    <input id="namePr" name="Name"  placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
                                 </div>
                             </div>
-
+                            <div class="col-md-12">
+                                <div class="input-box pb--20">
+                                    <label class="form-label">Chuyên mục *</label>
+                                    <div id="nameError" class="form-label"></div>
+                                    <select name="idCategory">
+                                        <option selected>Chọn chuyên mục</option>
+                                        <?php 
+                                            $category_select_all_one = category_select_all_one();
+                                            foreach ($category_select_all_one as $item){
+                                                extract($item);
+                                                echo '<option value="'.$idCategories.'">'.$Name_C.'</option>';
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="Discription" class="form-label">Mô tả ngắn *</label>
-                                    <textarea id="Discription" required rows="3" placeholder="vd: đây là sản phẩm đồ họa thông mình ..."></textarea>
+                                    <textarea name="Describe" id="Discription"  rows="3" placeholder="vd: đây là sản phẩm đồ họa thông mình ..."></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="Discription" class="form-label">Mô tả chi tiết *</label>
-                                    <textarea id="motachitiet" required rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
+                                    <textarea name="Instruct" id="motachitiet"  rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
                                 </div>
                             </div>
                             <script>
@@ -72,27 +87,27 @@
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="dollerValue" class="form-label">Phí tải về *</label>
-                                    <input id="dollerValue" required placeholder="50 Pcoin">
+                                    <input name="Price" id="dollerValue" type="number"  placeholder="tự nhập">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="Size" class="form-label">Giá khuyến mãi (nếu có)</label>
-                                    <input id="Size"  placeholder="25 PCoin">
+                                    <input name="Price_2" id="Size"  type="number" placeholder="tự nhập">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="Propertie" class="form-label">Thời hạn khuyến mãi (nếu có)</label>
-                                    <input id="Propertie"  type="date">
+                                    <input name="Date_Sale" id="Propertie"  type="date">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="dollerValue" class="form-label">Upload tài nguyên sản phẩm *</label>
-                                    <input id="dollerValue" required type="file">
+                                    <input name="File" id="dollerValue" type="file">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -110,30 +125,29 @@
                             <br><br>
                             <div class="col-md-4 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
-                                    <input class="rn-check-box-input" required type="checkbox" id="putonsale">
+                                    <input name="Test" class="rn-check-box-input" type="checkbox" id="putonsale">
                                     <label class="rn-check-box-label" for="putonsale">
                                         Xác thực kiểm duyệt
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-12 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
-                                    <input class="rn-check-box-input" required type="checkbox" id="instantsaleprice">
+                                    <input class="rn-check-box-input"  type="checkbox" id="instantsaleprice">
                                     <label class="rn-check-box-label" for="instantsaleprice">
-                                        Bạn tick vào nút này, sẽ đồng ý với các điều khoản & chính sách cộng đồng từ phía MyT đề ra 
+                                        Tôi đã đọc và  đồng ý với các điều khoản & chính sách cộng đồng từ phía MyT đề ra 
                                     </label>
                                 </div>
                             </div>
 
-                            .
+                            
                             
 
-                            <div class="col-md-12 col-xl-8 mt_lg--15 mt_md--15 mt_sm--15">
-                                <div class="input-box">
-                                    <button class="btn btn-primary btn-large" onclick="validateForm()">Đăng bán</button>
-                                </div>
-                            </div>
+                            
+                                <button type="submit" class="btn btn-primary btn-large">Đăng bán</button>
+                                
+                            
                             
                             
                         </form>

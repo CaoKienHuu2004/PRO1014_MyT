@@ -46,6 +46,10 @@ function category_select_all($limi){
     $sql = "SELECT * FROM categories LIMIT ".$limi;
     return pdo_query($sql);
 }
+function category_select_all_one(){
+    $sql = "SELECT * FROM categories";
+    return pdo_query($sql);
+}
 /**
  * Truy vấn một loại theo mã
  * @param int $id_category là mã loại cần truy vấn
