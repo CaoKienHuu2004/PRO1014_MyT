@@ -44,21 +44,21 @@
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label class="form-label">Tên sản phẩm *</label>
-                                    <label id="nameError" class="form-label"></label>
-                                    <input id="name" name="Name" placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
+                                    <div id="nameError" class="form-label"></div>
+                                    <input id="namePr" required placeholder="vd: Bộ ấn phẩm đồ họa MyT123, ...">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="Discription" class="form-label">Mô tả ngắn *</label>
-                                    <textarea id="Discription" rows="3" placeholder="vd: đây là sản phẩm đồ họa thông mình ..."></textarea>
+                                    <textarea id="Discription" required rows="3" placeholder="vd: đây là sản phẩm đồ họa thông mình ..."></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="Discription" class="form-label">Mô tả chi tiết *</label>
-                                    <textarea id="motachitiet" rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
+                                    <textarea id="motachitiet" required rows="3" placeholder="e. g. “After purchasing the product you can get item...”"></textarea>
                                 </div>
                             </div>
                             <script>
@@ -72,27 +72,27 @@
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="dollerValue" class="form-label">Phí tải về *</label>
-                                    <input id="dollerValue" placeholder="50 Pcoin">
+                                    <input id="dollerValue" required placeholder="50 Pcoin">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="Size" class="form-label">Giá khuyến mãi (nếu có)</label>
-                                    <input id="Size" placeholder="25 PCoin">
+                                    <input id="Size"  placeholder="25 PCoin">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="input-box pb--20">
                                     <label for="Propertie" class="form-label">Thời hạn khuyến mãi (nếu có)</label>
-                                    <input id="Propertie" type="date">
+                                    <input id="Propertie"  type="date">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
                                     <label for="dollerValue" class="form-label">Upload tài nguyên sản phẩm *</label>
-                                    <input id="dollerValue" type="file">
+                                    <input id="dollerValue" required type="file">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -110,7 +110,7 @@
                             <br><br>
                             <div class="col-md-4 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
-                                    <input class="rn-check-box-input" type="checkbox" id="putonsale">
+                                    <input class="rn-check-box-input" required type="checkbox" id="putonsale">
                                     <label class="rn-check-box-label" for="putonsale">
                                         Xác thực kiểm duyệt
                                     </label>
@@ -119,7 +119,7 @@
 
                             <div class="col-md-4 col-sm-4">
                                 <div class="input-box pb--20 rn-check-box">
-                                    <input class="rn-check-box-input" type="checkbox" id="instantsaleprice">
+                                    <input class="rn-check-box-input" required type="checkbox" id="instantsaleprice">
                                     <label class="rn-check-box-label" for="instantsaleprice">
                                         Bạn tick vào nút này, sẽ đồng ý với các điều khoản & chính sách cộng đồng từ phía MyT đề ra 
                                     </label>
@@ -149,15 +149,15 @@
     <!-- create new product area -->
     <script>
         function validateForm() {
-            var name = document.getElementById("name").value;
+            var namePr = document.getElementById("namePr").value;
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
 
             // Kiểm tra xem các trường dữ liệu có được điền đầy đủ và có định dạng hợp lệ không
-            if (username.trim() === "") {
-                document.getElementById("usernameError").innerText = "Vui lòng nhập tên người dùng.";
+            if (namePr.trim() == "") {
+                document.getElementById("nameError").innerText = "Vui lòng nhập tên người dùng.";
             } else {
-                document.getElementById("usernameError").innerText = "";
+                document.getElementById("nameError").innerText = "";
             }
 
             if (email.trim() === "") {
