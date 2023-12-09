@@ -21,11 +21,6 @@ if (!isset($search)) $search = '';
     </div>
 </div>
 <!-- end page title area -->
-
-
-
-
-
 <!-- Start Tab Product list style area -->
 <div class="rn-product-area rn-section-gapTop">
     <div class="container">

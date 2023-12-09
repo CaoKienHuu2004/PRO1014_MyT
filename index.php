@@ -8,8 +8,12 @@ include_once "model/connect_db.php";
 include_once "model/product_db.php";
 include_once "model/category_db.php";
 include_once "model/user_db.php";
+<<<<<<< HEAD
+// include_once "model/comment_db.php";
+=======
 include_once "model/comment_db.php";
 include_once "model/order_db.php";
+>>>>>>> 0fc0cc32f8107c05c55337e53c357a17da5fff4d
 // DATA---------------------------------------------------------------------------------------------------------------------
 $product_select_all = product_select_all();
 $product_select_sale = product_select_sale(10);
@@ -35,10 +39,10 @@ if (isset($_GET['pg'])) {
             $Price = 0;
             $orderBy = 1;
             if (isset($_POST['submit'])) {
-                $Price    = $_POST['Price'];
-                $orderBy  = $_POST['orderBy'];
+                $Price =    $_POST['Price'];
+                $orderBy =  $_POST['orderBy'];
                 $category = $_POST['category'];
-                $filter   = filter_products($category, $Price, $orderBy);
+                $filter=filter_products($category, $Price, $orderBy);
             } else {
                 $filter = get_all_products(); // lấy tất cả sản phẩm
             }
@@ -73,6 +77,8 @@ if (isset($_GET['pg'])) {
                 header('location: index.php');
             }
             break;
+<<<<<<< HEAD
+=======
         case 'category':
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             include_once "view/Category-page.php";
@@ -81,6 +87,7 @@ if (isset($_GET['pg'])) {
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             include_once "view/contact.php";
             break;
+>>>>>>> 0fc0cc32f8107c05c55337e53c357a17da5fff4d
         case 'create_product':
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             include_once "view/create_product.php";
@@ -183,6 +190,17 @@ if (isset($_GET['pg'])) {
             break;
 
         case 'product_detail':
+<<<<<<< HEAD
+            if (isset($_GET['idProduct'])&&($_GET['idProduct']>=0)) {
+                $idProduct = $_GET['idProduct'];
+                $idUser = $_SESSION['user']['idUser'];
+                if(isset($_POST['btnCmt'])){
+                    $content = $_POST['content'];
+                    comment_insert($idUser, $idProduct, $content);
+                    header("Location: index.php?pg=product_detail&idProduct=".$idProduct);
+                }
+                    
+=======
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             if (isset($_GET['idProduct']) && ($_GET['idProduct'] >= 0)) {
                 $idProduct = $_GET['idProduct'];
@@ -194,13 +212,21 @@ if (isset($_GET['pg'])) {
                     comment_insert($idUser, $idProduct, $content);
                     header("Location: index.php?pg=product_detail&idProduct=" . $idProduct);
                 }
+>>>>>>> 0fc0cc32f8107c05c55337e53c357a17da5fff4d
                 $product_select_id = product_select_id($idProduct);
                 $all_cmt = comment_select_by_product($idProduct);
                 $count_comment = count($all_cmt);
                 include_once "view/product_detail.php";
+<<<<<<< HEAD
+            }else{
+                include_once "view/home.php";
+            }
+
+=======
             } else {
                 include_once "view/home.php";
             }
+>>>>>>> 0fc0cc32f8107c05c55337e53c357a17da5fff4d
             break;
 
         case "search":
