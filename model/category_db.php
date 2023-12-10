@@ -7,7 +7,7 @@ require_once 'connect_db.php';
  * @throws PDOException lỗi thêm mới
  */
 function category_insert($name_category){
-    $sql = "INSERT INTO category(name_category) VALUES(?)";
+    $sql = "INSERT INTO categories(Name_C) VALUES(?)";
     pdo_execute($sql, $name_category);
 }
 /**
@@ -17,7 +17,7 @@ function category_insert($name_category){
  * @throws PDOException lỗi cập nhật
  */
 function category_update($id_category, $name_category){
-    $sql = "UPDATE category SET name_category=? WHERE id_category=?";
+    $sql = "UPDATE categories SET Name_C=? WHERE idCategories=?";
     pdo_execute($sql, $name_category, $id_category);
 }
 /**
@@ -26,15 +26,8 @@ function category_update($id_category, $name_category){
  * @throws PDOException lỗi xóa
  */
 function category_delete($id_category){
-    $sql = "DELETE FROM category WHERE id_category=?";
-    if(is_array($id_category)){
-        foreach ($id_category as $ma) {
-            pdo_execute($sql, $ma);
-        }
-    }
-    else{
-        pdo_execute($sql, $id_category);
-    }
+    $sql = "DELETE FROM categories WHERE idCategories=?";
+    return pdo_execute($sql, $id_category);
 }
 // --------------------------------------------------------------------------------------------------------------------
 /**
@@ -44,6 +37,10 @@ function category_delete($id_category){
  */
 function category_select_all($limi){
     $sql = "SELECT * FROM categories LIMIT ".$limi;
+    return pdo_query($sql);
+}
+function get_all_cate(){
+    $sql = "SELECT * FROM categories";
     return pdo_query($sql);
 }
 function category_select_all_one(){

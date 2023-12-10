@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 09, 2023 lúc 11:07 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Thời gian đã tạo: Th12 10, 2023 lúc 09:01 PM
+-- Phiên bản máy phục vụ: 10.4.27-MariaDB
+-- Phiên bản PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -131,8 +131,8 @@ INSERT INTO `order` (`idOrder`, `idUser`, `Name_seller`, `Phone_seller`, `Email_
 (17, 4, 'Cao Kiến Hựu', 374244751, 'lyhuu5570@gmail.com', 'Nguyễn Khánh Đăng', 123456789, 'khdang207@gmail.com', '2023-12-08 14:21:32', 25, 1),
 (18, 4, 'Quản Trị Viên', 374244751, 'quantrivien@gmail.com', 'Nguyễn Khánh Đăng', 123456789, 'khdang207@gmail.com', '2023-12-08 14:36:04', 90, 1),
 (19, 4, 'Quản Trị Viên', 374244751, 'quantrivien@gmail.com', 'Nguyễn Khánh Đăng', 123456789, 'khdang207@gmail.com', '2023-12-08 16:08:57', 75, 1),
-(20, 2, 'Đặng Trung Đức', 0, 'duclee206145@gmail.com', 'Quản Trị Viên', 374244751, 'quantrivien@gmail.com', '2023-12-09 16:11:52', 60, 1),
-(21, 4, 'Đặng Trung Đức', 0, 'duclee206145@gmail.com', 'Nguyễn Khánh Đăng', 123456789, 'khdang207@gmail.com', '2023-12-09 16:15:23', 0, 1);
+(20, 2, 'Đặng Trung Đức', 0, 'duclee206145@gmail.com', 'Quản Trị Viên', 374244751, 'quantrivien@gmail.com', '2023-12-11 00:00:00', 60, 1),
+(21, 4, 'Đặng Trung Đức', 0, 'duclee206145@gmail.com', 'Nguyễn Khánh Đăng', 123456789, 'khdang207@gmail.com', '2023-12-11 00:00:00', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -218,18 +218,19 @@ CREATE TABLE `user` (
   `Bio` varchar(250) DEFAULT NULL,
   `Major` varchar(50) DEFAULT NULL,
   `Role` tinyint(4) NOT NULL DEFAULT 0,
-  `Total_Pcoin` int(10) NOT NULL DEFAULT 0
+  `Total_Pcoin` int(10) NOT NULL DEFAULT 0,
+  `create_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`idUser`, `Username`, `Pass`, `Avata_img`, `Name_U`, `Email`, `Phone`, `Address`, `Bio`, `Major`, `Role`, `Total_Pcoin`) VALUES
-(1, 'lyhuu123', '13102004caokienhuu', 'client-3.png', 'Cao Kiến Hựu', 'lyhuu5570@gmail.com', 374244751, 'TP.HCM', NULL, NULL, 0, 70),
-(2, 'admin', '321', 'boy-avater.png', 'Quản Trị Viên', 'quantrivien@gmail.com', 374244751, 'TP.HCM', 'Lập Trình Viên + Nhà điều hành MyT Việt Nam', 'Web Dev', 1, 965),
-(3, 'duclee206', '1234', '/newUser/AvatarBase.jpg', 'Đặng Trung Đức', 'duclee206145@gmail.com', 0, 'TP.HCM', NULL, NULL, 0, 4765),
-(4, 'kh.dang-.-', '54321', 'newUser/AvatarBase.jpg', 'Nguyễn Khánh Đăng', 'khdang207@gmail.com', 123456789, NULL, NULL, NULL, 0, 0);
+INSERT INTO `user` (`idUser`, `Username`, `Pass`, `Avata_img`, `Name_U`, `Email`, `Phone`, `Address`, `Bio`, `Major`, `Role`, `Total_Pcoin`, `create_date`) VALUES
+(1, 'lyhuu123', '13102004caokienhuu', 'client-3.png', 'Cao Kiến Hựu', 'lyhuu5570@gmail.com', 374244751, 'TP.HCM', NULL, NULL, 0, 70, '2023-12-01 00:00:00'),
+(2, 'admin', '321', 'boy-avater.png', 'Quản Trị Viên', 'quantrivien@gmail.com', 374244751, 'TP.HCM', 'Lập Trình Viên + Nhà điều hành MyT Việt Nam', 'Web Dev', 1, 965, '2023-12-06 00:00:00'),
+(3, 'duclee206', '1234', '/newUser/AvatarBase.jpg', 'Đặng Trung Đức', 'duclee206145@gmail.com', 0, 'TP.HCM', NULL, NULL, 0, 4765, '2023-12-11 00:00:00'),
+(4, 'kh.dang-.-', '54321', 'newUser/AvatarBase.jpg', 'Nguyễn Khánh Đăng', 'khdang207@gmail.com', 123456789, NULL, NULL, NULL, 0, 0, '2023-12-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -338,7 +339,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCategories` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `comment`

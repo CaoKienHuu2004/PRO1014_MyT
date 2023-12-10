@@ -112,3 +112,11 @@ function tru_tien($id, $sotien){
     $Toltal_Pcoin = $Toltal_Pcoin - $sotien;
     return pdo_execute($sql, $Toltal_Pcoin, $id);
 }
+function get_count_user(){
+    $sql = "SELECT count(*) FROM user WHERE 1";
+    return pdo_query_value($sql);
+}
+function get_total_coin(){
+    $sql = "SELECT SUM(Total_Pcoin) FROM user WHERE 1";
+    return pdo_query_value($sql);
+}

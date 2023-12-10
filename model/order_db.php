@@ -24,5 +24,8 @@ function order_product_idUser_all($idUs, $idPro){
     $sql = "SELECT * FROM cart JOIN `order` ON `order`.idOrder = cart.idOrder WHERE `order`.idUser = ".$idUs." AND cart.idProducts = ".$idPro;
     return pdo_query($sql);
 }
-
+function get_count_order(){
+    $sql = "SELECT count(*) FROM `order` WHERE 1";
+    return pdo_query_value($sql);
+}
 ?>

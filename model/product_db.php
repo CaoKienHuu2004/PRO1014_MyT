@@ -165,4 +165,8 @@ function get_all_products()
     $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
+function get_count_pro(){
+    $sql = "SELECT count(*) FROM product WHERE 1";
+    return pdo_query_value($sql);
+}
 ?>
