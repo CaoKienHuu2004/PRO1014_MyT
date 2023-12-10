@@ -28,6 +28,11 @@ function product_select_all()
     $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
+function product_select_all_admin()
+{
+    $sql = "SELECT * FROM product";
+    return pdo_query($sql);
+}
 function product_select_view($limi)
 {
     $sql = "SELECT * FROM product WHERE View AND status='approved' ORDER BY View DESC LIMIT " . $limi;
@@ -52,7 +57,7 @@ function product_select_category($cate, $limi)
 
 function product_select_id($idProduct)
 {
-    $sql = "SELECT * FROM product WHERE idProduct=? AND status='approved'";
+    $sql = "SELECT * FROM product WHERE idProduct=?";
     return pdo_query_one($sql, $idProduct);
 }
 function product_select_idUser($idUs)

@@ -20,19 +20,38 @@ if (isset($_GET['page'])) {
             require_once('view/categories-add.php');
             break;
         case 'categories-edit':
-            if(isset($_GET['id']) && ($_GET['id'] > 0)){
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $row = pdo_query_value("SELECT count(*) FROM categories WHERE idCategories = ?", $_GET['id']);
                 $id = check_string($_GET['id']);
-                if($row > 0){
+                if ($row > 0) {
                     $info_cate = category_select_by_id($id);
                     require_once('view/categories-edit.php');
-                }else{
+                } else {
                     header("Location: index.php?page=categories");
                 }
-            }else{
+            } else {
                 require_once('view/404.php');
             }
-            
+
+            break;
+        case 'products':
+            $all_pro = product_select_all_admin();
+            require_once('view/products.php');
+            break;
+        case 'product-edit':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = check_string($_GET['id']);
+                $row = pdo_query_value("SELECT count(*) FROM product WHERE idProduct = ?", $id);
+                if ($row > 0) {
+                    $info_pro = product_select_id($id);
+                    require_once('view/product-edit.php');
+                } else {
+                    header("Location: index.php?page=products");
+                }
+            } else {
+                require_once('view/404.php');
+            }
+
             break;
         default:
             require_once('view/404.php');

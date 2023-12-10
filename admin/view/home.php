@@ -25,7 +25,7 @@
 
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3><?=format_cash($tong_giaodich)?></h3>
+                            <h3><?= format_cash($tong_giaodich) ?></h3>
                             <p>Tổng giao dịch</p>
                         </div>
                         <div class="icon">
@@ -39,7 +39,7 @@
 
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3><?=format_cash($tong_tainguyen)?></h3>
+                            <h3><?= format_cash($tong_tainguyen) ?></h3>
                             <p>Tổng tài nguyên</p>
                         </div>
                         <div class="icon">
@@ -53,7 +53,7 @@
 
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3><?=format_cash($tong_thanhvien)?></h3>
+                            <h3><?= format_cash($tong_thanhvien) ?></h3>
                             <p>Tổng thành viên</p>
                         </div>
                         <div class="icon">
@@ -67,7 +67,7 @@
 
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3><?=format_cash($tong_sodu_user)?></h3>
+                            <h3><?= format_cash($tong_sodu_user) ?></h3>
                             <p>Tổng số dư thành viên</p>
                         </div>
                         <div class="icon">
@@ -79,7 +79,7 @@
                 <div class="col-lg-4 col-6">
                     <div class="card">
                         <div class="card-header border-0">
-                            <h3 class="card-title">Thống kê tháng <?=date('m', time());?></h3>
+                            <h3 class="card-title">Thống kê tháng <?= date('m', time()); ?></h3>
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
@@ -88,7 +88,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                        <?=format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE YEAR(Date_oder) = ".date('Y')." AND MONTH(Date_oder) = ".date('m')." "))?> PCoin </span>
+                                        <?= format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE YEAR(Date_oder) = " . date('Y') . " AND MONTH(Date_oder) = " . date('m') . " ")) ?> PCoin </span>
                                     <span class="text-muted">TỔNG DOANH THU</span>
                                 </p>
                             </div>
@@ -99,7 +99,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                        <?=format_cash(pdo_query_value("SELECT COUNT(*) FROM `order` WHERE YEAR(Date_oder) = ".date('Y')." AND MONTH(Date_oder) = ".date('m')." "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT COUNT(*) FROM `order` WHERE YEAR(Date_oder) = " . date('Y') . " AND MONTH(Date_oder) = " . date('m') . " ")) ?> </span>
                                     <span class="text-muted">TỔNG GIAO DỊCH</span>
                                 </p>
                             </div>
@@ -110,7 +110,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                        <?=format_cash(pdo_query_value("SELECT COUNT(*) FROM `user` WHERE YEAR(create_date) = ".date('Y')." AND MONTH(create_date) = ".date('m')." "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT COUNT(*) FROM `user` WHERE YEAR(create_date) = " . date('Y') . " AND MONTH(create_date) = " . date('m') . " ")) ?> </span>
                                     <span class="text-muted">THÀNH VIÊN MỚI</span>
                                 </p>
                             </div>
@@ -130,7 +130,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                        <?=format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE WEEK(Date_oder, 1) = WEEK(CURDATE(), 1) "))?> PCoin</span>
+                                        <?= format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE WEEK(Date_oder, 1) = WEEK(CURDATE(), 1) ")) ?> PCoin</span>
                                     <span class="text-muted">TỔNG DOANH THU</span>
                                 </p>
                             </div>
@@ -141,7 +141,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                    <?=format_cash(pdo_query_value("SELECT COUNT(*) FROM `order` WHERE WEEK(Date_oder, 1) = WEEK(CURDATE(), 1) "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT COUNT(*) FROM `order` WHERE WEEK(Date_oder, 1) = WEEK(CURDATE(), 1) ")) ?> </span>
                                     <span class="text-muted">TỔNG GIAO DỊCH</span>
                                 </p>
                             </div>
@@ -152,7 +152,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                    <?=format_cash(pdo_query_value("SELECT COUNT(*) FROM `user` WHERE WEEK(create_date, 1) = WEEK(CURDATE(), 1) "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT COUNT(*) FROM `user` WHERE WEEK(create_date, 1) = WEEK(CURDATE(), 1) ")) ?> </span>
                                     <span class="text-muted">THÀNH VIÊN MỚI</span>
                                 </p>
                             </div>
@@ -172,7 +172,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                        <?=format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE `Date_oder` >= DATE(NOW()) AND `Date_oder` < DATE(NOW()) + INTERVAL 1 DAY "))?> PCoin</span>
+                                        <?= format_cash(pdo_query_value("SELECT SUM(`Total_Pcoin`) FROM `order` WHERE `Date_oder` >= DATE(NOW()) AND `Date_oder` < DATE(NOW()) + INTERVAL 1 DAY ")) ?> PCoin</span>
                                     <span class="text-muted">TỔNG DOANH THU</span>
                                 </p>
                             </div>
@@ -183,7 +183,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                    <?=format_cash(pdo_query_value("SELECT count(*) FROM `order` WHERE `Date_oder` >= DATE(NOW()) AND `Date_oder` < DATE(NOW()) + INTERVAL 1 DAY "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT count(*) FROM `order` WHERE `Date_oder` >= DATE(NOW()) AND `Date_oder` < DATE(NOW()) + INTERVAL 1 DAY ")) ?> </span>
                                     <span class="text-muted">TỔNG GIAO DỊCH</span>
                                 </p>
                             </div>
@@ -194,7 +194,7 @@
                                 </p>
                                 <p class="d-flex flex-column text-right">
                                     <span class="font-weight-bold">
-                                    <?=format_cash(pdo_query_value("SELECT count(*) FROM `user` WHERE `create_date` >= DATE(NOW()) AND `create_date` < DATE(NOW()) + INTERVAL 1 DAY "))?> </span>
+                                        <?= format_cash(pdo_query_value("SELECT count(*) FROM `user` WHERE `create_date` >= DATE(NOW()) AND `create_date` < DATE(NOW()) + INTERVAL 1 DAY ")) ?> </span>
                                     <span class="text-muted">THÀNH VIÊN MỚI</span>
                                 </p>
                             </div>

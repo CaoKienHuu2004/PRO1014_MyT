@@ -277,7 +277,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?page=products" class="nav-link ">
+                            <a href="index.php?page=products" class="nav-link <?=active_sidebar(['product-edit', 'products'])?>">
                                 <i class="nav-icon fa-solid fa-folder-plus"></i>
                                 <p>
                                     Quản lí sản phẩm
