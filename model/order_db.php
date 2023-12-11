@@ -2,7 +2,8 @@
 require_once 'connect_db.php';
 
 function order_insert($iU,$Ns,$Ps,$Es,$Nb,$Pb,$Eb,$TP){
-    $sql = "INSERT INTO `order` (idUser,Name_seller,Phone_seller,Email_seller,Name_buyer,Phone_buyer,Email_buyer,Date_oder,Total_Pcoin) VALUES (?,?,?,?,?,?,?,now(),?)";
+    $sql = "INSERT INTO `order` (idUser,Name_seller,Phone_seller,Email_seller,
+    Name_buyer,Phone_buyer,Email_buyer,Date_oder,Total_Pcoin) VALUES (?,?,?,?,?,?,?,now(),?)";
     return pdo_execute_lastInsertId($sql,$iU,$Ns,$Ps,$Es,$Nb,$Pb,$Eb,$TP);
     
 }

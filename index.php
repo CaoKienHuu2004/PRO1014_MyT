@@ -59,8 +59,20 @@ if (isset($_GET['pg'])) {
             // $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             include_once "view/create_product.php";
             break;
-        case 'creat':
-            echo'HẾT CỨU';
+        case 'create':
+            if(isset($_POST['btnaddpro'])){
+                $Name = $_POST['Name'];
+                $idCategory = $_POST['idCategory'];
+                $Describe = $_POST['Describe'];
+                $Instruct = $_POST['Instruct'];
+                $Price = $_POST['Price'];
+                $Price_2 = $_POST['Price_2'];
+                $Date_Sale = $_POST['Date_Sale'];
+                $File = $_POST['File'];
+                $Test = $_POST['Test'];
+
+                
+            }
             break;
         case "edit_user":
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
