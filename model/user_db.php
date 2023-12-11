@@ -120,3 +120,7 @@ function get_total_coin(){
     $sql = "SELECT SUM(Total_Pcoin) FROM user WHERE 1";
     return pdo_query_value($sql);
 }
+function admin_login($username, $password){
+    $sql = "SELECT count(*) FROM user WHERE (Username=? OR Email=?) AND Pass=? AND Role=1";
+    return pdo_query_value($sql, $username, $username, $password) > 0;
+}   

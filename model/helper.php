@@ -1,4 +1,5 @@
 <?php
+session_start();
 function format_cash($price)
 {
     return str_replace(",", ".", number_format($price));
