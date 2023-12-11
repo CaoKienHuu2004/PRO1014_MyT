@@ -139,17 +139,8 @@
                                         Tôi đã đọc và  đồng ý với các điều khoản & chính sách cộng đồng từ phía MyT đề ra 
                                     </label>
                                 </div>
-                            </div>
-
-                            
-                            
-
-                            
-                                <button type="submit" class="btn btn-primary btn-large">Đăng bán</button>
-                                
-                            
-                            
-                            
+                            </div>  
+                            <button type="submit" name ="btnaddpro" class="btn btn-primary btn-large">Đăng bán</button>
                         </form>
 
                     </div>
