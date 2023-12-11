@@ -70,8 +70,9 @@ if (isset($_GET['pg'])) {
                 $Date_Sale = $_POST['Date_Sale'];
                 $File = $_POST['File'];
                 $Test = $_POST['Test'];
-
-                
+                $Img = $_POST['Img'];
+                product_insert($Name,$idCategory,$Describe,$Instruct,$Price,$Price_2,$Date_Sale,$File,$Test,$Img);
+                header ('location:index.php?pg=user');
             }
             break;
         case "edit_user":

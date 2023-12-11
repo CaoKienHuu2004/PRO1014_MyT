@@ -5,6 +5,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-3 offset-1 ml_md--0 ml_sm--0">
+                <form method="post" action="index.php?pg=create" class="row" id="registrationForm">
                     <!-- file upload area -->
                     <div class="upload-area">
 
@@ -18,7 +19,7 @@
                         </div>
                         <div class="brows-file-wrapper">
                             <!-- actual upload which is hidden -->
-                            <input name="createinputfile" id="createinputfile" type="file" class="inputfile" />
+                            <input name="Img" id="createinputfile" type="file" class="inputfile" />
                             <!-- <img id="createfileImage" src="assets/images/portfolio/portfolio-02.jpg" alt="" data-black-overlay="1"> -->
                             <!-- our custom upload button -->
                             <label for="createinputfile" title="No File Choosen">
@@ -39,7 +40,7 @@
                 <div class="col-lg-7">
                     <div class="form-wrapper-one">
                         <h4>Đăng tải tài nguyên</h4>
-                        <form method="post" action="index.php?pg=create" class="row" id="registrationForm">
+                        
 
                             <div class="col-md-12">
                                 <div class="input-box pb--20">

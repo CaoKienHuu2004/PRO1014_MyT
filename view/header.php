@@ -148,7 +148,7 @@
                                             <li><a href="'.$link_user_detail.'" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-user"></i>Thông tin của tôi</a></li>
                                             <li><a href="'.$link_user_edit.'" style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-edit-3"></i>Chỉnh sửa hồ sơ</a></li>
                                             <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-credit-card"></i>Nạp / Rút xu</a></li>
-                                            <li><a href="author.html"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-paperclip"></i>Thống kê giao dịch</a></li>
+                                            <li><a href="index.php?pg=thongkegiaodich"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-paperclip"></i>Thống kê giao dịch</a></li>
                                             <li><a href="index.php?pg=create_product"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-upload-cloud"></i>Tải lên tài nguyên</a></li>
                                             <li><a href="index.php?pg=logout"style="justify-content: flex-start;"><i style="margin-right: 10px;" class="feather-log-out"></i>Đăng xuất</a></li>
                                         </ul>

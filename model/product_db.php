@@ -1,9 +1,9 @@
 <?php
 require_once 'connect_db.php';
 
-function product_insert(){
-    $sql = "INSERT INTO () VALUES ()";
-    pdo_execute($sql);
+function product_insert($Name,$idCategory,$Describe,$Instruct,$Price,$Price_2,$Date_Sale,$File,$Test,$Img) {
+    $sql = "INSERT INTO `product`( `Name`,`idCategories`, `Describe`,`Instruct`, `Price`, `Price_2`, `Date_Sale`, `File`, `Test`, `img`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql,$Name,$idCategory,$Describe,$Instruct,$Price,$Price_2,$Date_Sale,$File,$Test,$Img);
 }
 
 // function hang_hoa_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta){
@@ -138,10 +138,10 @@ function product_select_keyword($keyword)
 // }
 
 function filter_products($category, $Price, $orderBy)
-{   
-    
+{
+
     // ORDER BY GIÁ
-    $PriceSQL="";
+    $PriceSQL = "";
     if ($Price == 0) {
         $PriceSQL = "";
     } elseif ($Price == 1) {
@@ -170,8 +170,8 @@ function get_all_products()
     $sql = "SELECT * FROM product WHERE status='approved'";
     return pdo_query($sql);
 }
-function get_count_pro(){
+function get_count_pro()
+{
     $sql = "SELECT count(*) FROM product WHERE 1";
     return pdo_query_value($sql);
 }
-?>
