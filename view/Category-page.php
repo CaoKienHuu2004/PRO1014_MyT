@@ -941,7 +941,7 @@ foreach ($product_select_category_5 as $item) {
     <div class="category-area pt--110 pt_md--70 pt_sm--50">
         <div class="container">
             <div class="row g-5">
-                <?= $html_category_select_all ?>
+                
             </div>
         </div>
     </div>

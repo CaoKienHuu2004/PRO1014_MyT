@@ -31,6 +31,9 @@ include_once "view/header.php";
 // Tạo đường dẫn pg - vd: index.php?pg=product
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        case 'category':
+            include_once "view/Category-page.php";
+            break;
         case 'product':
             $_SESSION['link_page'] = $_SERVER['REQUEST_URI'];
             $Price = 0;
