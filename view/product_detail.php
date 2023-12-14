@@ -79,7 +79,7 @@ foreach ($all_cmt as $value) {
     $user = user_select_by_id($idUser);
     $html_cmt .= '<div class="forum-single-ans">
                             <div class="ans-header">
-                                <a href="author.html"><img src="view/layout/assets/images/client/' . $user['Avata_img'] . '" alt="Nft-Profile"></a>
+                                <a href="author.html"><img src="view/layout/assets/images/product/' . $user['Avata_img'] . '" alt="Nft-Profile"></a>
                                 <a href="author.html">
                                     <p class="name">' . $user['Name_U'] . '</p>
                                 </a>
@@ -207,7 +207,7 @@ foreach ($all_cmt as $value) {
                             <div class="top-seller-inner-one">
                                 <div class="top-seller-wrapper">
                                     <div class="thumbnail">
-                                        <a href="index.php?pg=user&idUser=<?=$idUser?>"><img src="view/layout/assets/images/client/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
+                                        <a href="index.php?pg=user&idUser=<?=$idUser?>"><img src="view/layout/assets/images/product/<?php echo $Avata_img ?>" alt="Nft_Profile"></a>
                                     </div>
                                     <div class="top-seller-content">
                                         <a href="index.php?pg=user&idUser=<?=$idUser?>">
@@ -326,7 +326,7 @@ foreach ($all_cmt as $value) {
                             if (isset($_SESSION['user']) && check_cmt($_SESSION['user']['idUser'], $idProduct) > 0) {
                                 echo '<form action="index.php?pg=product_detail&idProduct='.$idProduct.'" method="post">
                                         <div class="forum-input-ans-wrapper">
-                                            <img src="view/layout/assets/images/client/'.$_SESSION['user']['Avata_img'].'" alt="Nft-Profile">
+                                            <img src="view/layout/assets/images/product/'.$_SESSION['user']['Avata_img'].'" alt="Nft-Profile">
                                             <input type="text" name="content" placeholder="Bình luận của bạn...">
                                             <button name="btnCmt" type="submit" class="btn btn-primary rounded">Bình luận</button>
                                         </div>
@@ -344,7 +344,7 @@ foreach ($all_cmt as $value) {
                             <!-- single answer -->
                             <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
-                                    <a href="author.html"><img src="view/layout/assets/images/client/client-4.png" alt="Nft-Profile"></a>
+                                    <a href="author.html"><img src="view/layout/assets/images/product/client-4.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
                                         <p class="name">@Jone Lee</p>
                                     </a>
@@ -376,7 +376,7 @@ foreach ($all_cmt as $value) {
                             <!-- single answer -->
                             <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
-                                    <a href="author.html"><img src="view/layout/assets/images/client/client-5.png" alt="Nft-Profile"></a>
+                                    <a href="author.html"><img src="view/layout/assets/images/product/client-5.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
                                         <p class="name">@Alamin</p>
                                     </a>
@@ -408,7 +408,7 @@ foreach ($all_cmt as $value) {
                             <!-- single answer -->
                             <!-- <div class="forum-single-ans">
                                 <div class="ans-header">
-                                    <a href="author.html"><img src="view/layout/assets/images/client/client-6.png" alt="Nft-Profile"></a>
+                                    <a href="author.html"><img src="view/layout/assets/images/product/client-6.png" alt="Nft-Profile"></a>
                                     <a href="author.html">
                                         <p class="name">@Mikle</p>
                                     </a>
@@ -462,9 +462,9 @@ foreach ($all_cmt as $value) {
                         </div>
                         <div class="product-share-wrapper">
                             <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Jone Due"><img src="view/layout/assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Nisat Tara"><img src="view/layout/assets/images/client/client-3.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/product/client-1.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Jone Due"><img src="view/layout/assets/images/product/client-2.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Nisat Tara"><img src="view/layout/assets/images/product/client-3.png" alt="Nft_Profile"></a>
                                 <a class="more-author-text" href="#">9+ Place Bit.</a>
                             </div>
                             <div class="share-btn share-btn-activation dropdown">
@@ -508,9 +508,9 @@ foreach ($all_cmt as $value) {
                         </div>
                         <div class="product-share-wrapper">
                             <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/client/client-4.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Nira Ara"><img src="view/layout/assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Fatima Afrafy"><img src="view/layout/assets/images/client/client-6.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/product/client-4.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Nira Ara"><img src="view/layout/assets/images/product/client-5.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Fatima Afrafy"><img src="view/layout/assets/images/product/client-6.png" alt="Nft_Profile"></a>
                                 <a class="more-author-text" href="#">10+ Place Bit.</a>
                             </div>
                             <div class="share-btn share-btn-activation dropdown">
@@ -554,9 +554,9 @@ foreach ($all_cmt as $value) {
                         </div>
                         <div class="product-share-wrapper">
                             <div class="profile-share">
-                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Janin Ara"><img src="view/layout/assets/images/client/client-8.png" alt="Nft_Profile"></a>
-                                <a href="author.html" class="avatar" data-tooltip="Atif Islam"><img src="view/layout/assets/images/client/client-9.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="view/layout/assets/images/product/client-1.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Janin Ara"><img src="view/layout/assets/images/product/client-8.png" alt="Nft_Profile"></a>
+                                <a href="author.html" class="avatar" data-tooltip="Atif Islam"><img src="view/layout/assets/images/product/client-9.png" alt="Nft_Profile"></a>
                                 <a class="more-author-text" href="#">10+ Place Bit.</a>
                             </div>
                             <div class="share-btn share-btn-activation dropdown">

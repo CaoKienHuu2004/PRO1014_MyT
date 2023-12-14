@@ -33,7 +33,7 @@
             <div class="inner" >
                 <div class="lg-left-content" style="justify-content: center;">
                     <a href="product-details.html" class="thumbnail">
-                        <img src="view/layout/assets/images/portfolio/'.$img.'" alt="Nft_Portfolio">
+                        <img src="view/layout/assets/images/product/'.$img.'" alt="Nft_Portfolio">
                     </a>
                     <div class="read-content" style="max-width: 350px;">
                         <a href="index.php?pg=product_detail&idProduct='.$idproduct.'">
@@ -187,7 +187,7 @@
                 <div class="modal-body">
                     <div class="product-style-one no-overlay">
                         <div class="card-thumbnail">
-                            <a href="product-details.html"><img src="view/layout/assets/images/portfolio/portfolio-08.jpg" alt="NFT_portfolio"></a>
+                            <a href="product-details.html"><img src="view/layout/assets/images/product/portfolio-08.jpg" alt="NFT_portfolio"></a>
                         </div>
                         <div class="product-share-wrapper">
                             <div class="profile-share">

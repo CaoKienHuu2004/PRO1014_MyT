@@ -43,7 +43,7 @@ if (!isset($search)) $search = '';
                                     <div class="inner">
                                         <div class="lg-left-content">
                                             <a href="product-details.html" class="thumbnail">
-                                                <img src="view/layout/assets/images/portfolio/<?= $img ?>" alt="Nft_Portfolio">
+                                                <img style="width: 200px; height: 200px; object-fit: cover;" src="view/layout/assets/images/product/<?= $img ?>" alt="Nft_Portfolio">
                                             </a>
                                             <div class="read-content">
 
