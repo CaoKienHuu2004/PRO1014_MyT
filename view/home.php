@@ -323,6 +323,7 @@
      $html_product_category_0 = '';
      foreach ($product_select_category_0 as $item) {
          extract($item);
+         $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
         $btn_cart = '';
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
                     $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
@@ -422,6 +423,7 @@
      $html_product_category_1 = '';
      foreach ($product_select_category_1 as $item) {
          extract($item);
+         $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 $btn_cart = '';
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
                     $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
@@ -521,6 +523,7 @@ $btn_cart = '';
      $html_product_category_2 = '';
      foreach ($product_select_category_2 as $item) {
          extract($item);
+         $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 $btn_cart = '';
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
                     $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
@@ -620,6 +623,7 @@ $btn_cart = '';
      $html_product_category_3 = '';
      foreach ($product_select_category_3 as $item) {
          extract($item);
+         $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 $btn_cart = '';
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
                     $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
@@ -719,6 +723,7 @@ $btn_cart = '';
      $html_product_category_4 = '';
      foreach ($product_select_category_4 as $item) {
          extract($item);
+         $link_productdetails = 'index.php?pg=product_detail&idProduct='.$idProduct;
 $btn_cart = '';
                 if (isset($_SESSION['user'])&&($_SESSION['user']['idUser']==$idUser)||isset($_SESSION['user'])&& ( order_product_idUser_all($_SESSION['user']['idUser'], $idProduct))) {
                     $btn_cart .= '<i class="feather-download" style="padding-right: 5px;"></i>
@@ -915,7 +920,7 @@ $btn_cart = '';
                                     echo '<a class="btn btn-large btn-primary-alta" href="index.php?pg=login" onclick="thongbao()">Chia sẻ tài nguyên <b class="feather-upload-cloud"></b></a> ';
                                 }
                             ?>
-                            <script>function thongbao() {alert ('Bạn chưa đăng nhập, hãy đăng nhập nhé !');}</script>
+                            
                         </div>
                         <div class="odometer-area-slide ">
                             <div class="single-odometer" data-sal-delay="400" data-sal="slide-left" data-sal-duration="800">
